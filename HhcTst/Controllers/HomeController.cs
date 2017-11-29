@@ -11,6 +11,10 @@ namespace HhcTst.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
+            return View();
+        }
+        public ActionResult Login()
+        {
 
             return View();
         }

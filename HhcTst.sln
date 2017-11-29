@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HhcTst", "HhcTst\HhcTst.csproj", "{BC38E3EE-8535-4748-B5F2-8D95BAE6CEBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ajs", "Ajs\Ajs.csproj", "{95E9BDF7-42DD-4A09-8B6F-80EA4229EBE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BC38E3EE-8535-4748-B5F2-8D95BAE6CEBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC38E3EE-8535-4748-B5F2-8D95BAE6CEBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC38E3EE-8535-4748-B5F2-8D95BAE6CEBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E9BDF7-42DD-4A09-8B6F-80EA4229EBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E9BDF7-42DD-4A09-8B6F-80EA4229EBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E9BDF7-42DD-4A09-8B6F-80EA4229EBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E9BDF7-42DD-4A09-8B6F-80EA4229EBE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
