@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HhcTst.Models.Admin>
+@{
+    ViewBag.Title = "GetAdmins";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>GetAdmins</h2>
+
+<table class="table-bordered table-striped table-hover">
+    <tr>
+        <td>@Html.DisplayNameFor(m=>m.AdminNo)</td>
+        <td>@Html.DisplayNameFor(m=>m.AdminName)</td>
+    </tr>
+    @foreach (var v in Model) { 
+    <tr>
+        <td>
+            @Html.DisplayFor(m=>v.AdminNo)
+        </td>
+        <td>
+            @Html.DisplayFor(m=>v.AdminName)
+        </td>
+    </tr>
+    
+    
+    }
+</table>

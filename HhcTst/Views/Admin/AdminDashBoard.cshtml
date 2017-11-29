@@ -8,7 +8,7 @@
 
 <fieldset>
     <legend> User DashBoard </legend>
-
+    @Html.ActionLink("ViewAdmins","GetAdmins","Admin")
     @if (Session["loggedAdminName"] != null)
     {
         <text>

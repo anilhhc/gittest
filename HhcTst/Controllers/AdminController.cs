@@ -11,6 +11,13 @@ namespace HhcTst.Controllers
     {
         HhcDbContainer db = new HhcDbContainer();
         // GET: Admin
+        //[Authorize(Roles="Admin")]
+        public ActionResult GetAdmins()
+        {
+            var v = db.Admins.ToList();
+            return View(v);
+        }
+
         public ActionResult Index()
         {
             return View("Login");
