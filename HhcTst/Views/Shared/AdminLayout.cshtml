@@ -7,6 +7,10 @@
 </head>
 <body>
     <div>
+        @Html.ActionLink("Admin Page", "AdminDashboard", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+    </div>
+    <div>
+        @Html.ActionLink("ViewAdmins", "GetAdmins", "Admin")
         @Html.ActionLink("LogOut","LogOut","Admin")
         @RenderBody()
     </div>

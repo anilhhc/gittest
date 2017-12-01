@@ -4,11 +4,9 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>AdminDashBoard</h2>
-
 <fieldset>
     <legend> User DashBoard </legend>
-    @Html.ActionLink("ViewAdmins","GetAdmins","Admin")
+    
     @if (Session["loggedAdminName"] != null)
     {
         <text>
