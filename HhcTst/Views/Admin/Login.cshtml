@@ -5,14 +5,11 @@
     //Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Login</h2>
-
-
 <h2>AdminSignIn</h2>
 @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
 {
 
-    <fieldset>
+    <fieldset class="align-center">
         <legend>Mvc Simple Login Application Demo</legend>
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -22,7 +19,7 @@
                 @ViewBag.Message
             </div>
         }
-        <table>
+        <table class="glyphicon-align-center">
             <tr>
                 <td>@Html.LabelFor(a => a.AdminName)</td>
                 <td>@Html.TextBoxFor(a => a.AdminName)</td>
