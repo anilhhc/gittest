@@ -17,14 +17,7 @@ namespace HhcTst.Controllers
         // GET: Stockists
         public ActionResult Index()
         {
-            if (Session != null)
-            {
                 return View(db.Stockists.ToList());
-            }
-            else
-            {
-                return RedirectToAction("Login","Admin");
-            }
         }
 
         // GET: Stockists/Details/5
