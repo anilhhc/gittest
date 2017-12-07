@@ -47,6 +47,10 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MongoDB.Bson, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <HintPath>..\packages\mongocsharp.linqindexers.1.8.1.1\lib\net35\MongoDB.Bson.dll</HintPath>
@@ -62,6 +66,18 @@
     </Reference>
     <Reference Include="MongoDB.Driver.Legacy, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\mongocsharpdriver.2.4.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -233,7 +249,20 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs">
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CITY.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COUNTRY.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hdivision.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hhcAdminLogin.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hhcControlPanelIPStat.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HhcDb.Context.cs">
@@ -251,9 +280,88 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\HhcDb123.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HhcDb123.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HhcDbtst.Designer.cs" />
+    <Compile Include="Models\hhcprimarysale.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hhcsecondarysale.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hproductslist.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hproductslistdescription.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hstockistdetail.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hstockistupload.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Htherapatic.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hvendordetail.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hvproductslist.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hvsale.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginVm.cs" />
-    <Compile Include="Models\Stockist.cs">
+    <Compile Include="Models\OtherAdminLogin.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OtherAdminPermission.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\secondarysale.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STATE.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stockist.cs" />
+    <Compile Include="Models\subareaCITY.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UploadFileName.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USER.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserAdminLogin.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Usershetro.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENDORSPECIALIZATION.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENDORSPECIALIZATION1.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENDORSUser.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENDORTYPE.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -276,14 +384,14 @@
     <Content Include="HtmlPages\HtmlPage4.html" />
     <Content Include="Models\HhcDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HhcDb123.edmx</DependentUpon>
       <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
     </Content>
     <Content Include="Models\HhcDb.edmx.sql" />
     <Content Include="Models\HhcDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HhcDb123.edmx</DependentUpon>
       <LastGenOutput>HhcDb.cs</LastGenOutput>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -347,13 +455,6 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <EntityDeploy Include="Models\HhcDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\HhcDb.edmx.diagram">
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -362,6 +463,20 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <EntityDeploy Include="Models\HhcDb123.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HhcDb123.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HhcDb123.edmx.diagram">
+      <DependentUpon>HhcDb123.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\HhcDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HhcDb.edmx.diagram">
+      <DependentUpon>HhcDb.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
