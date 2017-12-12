@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using HhcTst.Models;
 
-
-
 namespace HhcTst.Controllers
 {
     public class AdminController : Controller
