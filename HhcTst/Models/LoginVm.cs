@@ -9,9 +9,9 @@ namespace HhcTst.Models
     public class LoginVm
     {
         [Required(ErrorMessage="type ur name")]
-        public string AdminName { get; set; }
+        public string UserName { get; set; }
         [Required(ErrorMessage="type ur password")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string UserPwd { get; set; }
     }
 }

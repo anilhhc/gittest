@@ -12,11 +12,15 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class Hvproductslist
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int HvproductslistID { get; set; }
+        public string HvproductslistNAME { get; set; }
+        public string HvproductslistDESC { get; set; }
+        public string Hvproductslistcompanyid { get; set; }
+        public string Hproductslistcompanyid { get; set; }
+        public string hvstockistid { get; set; }
+        public string Hproductslistcompanyname { get; set; }
+        public string hvstockistname { get; set; }
     }
 }

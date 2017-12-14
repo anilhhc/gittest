@@ -14,7 +14,7 @@ namespace HhcTst.Controllers
 {
     public class StockistsApiController : ApiController
     {
-        private SampleEntities1 db = new SampleEntities1();
+        private HhcDbEntities1 db = new HhcDbEntities1();
 
         // GET: api/Stockists
         public IQueryable<Stockist> GetStockists()

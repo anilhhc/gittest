@@ -12,7 +12,7 @@ namespace HhcTst.Controllers
 {
     public class AdminsController : Controller
     {
-        private SampleEntities1 db = new SampleEntities1();
+        private HhcDbEntities1 db = new HhcDbEntities1();
 
         // GET: Admins
         public ActionResult Index()

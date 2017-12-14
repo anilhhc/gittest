@@ -12,11 +12,14 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class VENDORSPECIALIZATION1
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int SPECIALIZATIONID { get; set; }
+        public string SPECIALIZATIONNAME { get; set; }
+        public string SPECIALIZATIONDESC { get; set; }
+        public string Procedures { get; set; }
+        public string ACTIVE { get; set; }
+        public string Vendortype { get; set; }
+        public string ratingrtype { get; set; }
     }
 }

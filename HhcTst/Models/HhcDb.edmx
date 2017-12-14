@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HhcDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminNo" />
+          </Key>
+          <Property Name="AdminNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CITY">
+          <Key>
+            <PropertyRef Name="CITYID" />
+          </Key>
+          <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CITYNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATEID" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COUNTRY">
+          <Key>
+            <PropertyRef Name="COUNTRYID" />
+          </Key>
+          <Property Name="COUNTRYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COUNTRYNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hdivision">
+          <Key>
+            <PropertyRef Name="HdivisionID" />
+          </Key>
+          <Property Name="HdivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HdivisionDESC" Type="nvarchar(max)" />
+          <Property Name="heterodivisoncode" Type="nvarchar" MaxLength="50" />
+          <Property Name="hdname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hhcAdminLogins">
+          <Key>
+            <PropertyRef Name="hhcAdminLoginsId" />
+          </Key>
+          <Property Name="hhcAdminLoginsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Permissions" Type="ntext" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="hhcControlPanelIPStats">
+          <Key>
+            <PropertyRef Name="CPIPID" />
+          </Key>
+          <Property Name="CPIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CPLoginTime" Type="datetime" />
+          <Property Name="CPLogoutTime" Type="datetime" />
+          <Property Name="CPLoginID" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="hhcprimarysales">
+          <Key>
+            <PropertyRef Name="hhcprimarysalesID" />
+          </Key>
+          <Property Name="hhcprimarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="billingdocument" Type="nvarchar" MaxLength="500" />
+          <Property Name="billingdate" Type="datetime" />
+          <Property Name="stockistcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistsapid" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
+          <Property Name="headquarter" Type="nvarchar" MaxLength="200" />
+          <Property Name="heterosapproductcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="heterosapproductname" Type="nvarchar(max)" />
+          <Property Name="sapproductquantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="rate" Type="int" />
+          <Property Name="value" Type="int" />
+        </EntityType>
+        <EntityType Name="hhcsecondarysales">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="month" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistproductcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistproductname" Type="nvarchar" MaxLength="500" />
+          <Property Name="package" Type="nvarchar" MaxLength="50" />
+          <Property Name="openingstock" Type="int" />
+          <Property Name="purshcasequantity" Type="int" />
+          <Property Name="salequanitity" Type="int" />
+          <Property Name="purchasereturn" Type="int" />
+          <Property Name="salereturn" Type="int" />
+          <Property Name="closing" Type="int" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
+          <Property Name="heteroproductname" Type="nvarchar(max)" />
+          <Property Name="headquaterid" Type="nvarchar" MaxLength="50" />
+          <Property Name="headquartername" Type="nvarchar" MaxLength="500" />
+          <Property Name="heteroproductsapid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hproductslist">
+          <Key>
+            <PropertyRef Name="HproductslistID" />
+          </Key>
+          <Property Name="HproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HproductslistNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="HproductslistDESC" Type="nvarchar(max)" />
+          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hproductslistdescription">
+          <Key>
+            <PropertyRef Name="HproductslistdescriptionID" />
+          </Key>
+          <Property Name="HproductslistdescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HproductslistdescriptionDESC" Type="ntext" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="60" />
+          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdquantityperpack" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdquantityperstrip" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdratevalidform" Type="datetime" />
+          <Property Name="hpdpricetoretailer" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdmrp" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdstandardrate" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdpricetostockist" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpdbrandname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hdpcategoryname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hpddivisionname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hdpmanfacturename" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hstockistdetails">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hsfullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hslastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsemailid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssapcustomerid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsplotno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsadressone" Type="nvarchar(max)" />
+          <Property Name="hsadresstwo" Type="nvarchar(max)" />
+          <Property Name="hscountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsstate" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsheadquater" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssubarea" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdivision" Type="nvarchar" MaxLength="50" />
+          <Property Name="hscnf" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstherapatic" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsfax" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsgstprovisionalid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspan" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsssistatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdruglicenceno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hszone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hstockistupload">
+          <Key>
+            <PropertyRef Name="hstockistuploadID" />
+          </Key>
+          <Property Name="hstockistuploadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filedescription" Type="nvarchar(max)" />
+          <Property Name="month" Type="int" />
+          <Property Name="year" Type="int" />
+          <Property Name="filenumber" Type="int" />
+          <Property Name="fileuploaddate" Type="datetime" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="monthname" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Htherapatic">
+          <Key>
+            <PropertyRef Name="HtherapaticID" />
+          </Key>
+          <Property Name="HtherapaticID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HtherapaticDESC" Type="nvarchar(max)" />
+          <Property Name="HtherapaticSTATUS" Type="nvarchar" MaxLength="60" />
+          <Property Name="htheterocode" Type="nvarchar" MaxLength="50" />
+          <Property Name="hthetroname" Type="nvarchar" MaxLength="50" />
+          <Property Name="htdivisionid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hvendordetails">
+          <Key>
+            <PropertyRef Name="HvendordetailsID" />
+          </Key>
+          <Property Name="HvendordetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vfullname" Type="nvarchar" MaxLength="200" />
+          <Property Name="vlogo" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Hvproductslist">
+          <Key>
+            <PropertyRef Name="HvproductslistID" />
+          </Key>
+          <Property Name="HvproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HvproductslistNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="HvproductslistDESC" Type="nvarchar(max)" />
+          <Property Name="Hvproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hvstockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hproductslistcompanyname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hvstockistname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hvsales">
+          <Key>
+            <PropertyRef Name="HvsalesID" />
+          </Key>
+          <Property Name="HvsalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HvproductslistNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="HvproductslistDESC" Type="nvarchar" MaxLength="16" />
+          <Property Name="Hvproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Hproductsquantity" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OtherAdminLogins">
+          <Key>
+            <PropertyRef Name="OtherAdminId" />
+          </Key>
+          <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Permissions" Type="ntext" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="OtherAdminPermissions">
+          <Key>
+            <PropertyRef Name="OtherAdminPermissionID" />
+          </Key>
+          <Property Name="OtherAdminPermissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OtherAdminId" Type="int" />
+          <Property Name="SectionPermitted" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="secondarysales">
+          <Key>
+            <PropertyRef Name="secondarysalesID" />
+          </Key>
+          <Property Name="secondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="month" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="productcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="productname" Type="nvarchar" MaxLength="500" />
+          <Property Name="pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="purshcasequantity" Type="int" />
+          <Property Name="purchasereturn" Type="int" />
+          <Property Name="openingquantity" Type="int" />
+          <Property Name="salequanitity" Type="int" />
+          <Property Name="salereturn" Type="int" />
+          <Property Name="closing" Type="int" />
+          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="STATEID" />
+          </Key>
+          <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATENAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="COUNTRYID" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stockists">
+          <Key>
+            <PropertyRef Name="StockistId" />
+          </Key>
+          <Property Name="StockistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StockistName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subareaCITY">
+          <Key>
+            <PropertyRef Name="subareaCITYID" />
+          </Key>
+          <Property Name="subareaCITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subareaCITYNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CITYID" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UploadFileNames">
+          <Key>
+            <PropertyRef Name="UploadFileId" />
+          </Key>
+          <Property Name="UploadFileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="50" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="200" />
+          <Property Name="Section" Type="nvarchar" MaxLength="200" />
+          <Property Name="UploadedDate" Type="datetime" />
+          <Property Name="UploadedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserAdminLogins">
+          <Key>
+            <PropertyRef Name="OtherAdminId" />
+          </Key>
+          <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Permissions" Type="ntext" />
+          <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="10" />
+          <Property Name="UserRole" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usershetro">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VENDORSPECIALIZATION">
+          <Key>
+            <PropertyRef Name="SPECIALIZATIONID" />
+          </Key>
+          <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SPECIALIZATIONNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPECIALIZATIONDESC" Type="nvarchar" MaxLength="16" />
+          <Property Name="Procedures" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Vendortype" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VENDORSPECIALIZATIONs">
+          <Key>
+            <PropertyRef Name="SPECIALIZATIONID" />
+          </Key>
+          <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SPECIALIZATIONNAME" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPECIALIZATIONDESC" Type="nvarchar" MaxLength="16" />
+          <Property Name="Procedures" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Vendortype" Type="nvarchar" MaxLength="50" />
+          <Property Name="ratingrtype" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VENDORSUsers">
+          <Key>
+            <PropertyRef Name="VENDORID" />
+          </Key>
+          <Property Name="VENDORID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorSPECIALISATION" Type="nvarchar" MaxLength="400" />
+          <Property Name="QUALIFICATION" Type="nvarchar" MaxLength="400" />
+          <Property Name="AGE" Type="int" />
+          <Property Name="GENDER" Type="nchar" MaxLength="1" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="50" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="COUNTRY" Type="nchar" MaxLength="10" />
+          <Property Name="ZIP" Type="int" />
+          <Property Name="MOBILE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACTIVE" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PHOTO" Type="nvarchar" MaxLength="60" />
+          <Property Name="Designation" Type="nvarchar" MaxLength="500" />
+          <Property Name="BriefProfile" Type="nvarchar(max)" />
+          <Property Name="PresentPosition" Type="nvarchar(max)" />
+          <Property Name="Qualifications" Type="nvarchar(max)" />
+          <Property Name="SpecialTraining" Type="nvarchar(max)" />
+          <Property Name="Experience" Type="nvarchar(max)" />
+          <Property Name="Expertise" Type="nvarchar(max)" />
+          <Property Name="AchievementsBreakthroughCases" Type="nvarchar(max)" />
+          <Property Name="Publications" Type="nvarchar(max)" />
+          <Property Name="AwardsAndHonors" Type="nvarchar(max)" />
+          <Property Name="AcademicExposure" Type="nvarchar(max)" />
+          <Property Name="TalkDelivered" Type="nvarchar(max)" />
+          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="Media" Type="nvarchar(max)" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="vendortype" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VENDORTYPES">
+          <Key>
+            <PropertyRef Name="VENDORTYPEID" />
+          </Key>
+          <Property Name="VENDORTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VENDORTYPENAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="HomePageText" Type="ntext" />
+          <Property Name="About" Type="ntext" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENDORTYPESpecialisationsentry">
+          <Key>
+            <PropertyRef Name="BSID" />
+          </Key>
+          <Property Name="BSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionID" Type="int" />
+          <Property Name="BranchID" Type="int" />
+        </EntityType>
+        <EntityContainer Name="HhcDbModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CITY" EntityType="Self.CITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COUNTRY" EntityType="Self.COUNTRY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hdivision" EntityType="Self.Hdivision" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcAdminLogins" EntityType="Self.hhcAdminLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcControlPanelIPStats" EntityType="Self.hhcControlPanelIPStats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcprimarysales" EntityType="Self.hhcprimarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hproductslist" EntityType="Self.Hproductslist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hproductslistdescription" EntityType="Self.Hproductslistdescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hstockistupload" EntityType="Self.hstockistupload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Htherapatic" EntityType="Self.Htherapatic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hvendordetails" EntityType="Self.Hvendordetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hvproductslist" EntityType="Self.Hvproductslist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hvsales" EntityType="Self.Hvsales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherAdminLogins" EntityType="Self.OtherAdminLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OtherAdminPermissions" EntityType="Self.OtherAdminPermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="secondarysales" EntityType="Self.secondarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATE" EntityType="Self.STATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stockists" EntityType="Self.Stockists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subareaCITY" EntityType="Self.subareaCITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UploadFileNames" EntityType="Self.UploadFileNames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAdminLogins" EntityType="Self.UserAdminLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usershetro" EntityType="Self.Usershetro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDORSPECIALIZATION" EntityType="Self.VENDORSPECIALIZATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDORSPECIALIZATIONs" EntityType="Self.VENDORSPECIALIZATIONs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDORSUsers" EntityType="Self.VENDORSUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDORTYPES" EntityType="Self.VENDORTYPES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VENDORTYPESpecialisationsentry" EntityType="Self.VENDORTYPESpecialisationsentry" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HhcDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CITY">
+          <Key>
+            <PropertyRef Name="CITYID" />
+          </Key>
+          <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATEID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COUNTRY">
+          <Key>
+            <PropertyRef Name="COUNTRYID" />
+          </Key>
+          <Property Name="COUNTRYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COUNTRYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hdivision">
+          <Key>
+            <PropertyRef Name="HdivisionID" />
+          </Key>
+          <Property Name="HdivisionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HdivisionDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="heterodivisoncode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hdname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hhcAdminLogin">
+          <Key>
+            <PropertyRef Name="hhcAdminLoginsId" />
+          </Key>
+          <Property Name="hhcAdminLoginsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Permissions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hhcControlPanelIPStat">
+          <Key>
+            <PropertyRef Name="CPIPID" />
+          </Key>
+          <Property Name="CPIPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CPLoginTime" Type="DateTime" Precision="3" />
+          <Property Name="CPLogoutTime" Type="DateTime" Precision="3" />
+          <Property Name="CPLoginID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hhcprimarysale">
+          <Key>
+            <PropertyRef Name="hhcprimarysalesID" />
+          </Key>
+          <Property Name="hhcprimarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="billingdocument" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="billingdate" Type="DateTime" Precision="3" />
+          <Property Name="stockistcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="headquarter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="heterosapproductcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="heterosapproductname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sapproductquantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rate" Type="Int32" />
+          <Property Name="value" Type="Int32" />
+        </EntityType>
+        <EntityType Name="hhcsecondarysale">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stockistname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="package" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="openingstock" Type="Int32" />
+          <Property Name="purshcasequantity" Type="Int32" />
+          <Property Name="salequanitity" Type="Int32" />
+          <Property Name="purchasereturn" Type="Int32" />
+          <Property Name="salereturn" Type="Int32" />
+          <Property Name="closing" Type="Int32" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="headquaterid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="headquartername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hproductslist">
+          <Key>
+            <PropertyRef Name="HproductslistID" />
+          </Key>
+          <Property Name="HproductslistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HproductslistNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HproductslistDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hproductslistdescription">
+          <Key>
+            <PropertyRef Name="HproductslistdescriptionID" />
+          </Key>
+          <Property Name="HproductslistdescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HproductslistdescriptionDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdquantityperpack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdquantityperstrip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdratevalidform" Type="DateTime" Precision="3" />
+          <Property Name="hpdpricetoretailer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdmrp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdstandardrate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdpricetostockist" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpdbrandname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hdpcategoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hpddivisionname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hdpmanfacturename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hstockistdetail">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hsfullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hslastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsemailid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssapcustomerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsplotno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsadressone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hsadresstwo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hscountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsheadquater" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssubarea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdivision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hscnf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstherapatic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsfax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsgstprovisionalid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsssistatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdruglicenceno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hszone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hstockistupload">
+          <Key>
+            <PropertyRef Name="hstockistuploadID" />
+          </Key>
+          <Property Name="hstockistuploadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filedescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="filenumber" Type="Int32" />
+          <Property Name="fileuploaddate" Type="DateTime" Precision="3" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="monthname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Htherapatic">
+          <Key>
+            <PropertyRef Name="HtherapaticID" />
+          </Key>
+          <Property Name="HtherapaticID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HtherapaticDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HtherapaticSTATUS" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="htheterocode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hthetroname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="htdivisionid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hvendordetail">
+          <Key>
+            <PropertyRef Name="HvendordetailsID" />
+          </Key>
+          <Property Name="HvendordetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vfullname" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="vlogo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hvproductslist">
+          <Key>
+            <PropertyRef Name="HvproductslistID" />
+          </Key>
+          <Property Name="HvproductslistID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HvproductslistNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HvproductslistDESC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hvproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hvstockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductslistcompanyname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hvstockistname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hvsale">
+          <Key>
+            <PropertyRef Name="HvsalesID" />
+          </Key>
+          <Property Name="HvsalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HvproductslistNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HvproductslistDESC" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Hvproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductslistcompanyid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Hproductsquantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OtherAdminLogin">
+          <Key>
+            <PropertyRef Name="OtherAdminId" />
+          </Key>
+          <Property Name="OtherAdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Permissions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OtherAdminPermission">
+          <Key>
+            <PropertyRef Name="OtherAdminPermissionID" />
+          </Key>
+          <Property Name="OtherAdminPermissionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OtherAdminId" Type="Int32" />
+          <Property Name="SectionPermitted" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="secondarysale">
+          <Key>
+            <PropertyRef Name="secondarysalesID" />
+          </Key>
+          <Property Name="secondarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="productcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="productname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="purshcasequantity" Type="Int32" />
+          <Property Name="purchasereturn" Type="Int32" />
+          <Property Name="openingquantity" Type="Int32" />
+          <Property Name="salequanitity" Type="Int32" />
+          <Property Name="salereturn" Type="Int32" />
+          <Property Name="closing" Type="Int32" />
+          <Property Name="heteroproductid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="STATEID" />
+          </Key>
+          <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRYID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subareaCITY">
+          <Key>
+            <PropertyRef Name="subareaCITYID" />
+          </Key>
+          <Property Name="subareaCITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subareaCITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CITYID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UploadFileName">
+          <Key>
+            <PropertyRef Name="UploadFileId" />
+          </Key>
+          <Property Name="UploadFileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UploadFileName1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Section" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UploadedDate" Type="DateTime" Precision="3" />
+          <Property Name="UploadedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserAdminLogin">
+          <Key>
+            <PropertyRef Name="OtherAdminId" />
+          </Key>
+          <Property Name="OtherAdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Permissions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UserPwd" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Usershetro">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VENDORSPECIALIZATION">
+          <Key>
+            <PropertyRef Name="SPECIALIZATIONID" />
+          </Key>
+          <Property Name="SPECIALIZATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SPECIALIZATIONNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SPECIALIZATIONDESC" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Procedures" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Vendortype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VENDORSPECIALIZATION1">
+          <Key>
+            <PropertyRef Name="SPECIALIZATIONID" />
+          </Key>
+          <Property Name="SPECIALIZATIONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SPECIALIZATIONNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SPECIALIZATIONDESC" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Procedures" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Vendortype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ratingrtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VENDORSUser">
+          <Key>
+            <PropertyRef Name="VENDORID" />
+          </Key>
+          <Property Name="VENDORID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorSPECIALISATION" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="QUALIFICATION" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="AGE" Type="Int32" />
+          <Property Name="GENDER" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ZIP" Type="Int32" />
+          <Property Name="MOBILE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PHOTO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="BriefProfile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PresentPosition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Qualifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialTraining" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expertise" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AchievementsBreakthroughCases" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Publications" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AwardsAndHonors" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AcademicExposure" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TalkDelivered" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Media" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vendortype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VENDORTYPE">
+          <Key>
+            <PropertyRef Name="VENDORTYPEID" />
+          </Key>
+          <Property Name="VENDORTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VENDORTYPENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HomePageText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="About" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VENDORTYPESpecialisationsentry">
+          <Key>
+            <PropertyRef Name="BSID" />
+          </Key>
+          <Property Name="BSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionID" Type="Int32" />
+          <Property Name="BranchID" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="HhcDbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CITies" EntityType="Self.CITY" />
+          <EntitySet Name="COUNTRies" EntityType="Self.COUNTRY" />
+          <EntitySet Name="Hdivisions" EntityType="Self.Hdivision" />
+          <EntitySet Name="hhcAdminLogins" EntityType="Self.hhcAdminLogin" />
+          <EntitySet Name="hhcControlPanelIPStats" EntityType="Self.hhcControlPanelIPStat" />
+          <EntitySet Name="hhcprimarysales" EntityType="Self.hhcprimarysale" />
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysale" />
+          <EntitySet Name="Hproductslists" EntityType="Self.Hproductslist" />
+          <EntitySet Name="Hproductslistdescriptions" EntityType="Self.Hproductslistdescription" />
+          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetail" />
+          <EntitySet Name="hstockistuploads" EntityType="Self.hstockistupload" />
+          <EntitySet Name="Htherapatics" EntityType="Self.Htherapatic" />
+          <EntitySet Name="Hvendordetails" EntityType="Self.Hvendordetail" />
+          <EntitySet Name="Hvproductslists" EntityType="Self.Hvproductslist" />
+          <EntitySet Name="Hvsales" EntityType="Self.Hvsale" />
+          <EntitySet Name="OtherAdminLogins" EntityType="Self.OtherAdminLogin" />
+          <EntitySet Name="OtherAdminPermissions" EntityType="Self.OtherAdminPermission" />
+          <EntitySet Name="secondarysales" EntityType="Self.secondarysale" />
+          <EntitySet Name="STATEs" EntityType="Self.STATE" />
+          <EntitySet Name="subareaCITies" EntityType="Self.subareaCITY" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UploadFileNames" EntityType="Self.UploadFileName" />
+          <EntitySet Name="UserAdminLogins" EntityType="Self.UserAdminLogin" />
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+          <EntitySet Name="Usershetroes" EntityType="Self.Usershetro" />
+          <EntitySet Name="VENDORSPECIALIZATIONs" EntityType="Self.VENDORSPECIALIZATION" />
+          <EntitySet Name="VENDORSPECIALIZATIONs1" EntityType="Self.VENDORSPECIALIZATION1" />
+          <EntitySet Name="VENDORSUsers" EntityType="Self.VENDORSUser" />
+          <EntitySet Name="VENDORTYPES" EntityType="Self.VENDORTYPE" />
+          <EntitySet Name="VENDORTYPESpecialisationsentries" EntityType="Self.VENDORTYPESpecialisationsentry" />
+          <EntitySet Name="Admins" EntityType="HhcDbModel.Admin" />
+          <EntitySet Name="Employees" EntityType="HhcDbModel.Employee" />
+          <EntitySet Name="Stockists" EntityType="HhcDbModel.Stockist" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminNo" />
+          </Key>
+          <Property Name="AdminNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Stockist">
+          <Key>
+            <PropertyRef Name="StockistId" />
+          </Key>
+          <Property Name="StockistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StockistName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HhcDbModelStoreContainer" CdmEntityContainer="HhcDbEntities1">
+          <EntitySetMapping Name="CITies">
+            <EntityTypeMapping TypeName="HhcDbModel.CITY">
+              <MappingFragment StoreEntitySet="CITY">
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+                <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COUNTRies">
+            <EntityTypeMapping TypeName="HhcDbModel.COUNTRY">
+              <MappingFragment StoreEntitySet="COUNTRY">
+                <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+                <ScalarProperty Name="COUNTRYNAME" ColumnName="COUNTRYNAME" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hdivisions">
+            <EntityTypeMapping TypeName="HhcDbModel.Hdivision">
+              <MappingFragment StoreEntitySet="Hdivision">
+                <ScalarProperty Name="HdivisionID" ColumnName="HdivisionID" />
+                <ScalarProperty Name="HdivisionDESC" ColumnName="HdivisionDESC" />
+                <ScalarProperty Name="heterodivisoncode" ColumnName="heterodivisoncode" />
+                <ScalarProperty Name="hdname" ColumnName="hdname" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hhcAdminLogins">
+            <EntityTypeMapping TypeName="HhcDbModel.hhcAdminLogin">
+              <MappingFragment StoreEntitySet="hhcAdminLogins">
+                <ScalarProperty Name="hhcAdminLoginsId" ColumnName="hhcAdminLoginsId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hhcControlPanelIPStats">
+            <EntityTypeMapping TypeName="HhcDbModel.hhcControlPanelIPStat">
+              <MappingFragment StoreEntitySet="hhcControlPanelIPStats">
+                <ScalarProperty Name="CPIPID" ColumnName="CPIPID" />
+                <ScalarProperty Name="CPIP" ColumnName="CPIP" />
+                <ScalarProperty Name="CPLoginTime" ColumnName="CPLoginTime" />
+                <ScalarProperty Name="CPLogoutTime" ColumnName="CPLogoutTime" />
+                <ScalarProperty Name="CPLoginID" ColumnName="CPLoginID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hhcprimarysales">
+            <EntityTypeMapping TypeName="HhcDbModel.hhcprimarysale">
+              <MappingFragment StoreEntitySet="hhcprimarysales">
+                <ScalarProperty Name="hhcprimarysalesID" ColumnName="hhcprimarysalesID" />
+                <ScalarProperty Name="billingdocument" ColumnName="billingdocument" />
+                <ScalarProperty Name="billingdate" ColumnName="billingdate" />
+                <ScalarProperty Name="stockistcode" ColumnName="stockistcode" />
+                <ScalarProperty Name="stockistsapid" ColumnName="stockistsapid" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="headquarter" ColumnName="headquarter" />
+                <ScalarProperty Name="heterosapproductcode" ColumnName="heterosapproductcode" />
+                <ScalarProperty Name="heterosapproductname" ColumnName="heterosapproductname" />
+                <ScalarProperty Name="sapproductquantity" ColumnName="sapproductquantity" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hhcsecondarysales">
+            <EntityTypeMapping TypeName="HhcDbModel.hhcsecondarysale">
+              <MappingFragment StoreEntitySet="hhcsecondarysales">
+                <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="stockistproductcode" ColumnName="stockistproductcode" />
+                <ScalarProperty Name="stockistproductname" ColumnName="stockistproductname" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="openingstock" ColumnName="openingstock" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+                <ScalarProperty Name="heteroproductname" ColumnName="heteroproductname" />
+                <ScalarProperty Name="headquaterid" ColumnName="headquaterid" />
+                <ScalarProperty Name="headquartername" ColumnName="headquartername" />
+                <ScalarProperty Name="heteroproductsapid" ColumnName="heteroproductsapid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hproductslists">
+            <EntityTypeMapping TypeName="HhcDbModel.Hproductslist">
+              <MappingFragment StoreEntitySet="Hproductslist">
+                <ScalarProperty Name="HproductslistID" ColumnName="HproductslistID" />
+                <ScalarProperty Name="HproductslistNAME" ColumnName="HproductslistNAME" />
+                <ScalarProperty Name="HproductslistDESC" ColumnName="HproductslistDESC" />
+                <ScalarProperty Name="Hproductslistcompanyid" ColumnName="Hproductslistcompanyid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hproductslistdescriptions">
+            <EntityTypeMapping TypeName="HhcDbModel.Hproductslistdescription">
+              <MappingFragment StoreEntitySet="Hproductslistdescription">
+                <ScalarProperty Name="HproductslistdescriptionID" ColumnName="HproductslistdescriptionID" />
+                <ScalarProperty Name="HproductslistdescriptionDESC" ColumnName="HproductslistdescriptionDESC" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="Hproductslistcompanyid" ColumnName="Hproductslistcompanyid" />
+                <ScalarProperty Name="hpdquantityperpack" ColumnName="hpdquantityperpack" />
+                <ScalarProperty Name="hpdquantityperstrip" ColumnName="hpdquantityperstrip" />
+                <ScalarProperty Name="hpdratevalidform" ColumnName="hpdratevalidform" />
+                <ScalarProperty Name="hpdpricetoretailer" ColumnName="hpdpricetoretailer" />
+                <ScalarProperty Name="hpdmrp" ColumnName="hpdmrp" />
+                <ScalarProperty Name="hpdstandardrate" ColumnName="hpdstandardrate" />
+                <ScalarProperty Name="hpdpricetostockist" ColumnName="hpdpricetostockist" />
+                <ScalarProperty Name="hpdbrandname" ColumnName="hpdbrandname" />
+                <ScalarProperty Name="hdpcategoryname" ColumnName="hdpcategoryname" />
+                <ScalarProperty Name="hpddivisionname" ColumnName="hpddivisionname" />
+                <ScalarProperty Name="hdpmanfacturename" ColumnName="hdpmanfacturename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hstockistdetails">
+            <EntityTypeMapping TypeName="HhcDbModel.Hstockistdetail">
+              <MappingFragment StoreEntitySet="Hstockistdetails">
+                <ScalarProperty Name="HstockistdetailsID" ColumnName="HstockistdetailsID" />
+                <ScalarProperty Name="hsfullname" ColumnName="hsfullname" />
+                <ScalarProperty Name="hslastname" ColumnName="hslastname" />
+                <ScalarProperty Name="hsemailid" ColumnName="hsemailid" />
+                <ScalarProperty Name="hsmobile" ColumnName="hsmobile" />
+                <ScalarProperty Name="hspwd" ColumnName="hspwd" />
+                <ScalarProperty Name="hssapcustomerid" ColumnName="hssapcustomerid" />
+                <ScalarProperty Name="hsplotno" ColumnName="hsplotno" />
+                <ScalarProperty Name="hsadressone" ColumnName="hsadressone" />
+                <ScalarProperty Name="hsadresstwo" ColumnName="hsadresstwo" />
+                <ScalarProperty Name="hscountry" ColumnName="hscountry" />
+                <ScalarProperty Name="hsstate" ColumnName="hsstate" />
+                <ScalarProperty Name="hsheadquater" ColumnName="hsheadquater" />
+                <ScalarProperty Name="hssubarea" ColumnName="hssubarea" />
+                <ScalarProperty Name="hsdivision" ColumnName="hsdivision" />
+                <ScalarProperty Name="hscnf" ColumnName="hscnf" />
+                <ScalarProperty Name="hstherapatic" ColumnName="hstherapatic" />
+                <ScalarProperty Name="hspincode" ColumnName="hspincode" />
+                <ScalarProperty Name="hstelephone" ColumnName="hstelephone" />
+                <ScalarProperty Name="hsfax" ColumnName="hsfax" />
+                <ScalarProperty Name="hsgstprovisionalid" ColumnName="hsgstprovisionalid" />
+                <ScalarProperty Name="hspan" ColumnName="hspan" />
+                <ScalarProperty Name="hsspocname" ColumnName="hsspocname" />
+                <ScalarProperty Name="hsspocmobile" ColumnName="hsspocmobile" />
+                <ScalarProperty Name="hsssistatus" ColumnName="hsssistatus" />
+                <ScalarProperty Name="hsdruglicenceno" ColumnName="hsdruglicenceno" />
+                <ScalarProperty Name="hszone" ColumnName="hszone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hstockistuploads">
+            <EntityTypeMapping TypeName="HhcDbModel.hstockistupload">
+              <MappingFragment StoreEntitySet="hstockistupload">
+                <ScalarProperty Name="hstockistuploadID" ColumnName="hstockistuploadID" />
+                <ScalarProperty Name="filedescription" ColumnName="filedescription" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="filenumber" ColumnName="filenumber" />
+                <ScalarProperty Name="fileuploaddate" ColumnName="fileuploaddate" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="monthname" ColumnName="monthname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Htherapatics">
+            <EntityTypeMapping TypeName="HhcDbModel.Htherapatic">
+              <MappingFragment StoreEntitySet="Htherapatic">
+                <ScalarProperty Name="HtherapaticID" ColumnName="HtherapaticID" />
+                <ScalarProperty Name="HtherapaticDESC" ColumnName="HtherapaticDESC" />
+                <ScalarProperty Name="HtherapaticSTATUS" ColumnName="HtherapaticSTATUS" />
+                <ScalarProperty Name="htheterocode" ColumnName="htheterocode" />
+                <ScalarProperty Name="hthetroname" ColumnName="hthetroname" />
+                <ScalarProperty Name="htdivisionid" ColumnName="htdivisionid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hvendordetails">
+            <EntityTypeMapping TypeName="HhcDbModel.Hvendordetail">
+              <MappingFragment StoreEntitySet="Hvendordetails">
+                <ScalarProperty Name="HvendordetailsID" ColumnName="HvendordetailsID" />
+                <ScalarProperty Name="vfullname" ColumnName="vfullname" />
+                <ScalarProperty Name="vlogo" ColumnName="vlogo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hvproductslists">
+            <EntityTypeMapping TypeName="HhcDbModel.Hvproductslist">
+              <MappingFragment StoreEntitySet="Hvproductslist">
+                <ScalarProperty Name="HvproductslistID" ColumnName="HvproductslistID" />
+                <ScalarProperty Name="HvproductslistNAME" ColumnName="HvproductslistNAME" />
+                <ScalarProperty Name="HvproductslistDESC" ColumnName="HvproductslistDESC" />
+                <ScalarProperty Name="Hvproductslistcompanyid" ColumnName="Hvproductslistcompanyid" />
+                <ScalarProperty Name="Hproductslistcompanyid" ColumnName="Hproductslistcompanyid" />
+                <ScalarProperty Name="hvstockistid" ColumnName="hvstockistid" />
+                <ScalarProperty Name="Hproductslistcompanyname" ColumnName="Hproductslistcompanyname" />
+                <ScalarProperty Name="hvstockistname" ColumnName="hvstockistname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hvsales">
+            <EntityTypeMapping TypeName="HhcDbModel.Hvsale">
+              <MappingFragment StoreEntitySet="Hvsales">
+                <ScalarProperty Name="HvsalesID" ColumnName="HvsalesID" />
+                <ScalarProperty Name="HvproductslistNAME" ColumnName="HvproductslistNAME" />
+                <ScalarProperty Name="HvproductslistDESC" ColumnName="HvproductslistDESC" />
+                <ScalarProperty Name="Hvproductslistcompanyid" ColumnName="Hvproductslistcompanyid" />
+                <ScalarProperty Name="Hproductslistcompanyid" ColumnName="Hproductslistcompanyid" />
+                <ScalarProperty Name="Hproductsquantity" ColumnName="Hproductsquantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherAdminLogins">
+            <EntityTypeMapping TypeName="HhcDbModel.OtherAdminLogin">
+              <MappingFragment StoreEntitySet="OtherAdminLogins">
+                <ScalarProperty Name="OtherAdminId" ColumnName="OtherAdminId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OtherAdminPermissions">
+            <EntityTypeMapping TypeName="HhcDbModel.OtherAdminPermission">
+              <MappingFragment StoreEntitySet="OtherAdminPermissions">
+                <ScalarProperty Name="OtherAdminPermissionID" ColumnName="OtherAdminPermissionID" />
+                <ScalarProperty Name="OtherAdminId" ColumnName="OtherAdminId" />
+                <ScalarProperty Name="SectionPermitted" ColumnName="SectionPermitted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="secondarysales">
+            <EntityTypeMapping TypeName="HhcDbModel.secondarysale">
+              <MappingFragment StoreEntitySet="secondarysales">
+                <ScalarProperty Name="secondarysalesID" ColumnName="secondarysalesID" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="productcode" ColumnName="productcode" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
+                <ScalarProperty Name="pack" ColumnName="pack" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="openingquantity" ColumnName="openingquantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATEs">
+            <EntityTypeMapping TypeName="HhcDbModel.STATE">
+              <MappingFragment StoreEntitySet="STATE">
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+                <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
+                <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subareaCITies">
+            <EntityTypeMapping TypeName="HhcDbModel.subareaCITY">
+              <MappingFragment StoreEntitySet="subareaCITY">
+                <ScalarProperty Name="subareaCITYID" ColumnName="subareaCITYID" />
+                <ScalarProperty Name="subareaCITYNAME" ColumnName="subareaCITYNAME" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HhcDbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadFileNames">
+            <EntityTypeMapping TypeName="HhcDbModel.UploadFileName">
+              <MappingFragment StoreEntitySet="UploadFileNames">
+                <ScalarProperty Name="UploadFileId" ColumnName="UploadFileId" />
+                <ScalarProperty Name="UploadFileName1" ColumnName="UploadFileName" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="UploadedDate" ColumnName="UploadedDate" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAdminLogins">
+            <EntityTypeMapping TypeName="HhcDbModel.UserAdminLogin">
+              <MappingFragment StoreEntitySet="UserAdminLogins">
+                <ScalarProperty Name="OtherAdminId" ColumnName="OtherAdminId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="HhcDbModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usershetroes">
+            <EntityTypeMapping TypeName="HhcDbModel.Usershetro">
+              <MappingFragment StoreEntitySet="Usershetro">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORSPECIALIZATIONs">
+            <EntityTypeMapping TypeName="HhcDbModel.VENDORSPECIALIZATION">
+              <MappingFragment StoreEntitySet="VENDORSPECIALIZATION">
+                <ScalarProperty Name="SPECIALIZATIONID" ColumnName="SPECIALIZATIONID" />
+                <ScalarProperty Name="SPECIALIZATIONNAME" ColumnName="SPECIALIZATIONNAME" />
+                <ScalarProperty Name="SPECIALIZATIONDESC" ColumnName="SPECIALIZATIONDESC" />
+                <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="Vendortype" ColumnName="Vendortype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORSPECIALIZATIONs1">
+            <EntityTypeMapping TypeName="HhcDbModel.VENDORSPECIALIZATION1">
+              <MappingFragment StoreEntitySet="VENDORSPECIALIZATIONs">
+                <ScalarProperty Name="SPECIALIZATIONID" ColumnName="SPECIALIZATIONID" />
+                <ScalarProperty Name="SPECIALIZATIONNAME" ColumnName="SPECIALIZATIONNAME" />
+                <ScalarProperty Name="SPECIALIZATIONDESC" ColumnName="SPECIALIZATIONDESC" />
+                <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="Vendortype" ColumnName="Vendortype" />
+                <ScalarProperty Name="ratingrtype" ColumnName="ratingrtype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORSUsers">
+            <EntityTypeMapping TypeName="HhcDbModel.VENDORSUser">
+              <MappingFragment StoreEntitySet="VENDORSUsers">
+                <ScalarProperty Name="VENDORID" ColumnName="VENDORID" />
+                <ScalarProperty Name="VendorSPECIALISATION" ColumnName="VendorSPECIALISATION" />
+                <ScalarProperty Name="QUALIFICATION" ColumnName="QUALIFICATION" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="BriefProfile" ColumnName="BriefProfile" />
+                <ScalarProperty Name="PresentPosition" ColumnName="PresentPosition" />
+                <ScalarProperty Name="Qualifications" ColumnName="Qualifications" />
+                <ScalarProperty Name="SpecialTraining" ColumnName="SpecialTraining" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="Expertise" ColumnName="Expertise" />
+                <ScalarProperty Name="AchievementsBreakthroughCases" ColumnName="AchievementsBreakthroughCases" />
+                <ScalarProperty Name="Publications" ColumnName="Publications" />
+                <ScalarProperty Name="AwardsAndHonors" ColumnName="AwardsAndHonors" />
+                <ScalarProperty Name="AcademicExposure" ColumnName="AcademicExposure" />
+                <ScalarProperty Name="TalkDelivered" ColumnName="TalkDelivered" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Media" ColumnName="Media" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="vendortype" ColumnName="vendortype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORTYPES">
+            <EntityTypeMapping TypeName="HhcDbModel.VENDORTYPE">
+              <MappingFragment StoreEntitySet="VENDORTYPES">
+                <ScalarProperty Name="VENDORTYPEID" ColumnName="VENDORTYPEID" />
+                <ScalarProperty Name="VENDORTYPENAME" ColumnName="VENDORTYPENAME" />
+                <ScalarProperty Name="HomePageText" ColumnName="HomePageText" />
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VENDORTYPESpecialisationsentries">
+            <EntityTypeMapping TypeName="HhcDbModel.VENDORTYPESpecialisationsentry">
+              <MappingFragment StoreEntitySet="VENDORTYPESpecialisationsentry">
+                <ScalarProperty Name="BSID" ColumnName="BSID" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="HhcDbModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminNo" ColumnName="AdminNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="HhcDbModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stockists">
+            <EntityTypeMapping TypeName="HhcDbModel.Stockist">
+              <MappingFragment StoreEntitySet="Stockists">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StockistName" ColumnName="StockistName" />
+                <ScalarProperty Name="StockistId" ColumnName="StockistId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

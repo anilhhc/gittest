@@ -21,19 +21,19 @@
         }
         <table class="glyphicon-align-center">
             <tr>
-                <td>@Html.LabelFor(a => a.AdminName)</td>
-                <td>@Html.TextBoxFor(a => a.AdminName)</td>
-                <td>@Html.ValidationMessageFor(a => a.AdminName)</td>
+                <td>@Html.LabelFor(a => a.UserName)</td>
+                <td>@Html.TextBoxFor(a => a.UserName)</td>
+                <td>@Html.ValidationMessageFor(a => a.UserName)</td>
             </tr>
             <tr>
                 <td>
-                    @Html.LabelFor(a => a.Password)
+                    @Html.LabelFor(a => a.UserPwd)
                 </td>
                 <td>
-                    @Html.PasswordFor(a => a.Password)
+                    @Html.PasswordFor(a => a.UserPwd)
                 </td>
                 <td>
-                    @Html.ValidationMessageFor(a => a.Password)
+                    @Html.ValidationMessageFor(a => a.UserPwd)
                 </td>
             </tr>
             <tr>

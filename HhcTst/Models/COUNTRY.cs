@@ -12,11 +12,10 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class COUNTRY
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int COUNTRYID { get; set; }
+        public string COUNTRYNAME { get; set; }
+        public string ACTIVE { get; set; }
     }
 }

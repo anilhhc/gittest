@@ -12,11 +12,18 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class UserAdminLogin
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
+        public int OtherAdminId { get; set; }
+        public string Email { get; set; }
         public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Permissions { get; set; }
+        public string Adress { get; set; }
+        public string ActiveStatus { get; set; }
+        public string State { get; set; }
+        public string country { get; set; }
+        public string Mobile { get; set; }
     }
 }

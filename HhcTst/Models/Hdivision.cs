@@ -12,11 +12,12 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class Hdivision
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int HdivisionID { get; set; }
+        public string HdivisionDESC { get; set; }
+        public string heterodivisoncode { get; set; }
+        public string hdname { get; set; }
+        public string Active { get; set; }
     }
 }

@@ -12,11 +12,14 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class UploadFileName
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int UploadFileId { get; set; }
+        public string UploadFileName1 { get; set; }
+        public string FileType { get; set; }
+        public string FilePath { get; set; }
+        public string Section { get; set; }
+        public Nullable<System.DateTime> UploadedDate { get; set; }
+        public string UploadedBy { get; set; }
     }
 }

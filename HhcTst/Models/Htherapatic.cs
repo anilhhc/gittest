@@ -12,11 +12,13 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class USER
+    public partial class Htherapatic
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string UserPwd { get; set; }
-        public string UserRole { get; set; }
+        public int HtherapaticID { get; set; }
+        public string HtherapaticDESC { get; set; }
+        public string HtherapaticSTATUS { get; set; }
+        public string htheterocode { get; set; }
+        public string hthetroname { get; set; }
+        public string htdivisionid { get; set; }
     }
 }
