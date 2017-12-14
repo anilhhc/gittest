@@ -1,8 +1,8 @@
 ﻿@model HhcTst.Models.LoginVm
 @{
     ViewBag.Title = "Login";
-    Layout = null;
-    //Layout = "~/Views/Shared/AdminLayout.cshtml";
+    //Layout = null;
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
 <h2>AdminSignIn</h2>
@@ -19,7 +19,7 @@
                 @ViewBag.Message
             </div>
         }
-        <table class="glyphicon-align-center">
+        <table class="table-responsive">
             <tr>
                 <td>@Html.LabelFor(a => a.UserName)</td>
                 <td>@Html.TextBoxFor(a => a.UserName)</td>
@@ -45,4 +45,12 @@
             </tr>
         </table>
     </fieldset>
+    @*@section RightSection{
+        <h1>This is i right part of display</h1>
+    }*@
+    @section footer{
+    <p class="lead">
+        This is footer section here.
+    </p>
+    }
 }  

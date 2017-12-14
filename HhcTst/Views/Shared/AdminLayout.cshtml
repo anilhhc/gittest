@@ -9,11 +9,21 @@
     <div>
         @Html.ActionLink("Admin Page", "AdminDashboard", "Admin", new { area = "" }, new { @class = "navbar-brand" })
     </div>
+    <footer class="panel-footer">
+        @RenderSection("footer",true)
+    </footer>
+   
     <div>
         @Html.ActionLink("ViewAdmins", "Index", "Admins")
         @Html.ActionLink("View-Stockist","Index","Stockists")
         @Html.ActionLink("LogOut","LogOut","Admin")
         @RenderBody()
     </div>
+    @section RightSection{
+        <h1>This is in right part of display</h1>
+    }
+    @section LeftSection{
+        <p>footer here</p>
+    }
 </body>
 </html>

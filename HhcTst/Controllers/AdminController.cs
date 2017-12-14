@@ -14,8 +14,15 @@ namespace HhcTst.Controllers
         //[Authorize(Roles="Admin")]
         public ActionResult GetAdmins()
         {
-            var v = db.hhcAdminLogins.ToList();
-            return View(v);
+            if (Session["loggedAdminName"] != null)
+            {
+                var v = db.hhcAdminLogins.ToList();
+                return View(v);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
         }
 
         public ActionResult Index()
@@ -32,17 +39,17 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                var tbRes = new Admin()
+                var tbRes = new hhcAdminLogin()
                 {
-                    AdminName = vm.UserName,
-                    Password = vm.UserPwd
+                    UserName = vm.UserName,
+                    UserPwd = vm.UserPwd
                 };
                 using (HhcDbEntities1 db = new HhcDbEntities1())
                 {
-                    var v = db.Admins.Where(a => a.AdminName.Equals(tbRes.AdminName) && a.Password.Equals(tbRes.Password)).FirstOrDefault();
+                    var v = db.hhcAdminLogins.Where(a => a.UserName.Equals(tbRes.UserName) && a.UserPwd.Equals(tbRes.UserPwd)).FirstOrDefault();
                     if (v != null)
                     {
-                        Session["loggedAdminName"] = v.AdminName.ToString();
+                        Session["loggedAdminName"] = v.UserName.ToString();
                         return RedirectToAction("AdminDashBoard", "Admin");
                     }
                     else

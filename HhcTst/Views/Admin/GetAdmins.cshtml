@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HhcTst.Models.Admin>
+﻿@model IEnumerable<HhcTst.Models.hhcAdminLogin>
 @{
     ViewBag.Title = "GetAdmins";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -8,16 +8,28 @@
 
 <table class="table-bordered table-striped table-hover">
     <tr>
-        <td>@Html.DisplayNameFor(m=>m.AdminNo)</td>
-        <td>@Html.DisplayNameFor(m=>m.AdminName)</td>
+        <td>@Html.DisplayNameFor(m => m.hhcAdminLoginsId)</td>
+        <td>@Html.DisplayNameFor(m => m.UserName)</td>
+        <td>@Html.DisplayNameFor(m=>m.Name)</td>
+        <td>@Html.DisplayNameFor(m => m.EmailID)</td>
+        <td>@Html.DisplayNameFor(m => m.ActiveStatus)</td>
     </tr>
     @foreach (var v in Model) { 
     <tr>
         <td>
-            @Html.DisplayFor(m=>v.AdminNo)
+            @Html.DisplayFor(m => v.hhcAdminLoginsId)
         </td>
         <td>
-            @Html.DisplayFor(m=>v.AdminName)
+            @Html.DisplayFor(m => v.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(m=>v.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(m => v.EmailID)
+        </td>
+        <td>
+            @Html.DisplayFor(m => v.ActiveStatus)
         </td>
     </tr>
     
