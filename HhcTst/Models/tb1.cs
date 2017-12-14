@@ -12,12 +12,11 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class hhcControlPanelIPStat
+    public partial class tb1
     {
-        public int CPIPID { get; set; }
-        public string CPIP { get; set; }
-        public Nullable<System.DateTime> CPLoginTime { get; set; }
-        public Nullable<System.DateTime> CPLogoutTime { get; set; }
-        public string CPLoginID { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Nullable<System.DateTime> DATE { get; set; }
+        public Nullable<int> Mobile { get; set; }
     }
 }

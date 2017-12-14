@@ -14,7 +14,7 @@ namespace HhcTst.Controllers
 {
     public class AdminsApiController : ApiController
     {
-        private HhcDbContainer db = new HhcDbContainer();
+        private SampleEntities1 db = new SampleEntities1();
 
         // GET: api/AdminsApi
         public IQueryable<Admin> GetAdmins()

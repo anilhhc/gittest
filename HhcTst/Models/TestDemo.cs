@@ -12,13 +12,11 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class VENDORSPECIALIZATION
+    public partial class TestDemo
     {
-        public int SPECIALIZATIONID { get; set; }
-        public string SPECIALIZATIONNAME { get; set; }
-        public string SPECIALIZATIONDESC { get; set; }
-        public string Procedures { get; set; }
-        public string ACTIVE { get; set; }
-        public string Vendortype { get; set; }
+        public int ID { get; set; }
+        public string P_ID { get; set; }
+        public string Name { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

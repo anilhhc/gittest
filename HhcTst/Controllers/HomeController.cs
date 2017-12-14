@@ -15,8 +15,11 @@ namespace HhcTst.Controllers
         }
         public ActionResult Login()
         {
-
             return View();
+        }
+        public ActionResult test()
+        {
+            return PartialView("tempPView");
         }
     }
 }

@@ -12,13 +12,13 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Hvsale
+    public partial class Employee
     {
-        public int HvsalesID { get; set; }
-        public string HvproductslistNAME { get; set; }
-        public string HvproductslistDESC { get; set; }
-        public string Hvproductslistcompanyid { get; set; }
-        public string Hproductslistcompanyid { get; set; }
-        public string Hproductsquantity { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Mobile { get; set; }
     }
 }

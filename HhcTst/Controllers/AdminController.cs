@@ -9,7 +9,7 @@ namespace HhcTst.Controllers
 {
     public class AdminController : Controller
     {
-        HhcDbContainer db = new HhcDbContainer();
+        SampleEntities1 db = new SampleEntities1();
         // GET: Admin
         //[Authorize(Roles="Admin")]
         public ActionResult GetAdmins()
@@ -37,7 +37,7 @@ namespace HhcTst.Controllers
                     AdminName = vm.AdminName,
                     Password = vm.Password
                 };
-                using (HhcDbContainer db = new HhcDbContainer())
+                using (SampleEntities1 db = new SampleEntities1())
                 {
                     var v = db.Admins.Where(a => a.AdminName.Equals(tbRes.AdminName) && a.Password.Equals(tbRes.Password)).FirstOrDefault();
                     if (v != null)

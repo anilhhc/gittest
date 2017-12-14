@@ -52,6 +52,42 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <HintPath>..\packages\mongocsharp.linqindexers.1.8.1.1\lib\net35\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
@@ -88,6 +124,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -169,30 +209,6 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Facebook">
-      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies">
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth">
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Google">
-      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.Twitter">
-      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
       <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
     </Reference>
@@ -239,7 +255,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminsApiController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
@@ -249,21 +264,11 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\CITY.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\COUNTRY.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hdivision.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcControlPanelIPStat.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HhcDb.Context.cs">
       <AutoGen>True</AutoGen>
@@ -275,94 +280,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HhcDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\HhcDb123.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb123.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\HhcDbtst.Designer.cs" />
-    <Compile Include="Models\hhcprimarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcsecondarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hproductslist.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hproductslistdescription.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hstockistdetail.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hstockistupload.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Htherapatic.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvendordetail.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvproductslist.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvsale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginVm.cs" />
-    <Compile Include="Models\OtherAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OtherAdminPermission.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\secondarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\STATE.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Stockist.cs" />
-    <Compile Include="Models\subareaCITY.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\Stockist.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UploadFileName.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\tb1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\USER.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\TestDemo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usershetro.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSPECIALIZATION.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSPECIALIZATION1.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSUser.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORTYPE.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -392,6 +346,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb123.edmx</DependentUpon>
       <LastGenOutput>HhcDb.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -470,12 +434,12 @@
     <Content Include="Models\HhcDb123.edmx.diagram">
       <DependentUpon>HhcDb123.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\HhcDb.edmx">
+    <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\HhcDb.edmx.diagram">
-      <DependentUpon>HhcDb.edmx</DependentUpon>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
@@ -1257,10 +1221,10 @@
     <Content Include="Views\Stockists\Details.cshtml" />
     <Content Include="Views\Stockists\Edit.cshtml" />
     <Content Include="Views\Stockists\Index.cshtml" />
+    <Content Include="Views\Shared\tempPView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

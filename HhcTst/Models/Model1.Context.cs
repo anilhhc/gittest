@@ -13,10 +13,10 @@ namespace HhcTst.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SampleEntities : DbContext
+    public partial class SampleEntities1 : DbContext
     {
-        public SampleEntities()
-            : base("name=SampleEntities")
+        public SampleEntities1()
+            : base("name=SampleEntities1")
         {
         }
     
@@ -28,6 +28,7 @@ namespace HhcTst.Models
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Stockist> Stockists { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tb1> tb1 { get; set; }
         public virtual DbSet<TestDemo> TestDemoes { get; set; }
         public virtual DbSet<User> Users { get; set; }
