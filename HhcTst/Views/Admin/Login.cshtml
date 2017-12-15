@@ -1,56 +1,67 @@
 ﻿@model HhcTst.Models.LoginVm
 @{
     ViewBag.Title = "Login";
-    //Layout = null;
-    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    Layout = null;
+    // Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
-<h2>AdminSignIn</h2>
-@using (Html.BeginForm("Login", "Admin", FormMethod.Post))
-{
-
-    <fieldset class="align-center">
-        <legend>Mvc Simple Login Application Demo</legend>
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-        @if (@ViewBag.Message != null)
-        {
-            <div style="border: 1px solid red">
-                @ViewBag.Message
+<div class="container"
+    style="padding-right:0px; margin-top:165px; margin-left:500px;">
+    <div class="row">
+        <div class="col-lg-12"
+            style="width:400px; height:250px;">
+            <div class="col-lg-6">
+                <a href='@Url.Action("Login", "Admin")'>
+                    <img src='@Url.Content("~/Content/Images/HhcLogo.png")' />
+                </a>
             </div>
-        }
-        <table class="table-responsive">
-            <tr>
-                <td>@Html.LabelFor(a => a.UserName)</td>
-                <td>@Html.TextBoxFor(a => a.UserName)</td>
-                <td>@Html.ValidationMessageFor(a => a.UserName)</td>
-            </tr>
-            <tr>
-                <td>
-                    @Html.LabelFor(a => a.UserPwd)
-                </td>
-                <td>
-                    @Html.PasswordFor(a => a.UserPwd)
-                </td>
-                <td>
-                    @Html.ValidationMessageFor(a => a.UserPwd)
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Login" />
-                </td>
-                <td></td>
-            </tr>
-        </table>
-    </fieldset>
-    @*@section RightSection{
-        <h1>This is i right part of display</h1>
-    }*@
-    @section footer{
-    <p class="lead">
-        This is footer section here.
-    </p>
-    }
-}  
+            <div class="col-lg-6">
+                @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new{@class="form-horizontal"}))
+                {
+                    <fieldset class="align-center">
+                        <legend>Administrator Login</legend>
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        @if (@ViewBag.Message != null)
+                        {
+                            <div style="border: 1px solid red">
+                                @ViewBag.Message
+                            </div>
+                        }
+                        <table class="table-responsive">
+                            <tr>
+                                <td>@Html.LabelFor(a => a.UserName)</td>
+                                <td>@Html.TextBoxFor(a => a.UserName)</td>
+                                <td>@Html.ValidationMessageFor(a => a.UserName)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(a => a.UserPwd)
+                                </td>
+                                <td>
+                                    @Html.PasswordFor(a => a.UserPwd)
+                                </td>
+                                <td>
+                                    @Html.ValidationMessageFor(a => a.UserPwd)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="Login" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    @*@section RightSection{
+                    <h1>This is i right part of display</h1>
+                }*@
+                    @section footer{
+                        <p class="lead">
+                            This is footer section here.
+                        </p>
+                    }
+                }
+            </div>
+    </div>
+</div>
