@@ -18,7 +18,7 @@
                 @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new{@class="form-horizontal"}))
                 {
                     <fieldset class="align-center">
-                        <legend>Administrator Login</legend>
+                        <legend>Administrator Login(This is edited from myLappy)</legend>
                         @Html.AntiForgeryToken()
                         @Html.ValidationSummary(true)
                         @if (@ViewBag.Message != null)
