@@ -1,0 +1,35 @@
+﻿@model HhcTst.Models.COUNTRY
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COUNTRY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.COUNTRYNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COUNTRYNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTIVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTIVE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.COUNTRYID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="88eedd81c4244796b29d522028dba87b" Name="Diagram1">
-        <EntityTypeShape EntityType="HhcDbModel.CITY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.COUNTRY" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.CITY" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.COUNTRY" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Hdivision" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.hhcAdminLogin" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcControlPanelIPStat" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcControlPanelIPStat" Width="1.5" PointX="5.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.hhcprimarysale" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcsecondarysale" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcsecondarysale" Width="1.5" PointX="7.125" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Hproductslist" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Hproductslistdescription" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Hstockistdetail" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
@@ -23,7 +23,7 @@
         <EntityTypeShape EntityType="HhcDbModel.OtherAdminLogin" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.OtherAdminPermission" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.secondarysale" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.STATE" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.STATE" Width="1.5" PointX="2.125" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.subareaCITY" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.UploadFileName" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
@@ -35,7 +35,7 @@
         <EntityTypeShape EntityType="HhcDbModel.VENDORSUser" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.VENDORTYPE" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.VENDORTYPESpecialisationsentry" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Admin" Width="1.5" PointX="7.375" PointY="15.75" />
+        <EntityTypeShape EntityType="HhcDbModel.Admin" Width="1.5" PointX="6.5" PointY="14.625" />
         <EntityTypeShape EntityType="HhcDbModel.Employee" Width="1.5" PointX="15.375" PointY="11.75" />
         <EntityTypeShape EntityType="HhcDbModel.Stockist" Width="1.5" PointX="15.375" PointY="14.75" />
       </Diagram>
