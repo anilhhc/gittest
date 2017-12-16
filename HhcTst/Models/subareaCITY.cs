@@ -12,7 +12,7 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class subareaCITY
+    public partial class subareaCITy
     {
         public int subareaCITYID { get; set; }
         public string subareaCITYNAME { get; set; }

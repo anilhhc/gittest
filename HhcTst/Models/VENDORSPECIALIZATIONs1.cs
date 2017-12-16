@@ -12,7 +12,7 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class VENDORSPECIALIZATION1
+    public partial class VENDORSPECIALIZATIONs1
     {
         public int SPECIALIZATIONID { get; set; }
         public string SPECIALIZATIONNAME { get; set; }

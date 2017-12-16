@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HhcTst.Models.Admin>
+﻿@model IEnumerable<HhcTst.Models.hhcAdminLogin>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AdminName)
+            @Html.DisplayNameFor(model => model.UserName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.UserPwd)
         </th>
         <th> </th>
     </tr>
@@ -23,15 +23,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.AdminName)
+            @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Password)
+            @Html.DisplayFor(modelItem => item.UserPwd)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AdminNo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AdminNo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AdminNo })
+            @Html.ActionLink("Edit", "Edit", new { id = item.hhcAdminLoginsId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.hhcAdminLoginsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.hhcAdminLoginsId })
         </td>
     </tr>
 }

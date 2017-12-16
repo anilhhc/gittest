@@ -12,7 +12,7 @@ namespace HhcTst.Controllers
 {
     public class StockistsController : Controller
     {
-        private HhcDbEntities1 db = new HhcDbEntities1();
+        private HhcDbEntities db = new HhcDbEntities();
 
         // GET: Stockists
         public ActionResult Index()

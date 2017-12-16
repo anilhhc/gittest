@@ -13,7 +13,7 @@ namespace HhcTst.Controllers
 {
     public class AdminController : Controller
     {
-        HhcDbEntities1 db = new HhcDbEntities1();
+        HhcDbEntities db = new HhcDbEntities();
 
         public ActionResult Zones()
         {
@@ -169,7 +169,7 @@ namespace HhcTst.Controllers
                     UserName = vm.UserName,
                     UserPwd = vm.UserPwd
                 };
-                using (HhcDbEntities1 db = new HhcDbEntities1())
+                using (HhcDbEntities db = new HhcDbEntities())
                 {
                     var v = db.hhcAdminLogins.Where(a => a.UserName.Equals(tbRes.UserName) && a.UserPwd.Equals(tbRes.UserPwd)).FirstOrDefault();
                     if (v != null)

@@ -12,7 +12,7 @@ namespace HhcTst.Controllers
 {
     public class COUNTRiesController : Controller
     {
-        private HhcDbEntities1 db = new HhcDbEntities1();
+        private HhcDbEntities db = new HhcDbEntities();
 
         // GET: COUNTRies
         public ActionResult Index()
@@ -27,7 +27,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRY cOUNTRY = db.COUNTRies.Find(id);
+            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
             if (cOUNTRY == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRY cOUNTRY)
+        public ActionResult Create([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRy cOUNTRY)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRY cOUNTRY = db.COUNTRies.Find(id);
+            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
             if (cOUNTRY == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRY cOUNTRY)
+        public ActionResult Edit([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRy cOUNTRY)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRY cOUNTRY = db.COUNTRies.Find(id);
+            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
             if (cOUNTRY == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace HhcTst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            COUNTRY cOUNTRY = db.COUNTRies.Find(id);
+            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
             db.COUNTRies.Remove(cOUNTRY);
             db.SaveChanges();
             return RedirectToAction("Index");

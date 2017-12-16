@@ -12,10 +12,11 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class COUNTRy
+    public partial class Category
     {
-        public int COUNTRYID { get; set; }
-        public string COUNTRYNAME { get; set; }
-        public string ACTIVE { get; set; }
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public Nullable<int> ParentCategoryId { get; set; }
+        public string Remarks { get; set; }
     }
 }

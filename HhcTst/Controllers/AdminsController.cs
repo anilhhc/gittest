@@ -12,12 +12,12 @@ namespace HhcTst.Controllers
 {
     public class AdminsController : Controller
     {
-        private HhcDbEntities1 db = new HhcDbEntities1();
+        private HhcDbEntities db = new HhcDbEntities();
 
         // GET: Admins
         public ActionResult Index()
         {
-            return View(db.Admins.ToList());
+            return View(db.hhcAdminLogins.ToList());
         }
 
         // GET: Admins/Details/5
@@ -27,7 +27,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Admin admin = db.Admins.Find(id);
+            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
             if (admin == null)
             {
                 return HttpNotFound();
@@ -46,16 +46,16 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AdminNo,AdminName,Password")] Admin admin)
+        public ActionResult Create([Bind(Include = "AdminNo,AdminName,Password")] hhcAdminLogin hhcAdminLogin)
         {
             if (ModelState.IsValid)
             {
-                db.Admins.Add(admin);
+                db.hhcAdminLogins.Add(hhcAdminLogin);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(admin);
+            return View(hhcAdminLogin);
         }
 
         // GET: Admins/Edit/5
@@ -65,7 +65,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Admin admin = db.Admins.Find(id);
+            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
             if (admin == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AdminNo,AdminName,Password")] Admin admin)
+        public ActionResult Edit([Bind(Include = "AdminNo,AdminName,Password")] hhcAdminLogin admin)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Admin admin = db.Admins.Find(id);
+            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
             if (admin == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace HhcTst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Admin admin = db.Admins.Find(id);
-            db.Admins.Remove(admin);
+            hhcAdminLogin hhcAdminLogin = db.hhcAdminLogins.Find(id);
+            db.hhcAdminLogins.Remove(hhcAdminLogin);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

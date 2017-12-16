@@ -281,10 +281,13 @@
     <Compile Include="Models\Admin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CITY.cs">
+    <Compile Include="Models\Category.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\COUNTRY.cs">
+    <Compile Include="Models\CITy.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COUNTRy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
@@ -361,7 +364,7 @@
     <Compile Include="Models\Stockist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\subareaCITY.cs">
+    <Compile Include="Models\subareaCITy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
@@ -382,7 +385,7 @@
     <Compile Include="Models\VENDORSPECIALIZATION.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VENDORSPECIALIZATION1.cs">
+    <Compile Include="Models\VENDORSPECIALIZATIONs1.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VENDORSUser.cs">
@@ -419,7 +422,6 @@
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\HhcDb.edmx.sql" />
     <Content Include="Models\HhcDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
@@ -495,6 +497,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Grid.mvc.readme" />
     <EntityDeploy Include="Models\HhcDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
@@ -502,7 +505,6 @@
     <Content Include="Models\HhcDb.edmx.diagram">
       <DependentUpon>HhcDb.edmx</DependentUpon>
     </Content>
-    <Content Include="Grid.mvc.readme" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
@@ -1299,6 +1301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Doc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

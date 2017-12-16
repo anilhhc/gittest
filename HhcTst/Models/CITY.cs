@@ -12,7 +12,7 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class CITY
+    public partial class CITy
     {
         public int CITYID { get; set; }
         public string CITYNAME { get; set; }
