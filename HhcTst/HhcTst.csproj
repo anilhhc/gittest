@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -418,6 +419,7 @@
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\HhcDb.edmx.sql" />
     <Content Include="Models\HhcDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
