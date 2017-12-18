@@ -270,6 +270,7 @@
     <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\COUNTRiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\STATEsController.cs" />
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -1298,6 +1299,11 @@
     <Content Include="Views\COUNTRies\Index.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
+    <Content Include="Views\STATEs\Create.cshtml" />
+    <Content Include="Views\STATEs\Delete.cshtml" />
+    <Content Include="Views\STATEs\Details.cshtml" />
+    <Content Include="Views\STATEs\Edit.cshtml" />
+    <Content Include="Views\STATEs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
