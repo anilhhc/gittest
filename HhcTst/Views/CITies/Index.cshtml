@@ -1,11 +1,11 @@
-﻿@model IEnumerable<HhcTst.Models.STATE>
+﻿@model IEnumerable<HhcTst.Models.CITy>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>States</h2>
+<h2>Cities</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.STATENAME)
+            @Html.DisplayNameFor(model => model.CITYNAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COUNTRYNAME)
+            @Html.DisplayNameFor(model => model.STATEID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
@@ -27,18 +27,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.STATENAME)
+            @Html.DisplayFor(modelItem => item.CITYNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.COUNTRYNAME)
+            @Html.DisplayFor(modelItem => item.STATEID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ACTIVE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.STATEID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.STATEID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.STATEID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.CITYID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CITYID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CITYID })
         </td>
     </tr>
 }

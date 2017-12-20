@@ -15,12 +15,6 @@ namespace HhcTst.Controllers
     {
         HhcDbEntities db = new HhcDbEntities();
 
-        public ActionResult Zones()
-        {
-            return View(db.COUNTRies.ToList());
-        }
-
-
         public FileResult DownloadExcel()
         {
             string path = "/Doc/Users.xlsx";

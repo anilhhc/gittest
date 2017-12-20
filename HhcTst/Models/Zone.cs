@@ -12,10 +12,10 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class COUNTRy
+    public partial class Zone
     {
-        public int COUNTRYID { get; set; }
-        public string COUNTRYNAME { get; set; }
+        public int ZoneID { get; set; }
+        public string ZoneName { get; set; }
         public string ACTIVE { get; set; }
     }
 }

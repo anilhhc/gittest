@@ -13,14 +13,14 @@
             <img src='@Url.Content("~/Content/Images/HhcLogo.png")' />
         </a>
     </div>
-   
-   
     <div>
-        @Html.ActionLink("ViewAdmins", "Index", "Admins")
-        @Html.ActionLink("View-Stockist","Index","Stockists")
-        @Html.ActionLink("Stockist-Upload", "UploadExcel", "Admins")
-        @Html.ActionLink("View Zones", "Index", "COUNTRies")
-        @Html.ActionLink("View States","Index","STATEs")
+        @Html.ActionLink("Manage-Zones", "Index", "Zones")
+        @Html.ActionLink("Manage-States", "Index", "STATEs")
+        @Html.ActionLink("Manage-Cities", "Index", "CITies")
+        @Html.ActionLink("View-Admins", "Index", "Admins")
+        @Html.ActionLink("Manage-Stockist", "Index", "Stockists")
+        @Html.ActionLink("Manage-Stockist-Upload", "UploadExcel", "Admins")
+        
         @Html.ActionLink("LogOut","LogOut","Admin")
         @RenderBody()
     </div>

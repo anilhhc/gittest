@@ -7,110 +7,116 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HhcTst.Models;
-
+using HhcTst.xsds.datacareTableAdapters;
 namespace HhcTst.Controllers
 {
-    public class COUNTRiesController : Controller
+    public class CITiesController : Controller
     {
+        CITiesTableAdapter cta = new CITiesTableAdapter();   
         private HhcDbEntities db = new HhcDbEntities();
 
-        // GET: COUNTRies
+        // GET: CITies
         public ActionResult Index()
         {
-            return View(db.COUNTRies.ToList());
+            var v = db.CITies.ToList();
+            return View(v);
         }
 
-        // GET: COUNTRies/Details/5
+        // GET: CITies/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
-            if (cOUNTRY == null)
+            CITy cITy = db.CITies.Find(id);
+            if (cITy == null)
             {
                 return HttpNotFound();
             }
-            return View(cOUNTRY);
+            return View(cITy);
         }
 
-        // GET: COUNTRies/Create
+        // GET: CITies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: COUNTRies/Create
+        // POST: CITies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRy cOUNTRY)
+        public ActionResult Create([Bind(Include = "CITYID,CITYNAME,STATEID,ACTIVE")] CITy cITy)
         {
             if (ModelState.IsValid)
             {
-                db.COUNTRies.Add(cOUNTRY);
-                db.SaveChanges();
+                //if(db.CITies.Count(cITy.CITYID)>0)
+               if (cta.cityprimarycount(cITy.CITYNAME) > 0)
+                {
+                    db.CITies.Add(cITy);
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
 
-            return View(cOUNTRY);
+            return View(cITy);
         }
 
-        // GET: COUNTRies/Edit/5
+        // GET: CITies/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
-            if (cOUNTRY == null)
+            CITy cITy = db.CITies.Find(id);
+            if (cITy == null)
             {
                 return HttpNotFound();
             }
-            return View(cOUNTRY);
+            return View(cITy);
         }
 
-        // POST: COUNTRies/Edit/5
+        // POST: CITies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "COUNTRYID,COUNTRYNAME,ACTIVE")] COUNTRy cOUNTRY)
+        public ActionResult Edit([Bind(Include = "CITYID,CITYNAME,STATEID,ACTIVE")] CITy cITy)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cOUNTRY).State = EntityState.Modified;
+                db.Entry(cITy).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(cOUNTRY);
+            return View(cITy);
         }
 
-        // GET: COUNTRies/Delete/5
+        // GET: CITies/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
-            if (cOUNTRY == null)
+            CITy cITy = db.CITies.Find(id);
+            if (cITy == null)
             {
                 return HttpNotFound();
             }
-            return View(cOUNTRY);
+            return View(cITy);
         }
 
-        // POST: COUNTRies/Delete/5
+        // POST: CITies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            COUNTRy cOUNTRY = db.COUNTRies.Find(id);
-            db.COUNTRies.Remove(cOUNTRY);
+            CITy cITy = db.CITies.Find(id);
+            db.CITies.Remove(cITy);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

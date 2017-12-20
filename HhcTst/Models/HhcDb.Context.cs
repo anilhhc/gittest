@@ -28,7 +28,6 @@ namespace HhcTst.Models
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CITy> CITies { get; set; }
-        public virtual DbSet<COUNTRy> COUNTRies { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hdivision> Hdivisions { get; set; }
         public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
@@ -59,5 +58,6 @@ namespace HhcTst.Models
         public virtual DbSet<VENDORSUser> VENDORSUsers { get; set; }
         public virtual DbSet<VENDORTYPE> VENDORTYPES { get; set; }
         public virtual DbSet<VENDORTYPESpecialisationsentry> VENDORTYPESpecialisationsentries { get; set; }
+        public virtual DbSet<Zone> Zones { get; set; }
     }
 }

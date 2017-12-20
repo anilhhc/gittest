@@ -4,8 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
-
+<h2>Stockists</h2>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -36,7 +35,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StockistId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StockistId }) |
+          @*  @Html.ActionLink("Details", "Details", new { id=item.StockistId }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.StockistId })
         </td>
     </tr>

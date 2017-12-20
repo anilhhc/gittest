@@ -1,11 +1,11 @@
-﻿@model IEnumerable<HhcTst.Models.COUNTRy>
+﻿@model IEnumerable<HhcTst.Models.Zone>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Zones</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.COUNTRYNAME)
+            @Html.DisplayNameFor(model => model.ZoneName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
@@ -24,15 +24,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.COUNTRYNAME)
+            @Html.DisplayFor(modelItem => item.ZoneName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ACTIVE)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.COUNTRYID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.COUNTRYID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.COUNTRYID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ZoneID }) |
+          @*  @Html.ActionLink("Details", "Details", new { id=item.ZoneID }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.ZoneID })
         </td>
     </tr>
 }

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HhcTst.Models;
+using Microsoft.Owin.Security.Infrastructure;
 
 namespace HhcTst.Controllers
 {
@@ -35,7 +36,7 @@ namespace HhcTst.Controllers
             return View(stockist);
         }
 
-        // GET: Stockists/Create
+        // GET: Stockists/Create d
         public ActionResult Create()
         {
             return View();
@@ -50,9 +51,19 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Stockists.Add(stockist);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                {
+                    ModelState.AddModelError("StockistName", "Stockist Name already taken");
+                    return View(stockist);
+                    //   .Write("Name already exists");
+                    //Do what do u need to do...
+                }
+                else
+                {
+                    db.Stockists.Add(stockist);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(stockist);
@@ -82,9 +93,17 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(stockist).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                {
+                    ModelState.AddModelError("StockistName", "Stockist Name already taken");
+                    return View(stockist);
+                }
+                else
+                {
+                    db.Entry(stockist).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             return View(stockist);
         }

@@ -268,12 +268,13 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AdminsApiController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
-    <Compile Include="Controllers\COUNTRiesController.cs" />
+    <Compile Include="Controllers\CITiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\STATEsController.cs" />
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ZonesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -286,9 +287,6 @@
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CITy.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\COUNTRy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
@@ -398,10 +396,18 @@
     <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Zone.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="xsds\datacare.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datacare.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -1291,12 +1297,6 @@
     <Content Include="Views\Stockists\Index.cshtml" />
     <Content Include="Views\Shared\tempPView.cshtml" />
     <Content Include="Views\Shared\AdminInnerLayout.cshtml" />
-    <Content Include="Views\Admin\Zones.cshtml" />
-    <Content Include="Views\COUNTRies\Create.cshtml" />
-    <Content Include="Views\COUNTRies\Delete.cshtml" />
-    <Content Include="Views\COUNTRies\Details.cshtml" />
-    <Content Include="Views\COUNTRies\Edit.cshtml" />
-    <Content Include="Views\COUNTRies\Index.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\STATEs\Create.cshtml" />
@@ -1304,6 +1304,27 @@
     <Content Include="Views\STATEs\Details.cshtml" />
     <Content Include="Views\STATEs\Edit.cshtml" />
     <Content Include="Views\STATEs\Index.cshtml" />
+    <Content Include="Views\CITies\Create.cshtml" />
+    <Content Include="Views\CITies\Delete.cshtml" />
+    <Content Include="Views\CITies\Details.cshtml" />
+    <Content Include="Views\CITies\Edit.cshtml" />
+    <Content Include="Views\CITies\Index.cshtml" />
+    <Content Include="xsds\datacare.xsc">
+      <DependentUpon>datacare.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\Zones\Create.cshtml" />
+    <Content Include="Views\Zones\Delete.cshtml" />
+    <Content Include="Views\Zones\Details.cshtml" />
+    <Content Include="Views\Zones\Edit.cshtml" />
+    <Content Include="Views\Zones\Index.cshtml" />
+    <None Include="xsds\datacare.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datacare.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="xsds\datacare.xss">
+      <DependentUpon>datacare.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
