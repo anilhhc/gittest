@@ -17,6 +17,6 @@ namespace HhcTst.Models
         public int STATEID { get; set; }
         public string STATENAME { get; set; }
         public string ACTIVE { get; set; }
-        public string COUNTRYNAME { get; set; }
+        public string Zone { get; set; }
     }
 }

@@ -7,16 +7,25 @@
 
 <h2>States</h2>
 
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <td> Populating With Database and EF </td>
+        <td>
+            @Html.DropDownList("MySkills", (IEnumerable
+        <SelectListItem>)ViewBag.Zones)
+        </td>
+    </tr>
+    
+    <tr>
         <th>
             @Html.DisplayNameFor(model => model.STATENAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COUNTRYNAME)
+            @Html.DisplayNameFor(model => model.Zone)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
@@ -30,14 +39,14 @@
             @Html.DisplayFor(modelItem => item.STATENAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.COUNTRYNAME)
+            @Html.DisplayFor(modelItem => item.Zone)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ACTIVE)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.STATEID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.STATEID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.STATEID }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.STATEID })
         </td>
     </tr>

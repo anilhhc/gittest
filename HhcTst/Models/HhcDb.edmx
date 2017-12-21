@@ -282,7 +282,7 @@
           </Key>
           <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="STATENAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="COUNTRYNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zone" Type="nvarchar" MaxLength="50" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Stockists">
@@ -764,7 +764,7 @@
           <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="STATENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="COUNTRYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Stockist">
           <Key>
@@ -1263,7 +1263,7 @@
           <EntitySetMapping Name="STATEs">
             <EntityTypeMapping TypeName="HhcDbModel.STATE">
               <MappingFragment StoreEntitySet="STATEs">
-                <ScalarProperty Name="COUNTRYNAME" ColumnName="COUNTRYNAME" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
                 <ScalarProperty Name="STATEID" ColumnName="STATEID" />
                 <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
                 <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />

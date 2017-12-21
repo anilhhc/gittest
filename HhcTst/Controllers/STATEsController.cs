@@ -17,7 +17,12 @@ namespace HhcTst.Controllers
         // GET: STATEs
         public ActionResult Index()
         {
-            return View(db.STATEs.ToList());
+
+                var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
+                ViewBag.Zones=fromDatabaseEF;
+           // var v=from d in db.STATEs
+              //    Where 
+                return View(db.STATEs.ToList());
         }
 
         // GET: STATEs/Details/5

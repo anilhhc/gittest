@@ -1,0 +1,43 @@
+﻿@model HhcTst.Models.subareaCITy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>subareaCITy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.subareaCITYNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subareaCITYNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CITYID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CITYID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTIVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTIVE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.subareaCITYID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<HhcTst.Models.Hproductslistdescription>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HproductslistdescriptionDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hproductslistcompanyid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdquantityperpack)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdquantityperstrip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdratevalidform)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdpricetoretailer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdmrp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdstandardrate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdpricetostockist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpdbrandname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hdpcategoryname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hpddivisionname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hdpmanfacturename)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HproductslistdescriptionDESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hproductslistcompanyid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdquantityperpack)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdquantityperstrip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdratevalidform)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdpricetoretailer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdmrp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdstandardrate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdpricetostockist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpdbrandname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hdpcategoryname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hpddivisionname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hdpmanfacturename)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HproductslistdescriptionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HproductslistdescriptionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HproductslistdescriptionID })
+        </td>
+    </tr>
+}
+
+</table>

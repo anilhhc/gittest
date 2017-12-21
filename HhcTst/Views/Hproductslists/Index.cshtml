@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HhcTst.Models.Hproductslist>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HproductslistNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HproductslistDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hproductslistcompanyid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HproductslistNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HproductslistDESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hproductslistcompanyid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HproductslistID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HproductslistID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HproductslistID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model HhcTst.Models.Hproductslist
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hproductslist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HproductslistNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HproductslistNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HproductslistDESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HproductslistDESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hproductslistcompanyid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hproductslistcompanyid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HproductslistID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

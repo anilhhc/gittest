@@ -1,0 +1,137 @@
+﻿@model HhcTst.Models.Hproductslistdescription
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Hproductslistdescription</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HproductslistdescriptionDESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HproductslistdescriptionDESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hproductslistcompanyid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hproductslistcompanyid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdquantityperpack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdquantityperpack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdquantityperstrip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdquantityperstrip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdratevalidform)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdratevalidform)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdpricetoretailer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdpricetoretailer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdmrp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdmrp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdstandardrate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdstandardrate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdpricetostockist)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdpricetostockist)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpdbrandname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpdbrandname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hdpcategoryname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hdpcategoryname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hpddivisionname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hpddivisionname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hdpmanfacturename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hdpmanfacturename)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
