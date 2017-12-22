@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StockistId })
+    @Html.ActionLink("Edit", "Edit", new { id = Session["loggedStockistName"] })
      @*|    @Html.ActionLink("Back to List", "Index")*@
 </p>

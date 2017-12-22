@@ -14,7 +14,7 @@ namespace HhcTst.Controllers
         // GET: Stockist
         public ActionResult Index()
         {
-            return View();
+            return View("Login");
         }
         public ActionResult Login()
         {
@@ -91,8 +91,9 @@ namespace HhcTst.Controllers
                 {
                     db.Stockists.Add(stockist);
                     db.SaveChanges();
-                    ViewBag.name = stockist.StockistName.ToString();
-                    return RedirectToAction("Login"); // RedirectToAction("Index");
+                    ViewBag.name =( stockist.StockistName.ToString()+" has been registered successfully");
+                    return View();
+                  //  return RedirectToAction("Login"); // RedirectToAction("Index");
                 }
             }
 
