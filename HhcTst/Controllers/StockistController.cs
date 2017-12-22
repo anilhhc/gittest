@@ -59,6 +59,13 @@ namespace HhcTst.Controllers
                 return RedirectToAction("Login");
             }
         }
+        public ActionResult ProfilePage()
+        {
+            string str = Session["loggedStockistName"].ToString();
+            var v = db.Stockists.Where(a=>a.StockistName == str).FirstOrDefault();
+
+            return View(v);
+        }
         public ActionResult Register()
         {
             return View();
@@ -85,11 +92,16 @@ namespace HhcTst.Controllers
                     db.Stockists.Add(stockist);
                     db.SaveChanges();
                     ViewBag.name = stockist.StockistName.ToString();
-                    return View(); // RedirectToAction("Index");
+                    return RedirectToAction("Login"); // RedirectToAction("Index");
                 }
             }
 
             return View(stockist);
+        }
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Stockist");
         }
     }
 }

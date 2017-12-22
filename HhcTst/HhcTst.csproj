@@ -1487,6 +1487,7 @@
     <Content Include="Views\Stockist\Login.cshtml" />
     <Content Include="Views\Shared\StockistLayout.cshtml" />
     <Content Include="Views\Stockist\StockistDashBoard.cshtml" />
+    <Content Include="Views\Stockist\ProfilePage.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>

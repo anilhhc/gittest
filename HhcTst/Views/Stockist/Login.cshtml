@@ -2,9 +2,10 @@
 
 @{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/StockistLayout.cshtml";
+    Layout = null;
+    //Layout = "~/Views/Shared/StockistLayout.cshtml";
 }
-    
+
 <div class="container"
      style="padding-right:0px; margin-top:165px; margin-left:500px;">
     <div class="row">
@@ -54,16 +55,34 @@
                             </tr>
                         </table>
                     </fieldset>
+
+                   
+
                     @*@section RightSection{
                             <h1>This is i right part of display</h1>
                         }*@
-                    @*@section footer{
-                        <p class="lead">
-                            This is footer section here.
-                        </p>
-                    }*@
+                        @*@section footer{
+                                <p class="lead">
+                                    This is footer section here.
+                                </p>
+                            }*@
                 }
             </div>
+            @if (ViewBag.name != null)
+            {
+                <script>
+
+                    $(document).ready(function () {
+
+                        alert('@ViewBag.name');
+
+                    });
+
+                </script>
+
+            }
+
+
         </div>
     </div>
-    </div>
+</div>

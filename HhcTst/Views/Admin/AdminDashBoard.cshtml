@@ -1,12 +1,9 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "AdminDashBoard";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 <fieldset>
     <legend> User DashBoard </legend>
-    
     @if (Session["loggedAdminName"] != null)
     {
         <text>

@@ -7,6 +7,17 @@
 </head>
 <body>
     <div>
+        @*@Html.ActionLink("Admin Page", "AdminDashboard", "Admin", new { area = "" }, new { @class = "navbar-brand" })*@
+        <a href='@Url.Action("StockistDashboard", "Stockist")'>
+            <img src='@Url.Content("~/Content/Images/HhcLogo.png")' />
+        </a>
+    </div>
+    <div class="glyphicon-tree-deciduous">
+        @Html.ActionLink("Profile","ProfilePage","Stockist")
+        @Html.ActionLink("Upload-Sales", "UploadExcel", "Stockist") 
+        @Html.ActionLink("Manage-Products", "Products", "Stockist")
+        
+        @Html.ActionLink("LogOut", "LogOut", "Stockist")
         @RenderBody()
     </div>
 </body>
