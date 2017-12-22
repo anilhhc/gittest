@@ -11,12 +11,17 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Stockist
     {
         public int StockistId { get; set; }
+        [Required(ErrorMessage="enter ur name")]
         public string StockistName { get; set; }
+        [Required(ErrorMessage = "enter ur name")]
         public string Description { get; set; }
+        [Required(ErrorMessage = "enter ur name")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

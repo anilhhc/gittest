@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "StockistDashBoard";
+    Layout = "~/Views/Shared/StockistLayout.cshtml";
+}
+
+<h2>StockistDashBoard</h2>
+
+<fieldset>
+    <legend> User DashBoard </legend>
+
+    @if (Session["loggedStockistName"] != null)
+    {
+        <text>
+            Welcome @Session["loggedStockistName"].ToString() </text>
+    }
+</fieldset>
+@*@section footer{
+    <p class="lead">
+        This is footer section here.
+    </p>
+}*@

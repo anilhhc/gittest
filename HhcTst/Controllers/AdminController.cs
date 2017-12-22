@@ -20,8 +20,6 @@ namespace HhcTst.Controllers
             string path = "/Doc/Users.xlsx";
             return File(path, "application/vnd.ms-excel", "Users.xlsx");
         }
-
-
         [HttpPost]
         public JsonResult UploadExcel(hhcAdminLogin users, HttpPostedFileBase FileUpload)
         {

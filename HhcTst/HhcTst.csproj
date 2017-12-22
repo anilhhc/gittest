@@ -281,6 +281,7 @@
     <Compile Include="Controllers\HproductslistdescriptionsController.cs" />
     <Compile Include="Controllers\HproductslistsController.cs" />
     <Compile Include="Controllers\STATEsController.cs" />
+    <Compile Include="Controllers\StockistController.cs" />
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
     <Compile Include="Controllers\subareaCITiesController.cs" />
@@ -375,6 +376,7 @@
     <Compile Include="Models\Stockist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StockistLoginVM.cs" />
     <Compile Include="Models\subareaCITy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
@@ -1481,6 +1483,10 @@
     <Content Include="Views\Hproductslists\Details.cshtml" />
     <Content Include="Views\Hproductslists\Edit.cshtml" />
     <Content Include="Views\Hproductslists\Index.cshtml" />
+    <Content Include="Views\Stockist\Register.cshtml" />
+    <Content Include="Views\Stockist\Login.cshtml" />
+    <Content Include="Views\Shared\StockistLayout.cshtml" />
+    <Content Include="Views\Stockist\StockistDashBoard.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1493,6 +1499,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Doc\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
