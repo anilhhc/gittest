@@ -92,6 +92,7 @@ namespace HhcTst.Controllers
                     db.Stockists.Add(stockist);
                     db.SaveChanges();
                     ViewBag.name =( stockist.StockistName.ToString()+" has been registered successfully");
+                    ModelState.Clear();
                     return View();
                   //  return RedirectToAction("Login"); // RedirectToAction("Index");
                 }
