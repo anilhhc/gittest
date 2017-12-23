@@ -12,9 +12,11 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
     
     public partial class Stockist
     {
+        [HiddenInput(DisplayValue=false)]
         public int StockistId { get; set; }
         [Required(ErrorMessage="enter ur name")]
         public string StockistName { get; set; }

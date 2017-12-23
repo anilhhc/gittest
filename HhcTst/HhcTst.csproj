@@ -1488,6 +1488,7 @@
     <Content Include="Views\Zones\Details.cshtml" />
     <Content Include="Views\Zones\Edit.cshtml" />
     <Content Include="Views\Zones\Index.cshtml" />
+    <Content Include="Views\Stockist\Edit.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>

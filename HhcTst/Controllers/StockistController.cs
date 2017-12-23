@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Security;
 using System.Web.Mvc;
 using HhcTst.Models;
+using System.Net;
+using System.Data.Entity;
 
 namespace HhcTst.Controllers
 {
@@ -15,6 +17,42 @@ namespace HhcTst.Controllers
         public ActionResult Index()
         {
             return View("Login");
+        }
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Stockist stockist=db.Stockists.Find(id);
+            if(stockist==null)
+            {
+                return HttpNotFound();
+
+            }
+            return View(stockist);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "StockistID,StockistName,ACTIVE")] Stockist stockist)
+        {
+            if (ModelState.IsValid)
+            {
+                 if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                {
+                    ModelState.AddModelError("ZoneName", "Zone Name already taken");
+                    return View(stockist);
+                }
+                else
+                {
+                    db.Entry(stockist).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+
+
+            return View(stockist);
         }
         public ActionResult Login()
         {
