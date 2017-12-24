@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Zones</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -31,7 +31,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ZoneID }) |
-          @*  @Html.ActionLink("Details", "Details", new { id=item.ZoneID }) |*@
+            @*@Html.ActionLink("Details", "Details", new { id=item.ZoneID }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.ZoneID })
         </td>
     </tr>

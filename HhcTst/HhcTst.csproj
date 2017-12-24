@@ -1391,11 +1391,6 @@
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
-    <Content Include="Views\Zones\Create.cshtml" />
-    <Content Include="Views\Zones\Delete.cshtml" />
-    <Content Include="Views\Zones\Details.cshtml" />
-    <Content Include="Views\Zones\Edit.cshtml" />
-    <Content Include="Views\Zones\Index.cshtml" />
     <Content Include="startbootstrap-sb-admin-gh-pages\.jsbeautifyrc" />
     <Content Include="startbootstrap-sb-admin-gh-pages\.travis.yml" />
     <Content Include="startbootstrap-sb-admin-gh-pages\LICENSE" />
@@ -1488,6 +1483,12 @@
     <Content Include="Views\Shared\StockistLayout.cshtml" />
     <Content Include="Views\Stockist\StockistDashBoard.cshtml" />
     <Content Include="Views\Stockist\ProfilePage.cshtml" />
+    <Content Include="Views\Zones\Create.cshtml" />
+    <Content Include="Views\Zones\Delete.cshtml" />
+    <Content Include="Views\Zones\Details.cshtml" />
+    <Content Include="Views\Zones\Edit.cshtml" />
+    <Content Include="Views\Zones\Index.cshtml" />
+    <Content Include="Views\Stockist\Edit.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
