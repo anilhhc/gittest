@@ -17,8 +17,7 @@ namespace HhcTst.Controllers
         // GET: STATEs
         public ActionResult Index()
         {
-
-                var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
+         var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
                 ViewBag.Zones=fromDatabaseEF;
            // var v=from d in db.STATEs
               //    Where 
