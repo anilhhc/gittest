@@ -14,7 +14,7 @@ namespace HhcTst.Controllers
     public class AdminController : Controller
     {
         HhcDbEntities db = new HhcDbEntities();
-
+        
         public FileResult DownloadExcel()
         {
             string path = "/Doc/Users.xlsx";
@@ -128,7 +128,7 @@ namespace HhcTst.Controllers
             }
         }
         // GET: Admin
-        //[Authorize(Roles="Admin")]
+        [Authorize(Roles="Admin")]
         public ActionResult GetAdmins()
         {
             if (Session["loggedAdminName"] != null)

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<HhcTst.Models.foursolarwalloflove>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WallOfLove1</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shortdesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fulldesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imageurl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seotittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seokeywords)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.seometatags)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.urltittle)
+            </th>
+            <th></th>
+        </tr>*@
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.LabelFor(modelItem => item.tittle)
+            </td>
+            <td>
+                @Html.LabelFor(modelItem => item.shortdesc)
+            </td>
+            <td>
+                @Html.LabelFor(modelItem => item.fulldesc)
+            </td>
+            <td>
+                @Html.LabelFor(modelItem => item.imageurl)
+            </td>
+            <td>
+                @Html.LabelFor(modelItem => item.pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seotittle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seokeywords)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.seometatags)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.urltittle)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.foursolarwallofloveID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.foursolarwallofloveID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.foursolarwallofloveID })
+            </td>*@
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

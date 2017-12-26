@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mokshadbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="foursolarwalloflove">
+          <Key>
+            <PropertyRef Name="foursolarwallofloveID" />
+          </Key>
+          <Property Name="foursolarwallofloveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tittle" Type="nvarchar" MaxLength="500" />
+          <Property Name="shortdesc" Type="nvarchar(max)" />
+          <Property Name="fulldesc" Type="nvarchar(max)" />
+          <Property Name="imageurl" Type="nvarchar" MaxLength="500" />
+          <Property Name="pages" Type="nvarchar(max)" />
+          <Property Name="url" Type="nvarchar(max)" />
+          <Property Name="seotittle" Type="nvarchar" MaxLength="500" />
+          <Property Name="seokeywords" Type="nvarchar(max)" />
+          <Property Name="seometatags" Type="nvarchar(max)" />
+          <Property Name="urltittle" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="mokshadbModelStoreContainer">
+          <EntitySet Name="foursolarwalloflove" EntityType="Self.foursolarwalloflove" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mokshadbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="foursolarwalloflove">
+          <Key>
+            <PropertyRef Name="foursolarwallofloveID" />
+          </Key>
+          <Property Name="foursolarwallofloveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tittle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="shortdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fulldesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imageurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pages" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="seotittle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="seokeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="seometatags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="urltittle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="mkdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="foursolarwallofloves" EntityType="Self.foursolarwalloflove" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mokshadbModelStoreContainer" CdmEntityContainer="mkdbEntities">
+          <EntitySetMapping Name="foursolarwallofloves">
+            <EntityTypeMapping TypeName="mokshadbModel.foursolarwalloflove">
+              <MappingFragment StoreEntitySet="foursolarwalloflove">
+                <ScalarProperty Name="foursolarwallofloveID" ColumnName="foursolarwallofloveID" />
+                <ScalarProperty Name="tittle" ColumnName="tittle" />
+                <ScalarProperty Name="shortdesc" ColumnName="shortdesc" />
+                <ScalarProperty Name="fulldesc" ColumnName="fulldesc" />
+                <ScalarProperty Name="imageurl" ColumnName="imageurl" />
+                <ScalarProperty Name="pages" ColumnName="pages" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="seotittle" ColumnName="seotittle" />
+                <ScalarProperty Name="seokeywords" ColumnName="seokeywords" />
+                <ScalarProperty Name="seometatags" ColumnName="seometatags" />
+                <ScalarProperty Name="urltittle" ColumnName="urltittle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
