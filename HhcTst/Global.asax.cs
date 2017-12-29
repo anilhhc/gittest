@@ -20,6 +20,8 @@ namespace HhcTst
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+          //  RouteTable.Routes routeCollection;
+          //  routeCollection.MapPageRoute("DefaultRoute", string.Empty, "~/YourDesiredSubFolder/YourDesiredDocument.aspx");
         }
     }
 }

@@ -4,13 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="11624b7d28384c20bb9aad0fb61b0558" Name="Diagram1">
-        <EntityTypeShape EntityType="HhcDbModel.Admin" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+      <Diagram DiagramId="11624b7d28384c20bb9aad0fb61b0558" Name="Diagram1" ZoomLevel="124">
         <EntityTypeShape EntityType="HhcDbModel.Category" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.CITy" Width="1.5" PointX="2.875" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Employee" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Hdivision" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcAdminLogin" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.hhcControlPanelIPStat" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.hhcprimarysale" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.hhcsecondarysale" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
@@ -39,6 +37,7 @@
         <EntityTypeShape EntityType="HhcDbModel.VENDORTYPE" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.VENDORTYPESpecialisationsentry" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HhcDbModel.Zone" Width="1.5" PointX="0.5" PointY="2.5" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcAdminLogin" Width="1.5" PointX="0.75" PointY="16.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

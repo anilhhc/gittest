@@ -53,7 +53,11 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (db.Zones.Where(u => u.ZoneName == zone.ZoneName).Any())
+                var v = from p in db.Zones
+                        where p.ZoneName == zone.ZoneName && p.ZoneID != zone.ZoneID
+                        select p;
+                if (v.Any())
+              //  if (db.Zones.Where(u => u.ZoneName == zone.ZoneName).Any())
                 {
                     ModelState.AddModelError("ZoneName", "Zone Name already taken");
                     return View(zone);
@@ -93,7 +97,13 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (dz.getothercount(zone.ZoneName, zone.ZoneID) > 0)
+                var v = from p in db.Zones
+                        where p.ZoneName == zone.ZoneName && p.ZoneID != zone.ZoneID
+                        select p;
+                if (v.Any())
+
+
+               // if (dz.getothercount(zone.ZoneName, zone.ZoneID) > 0)
 
                 // if (db.Zones.Where(u => u.ZoneName == zone.ZoneName).Any())
                 {

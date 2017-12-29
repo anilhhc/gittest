@@ -38,6 +38,8 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
+               // var count = db.Stockists.Count(t=>t.StockistName==stockist.StockistName)//.Where(o => o.StockistName == stockist.StockistName).SelectMany(o=>o.StockistName).Count();
+               // if(db.Stockists.Count<>)
                  if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
                 {
                     ModelState.AddModelError("ZoneName", "Zone Name already taken");

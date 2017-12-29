@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Generic;   
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -46,13 +46,24 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AdminNo,AdminName,Password")] hhcAdminLogin hhcAdminLogin)
+        public ActionResult Create([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd")] hhcAdminLogin hhcAdminLogin)
         {
             if (ModelState.IsValid)
             {
-                db.hhcAdminLogins.Add(hhcAdminLogin);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var v = from p in db.hhcAdminLogins
+                        where p.UserName == hhcAdminLogin.UserName && p.hhcAdminLoginsId != hhcAdminLogin.hhcAdminLoginsId
+                        select p;
+                if (v.Any())
+                {
+                    ModelState.AddModelError("UserName", "UserName  already taken");
+                    return View(hhcAdminLogin);
+                }
+                else
+                {
+                    db.hhcAdminLogins.Add(hhcAdminLogin);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(hhcAdminLogin);
@@ -78,7 +89,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AdminNo,AdminName,Password")] hhcAdminLogin admin)
+        public ActionResult Edit([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd")] hhcAdminLogin admin)
         {
             if (ModelState.IsValid)
             {

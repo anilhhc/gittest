@@ -1,4 +1,4 @@
-﻿@model HhcTst.Models.Admin
+﻿@model HhcTst.Models.hhcAdminLogin
 
 @{
     ViewBag.Title = "Delete";
@@ -13,19 +13,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.AdminName)
+            @Html.DisplayNameFor(model => model.UserName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AdminName)
+            @Html.DisplayFor(model => model.UserName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.UserPwd)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Password)
+            @Html.DisplayFor(model => model.UserPwd)
         </dd>
 
     </dl>

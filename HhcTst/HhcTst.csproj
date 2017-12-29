@@ -15,7 +15,7 @@
     <AssemblyName>HhcTst</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -296,7 +296,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AdminsApiController.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\CITiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -315,11 +314,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Admin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
@@ -494,11 +497,13 @@
     <Content Include="HtmlPages\HtmlPage2.html" />
     <Content Include="HtmlPages\HtmlPage3.html" />
     <Content Include="HtmlPages\HtmlPage4.html" />
+    <Content Include="default.aspx" />
     <Content Include="Models\HhcDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\HhcDb.edmx.sql" />
     <Content Include="Models\HhcDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
@@ -605,7 +610,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
@@ -1347,8 +1351,13 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1403,7 +1412,9 @@
     <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery-easing\jquery.easing.min.js" />
     <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.js" />
     <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1417,7 +1428,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
@@ -1592,7 +1602,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56930</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55654/</IISUrl>
+          <IISUrl>http://localhost/HhcTst</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

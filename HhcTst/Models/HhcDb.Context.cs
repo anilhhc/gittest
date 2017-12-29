@@ -12,6 +12,8 @@ namespace HhcTst.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HhcDbEntities : DbContext
     {
@@ -25,12 +27,10 @@ namespace HhcTst.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CITy> CITies { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hdivision> Hdivisions { get; set; }
-        public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
         public virtual DbSet<hhcControlPanelIPStat> hhcControlPanelIPStats { get; set; }
         public virtual DbSet<hhcprimarysale> hhcprimarysales { get; set; }
         public virtual DbSet<hhcsecondarysale> hhcsecondarysales { get; set; }
@@ -59,5 +59,19 @@ namespace HhcTst.Models
         public virtual DbSet<VENDORTYPE> VENDORTYPES { get; set; }
         public virtual DbSet<VENDORTYPESpecialisationsentry> VENDORTYPESpecialisationsentries { get; set; }
         public virtual DbSet<Zone> Zones { get; set; }
+        public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> spSkCountId(string stockistname, string stockistId)
+        {
+            var stockistnameParameter = stockistname != null ?
+                new ObjectParameter("stockistname", stockistname) :
+                new ObjectParameter("stockistname", typeof(string));
+    
+            var stockistIdParameter = stockistId != null ?
+                new ObjectParameter("StockistId", stockistId) :
+                new ObjectParameter("StockistId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spSkCountId", stockistnameParameter, stockistIdParameter);
+        }
     }
 }
