@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;   
+using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -10,52 +10,52 @@ using HhcTst.Models;
 
 namespace HhcTst.Controllers
 {
-    public class AdminsController : Controller
+    public class hhcAdminLoginsController : Controller
     {
         private HhcDbEntities db = new HhcDbEntities();
 
-        // GET: Admins
+        // GET: hhcAdminLogins
         public ActionResult Index()
         {
             return View(db.hhcAdminLogins.ToList());
         }
 
-        // GET: Admins/Details/5
+        // GET: hhcAdminLogins/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
-            if (admin == null)
+            hhcAdminLogin hhcAdminLogin = db.hhcAdminLogins.Find(id);
+            if (hhcAdminLogin == null)
             {
                 return HttpNotFound();
             }
-            return View(admin);
+            return View(hhcAdminLogin);
         }
 
-        // GET: Admins/Create
+        // GET: hhcAdminLogins/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admins/Create
+        // POST: hhcAdminLogins/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd")] hhcAdminLogin hhcAdminLogin)
+        public ActionResult Create([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd,Name,Permissions,EmailID,ActiveStatus")] hhcAdminLogin hhcAdminLogin)
         {
             if (ModelState.IsValid)
             {
                 var v = from p in db.hhcAdminLogins
                         where p.UserName == hhcAdminLogin.UserName && p.hhcAdminLoginsId != hhcAdminLogin.hhcAdminLoginsId
                         select p;
-                if (v.Any())
+                if (v.Any()) 
                 {
-                    ModelState.AddModelError("UserName", "UserName  already taken");
+                    ModelState.AddModelError("UserName", "Name already taken");
                     return View(hhcAdminLogin);
                 }
                 else
@@ -69,53 +69,64 @@ namespace HhcTst.Controllers
             return View(hhcAdminLogin);
         }
 
-        // GET: Admins/Edit/5
+        // GET: hhcAdminLogins/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
-            if (admin == null)
+            hhcAdminLogin hhcAdminLogin = db.hhcAdminLogins.Find(id);
+            if (hhcAdminLogin == null)
             {
                 return HttpNotFound();
             }
-            return View(admin);
+            return View(hhcAdminLogin);
         }
 
-        // POST: Admins/Edit/5
+        // POST: hhcAdminLogins/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd")] hhcAdminLogin admin)
+        public ActionResult Edit([Bind(Include = "hhcAdminLoginsId,UserName,UserPwd,Name,Permissions,EmailID,ActiveStatus")] hhcAdminLogin hhcAdminLogin)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(admin).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var v = from p in db.hhcAdminLogins
+                        where p.UserName == hhcAdminLogin.UserName && p.hhcAdminLoginsId != hhcAdminLogin.hhcAdminLoginsId
+                        select p;
+                if (v.Any())
+                {
+                    ModelState.AddModelError("UserName",hhcAdminLogin.UserName +" Name already taken");
+                    return View(hhcAdminLogin);
+                }
+                else
+                {
+                    db.Entry(hhcAdminLogin).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-            return View(admin);
+            return View(hhcAdminLogin);
         }
 
-        // GET: Admins/Delete/5
+        // GET: hhcAdminLogins/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            hhcAdminLogin admin = db.hhcAdminLogins.Find(id);
-            if (admin == null)
+            hhcAdminLogin hhcAdminLogin = db.hhcAdminLogins.Find(id);
+            if (hhcAdminLogin == null)
             {
                 return HttpNotFound();
             }
-            return View(admin);
+            return View(hhcAdminLogin);
         }
 
-        // POST: Admins/Delete/5
+        // POST: hhcAdminLogins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

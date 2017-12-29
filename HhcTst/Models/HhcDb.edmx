@@ -927,11 +927,11 @@
           <EntitySet Name="VENDORTYPES" EntityType="Self.VENDORTYPE" />
           <EntitySet Name="VENDORTYPESpecialisationsentries" EntityType="Self.VENDORTYPESpecialisationsentry" />
           <EntitySet Name="Zones" EntityType="HhcDbModel.Zone" />
-          <EntitySet Name="hhcAdminLogins" EntityType="HhcDbModel.hhcAdminLogin" />
           <FunctionImport Name="spSkCountId" ReturnType="Collection(Int32)">
             <Parameter Name="stockistname" Mode="In" Type="String" />
             <Parameter Name="StockistId" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="hhcAdminLogins" EntityType="HhcDbModel.hhcAdminLogin" />
         </EntityContainer>
         <EntityType Name="Zone">
           <Key>
@@ -1412,6 +1412,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spSkCountId" FunctionName="HhcDbModel.Store.spSkCountId" />
           <EntitySetMapping Name="hhcAdminLogins">
             <EntityTypeMapping TypeName="HhcDbModel.hhcAdminLogin">
               <MappingFragment StoreEntitySet="hhcAdminLogins">
@@ -1425,7 +1426,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spSkCountId" FunctionName="HhcDbModel.Store.spSkCountId" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

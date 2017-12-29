@@ -296,8 +296,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\CITiesController.cs" />
+    <Compile Include="Controllers\hhcAdminLoginsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HproductslistdescriptionsController.cs" />
     <Compile Include="Controllers\HproductslistsController.cs" />
@@ -1433,11 +1433,6 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\AdminDashBoard.cshtml" />
     <Content Include="Views\Admin\GetAdmins.cshtml" />
-    <Content Include="Views\Admins\Create.cshtml" />
-    <Content Include="Views\Admins\Delete.cshtml" />
-    <Content Include="Views\Admins\Details.cshtml" />
-    <Content Include="Views\Admins\Edit.cshtml" />
-    <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Stockists\Create.cshtml" />
     <Content Include="Views\Stockists\Delete.cshtml" />
     <Content Include="Views\Stockists\Details.cshtml" />
@@ -1561,6 +1556,11 @@
     <Content Include="Views\WallOfLove\Index.cshtml" />
     <Content Include="Views\WallOfLove\WallOfLove1.cshtml" />
     <Content Include="Views\ImportExport\Index.cshtml" />
+    <Content Include="Views\hhcAdminLogins\Create.cshtml" />
+    <Content Include="Views\hhcAdminLogins\Delete.cshtml" />
+    <Content Include="Views\hhcAdminLogins\Details.cshtml" />
+    <Content Include="Views\hhcAdminLogins\Edit.cshtml" />
+    <Content Include="Views\hhcAdminLogins\Index.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
