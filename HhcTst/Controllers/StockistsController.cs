@@ -97,9 +97,9 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                var v=from p in db.Stockists
-                      where p.StockistName==stockist.StockistName && p.StockistId!=stockist.StockistId
-                      select p;
+                var v = from p in db.Stockists
+                        where p.StockistName == stockist.StockistName && p.StockistId != stockist.StockistId
+                        select p;
                 if(v.Any())
                // if(db.spSkCountId(stockist.StockistName,stockist.StockistId.ToString()).Any())
                // if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
