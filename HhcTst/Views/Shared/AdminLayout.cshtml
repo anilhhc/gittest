@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
         @RenderSection("head", required: false)
+    
 </head>
 <body>
     <div>
@@ -13,7 +14,7 @@
             <img src='@Url.Content("~/Content/Images/HhcLogo.png")' />
         </a>
     </div>
-    <div class="glyphicon-tree-deciduous">
+    <div class="">
         @Html.ActionLink("Manage-Zones", "Index", "Zones")
         @Html.ActionLink("Manage-States", "Index", "STATEs")
         @Html.ActionLink("Manage-Cities", "Index", "CITies")
@@ -28,7 +29,7 @@
         <h1>This is in right part of display</h1>
     }
     @section LeftSection{
-        <p>footer here</p>
+        <p>left part here</p>
     }
     <footer class="panel-footer">
         @RenderSection("footer", false)

@@ -47,7 +47,7 @@ namespace HhcTst.Controllers
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
+
                 }
 
             }

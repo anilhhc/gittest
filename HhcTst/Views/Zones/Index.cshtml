@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<HhcTst.Models.Zone>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -21,20 +20,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZoneName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ACTIVE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ZoneID }) |
-            @*@Html.ActionLink("Details", "Details", new { id=item.ZoneID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.ZoneID })
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZoneName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACTIVE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ZoneID }) |
+                @*@Html.ActionLink("Details", "Details", "Zones", new { id = item.ZoneID}) |*@
+                @{if (item.ACTIVE == "y")
+                {
+                   var v= (item.ACTIVE="n");
+                    @Html.ActionLink("DeActivate", "Delete", new { id = item.ZoneID})
+                }
+
+                  else { 
+                  @Html.ActionLink("Activate", "Delete", new { id = item.ZoneID })
+                  }
 }
+            </td>
+        </tr>
+    }
 
 </table>

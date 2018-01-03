@@ -11,6 +11,7 @@ using System.Data.Entity.Validation;
 
 namespace HhcTst.Controllers
 {
+    [HandleError]
     public class AdminController : Controller
     {
         HhcDbEntities db = new HhcDbEntities();

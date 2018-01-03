@@ -33,75 +33,76 @@
         </div>
     </div>
     <script>
-            $(function () {
-                $('input[type="file"]').change(function (e) {
+    $(function () {
+        $('input[type="file"]').change(function (e) {
+            debugger
+            var filename = e.target.files[0].name;
+            var Files = $("#fileLoadDoc").get(0);
+            $("#txtfile").val(filename);
+            // $("#btnsbmt").trigger("click");
+            formdata = new FormData();
+            for (var i = 0; i < e.target.files.length; i++) {
+                formdata.append(e.target.files[i].name, e.target.files[i]);
+            }
+            $.ajax({
+                url: '@Url.Action("UploadFile", "ImportExport")',
+                type: "POST",
+                datatype: "JSON",
+                contentType: false,
+                processData: false,
+                data: formdata,
+                success: function (result) {
                     debugger
-                    var filename = e.target.files[0].name;
-                    var Files = $("#fileLoadDoc").get(0);
-                    $("#txtfile").val(filename);
-                    // $("#btnsbmt").trigger("click");
-                    formdata = new FormData();
-                    for (var i = 0; i < e.target.files.length; i++) {
-                        formdata.append(e.target.files[i].name, e.target.files[i]);
-                    }
-                    $.ajax({
-                        url: '@Url.Action("UploadFile", "ImportExport")',
-                        type: "POST",
-                        datatype: "JSON",
-                        contentType: false,
-                        processData: false,
-                        data: formdata,
-                        success: function (result) {
-                            debugger
-                            var count = 0;
-                            if (result != null) {
-                                debugger
-                                $("#message").css('color', 'green').text("Your File has succesfully Loaded !!!")
-                                $(".head").empty();
-                                $(".body").empty();
-                                for (var i = 0; i < result.row; i++) {
-                                    if (i == 0) {
-                                        $(".head").append("<tr>");
-                                    }
-                                    else {
-                                        $(".body").append("<tr class='tr" + i + "'>");
-                                    }
-                                    for (var j = 0; j < result.col; j++) {
-                                        if (i == 0) {
-                                            $(".head tr").append("<th>" + result.data[count] + "</th>");
-                                        }
-                                        else {
-                                            if (result.data[count] != null) {
-                                                $(".body .tr" + i + "").append("<td>" + result.data[count] + "</td>");
-                                            }
-                                            else {
-                                                $(".body .tr" + i + "").append("<td></td>");
-                                            }
-                                        }
-                                        count++;
-                                    }
-                                    if (i == 0) {
-                                        $(".head").append("</tr>");
-
-                                    }
-                                    else {
-                                        $(".body .tr" + i + "").append("</tr>");
-                                    }
-                                }
+                    var count = 0;
+                    if (result != null) {
+                        debugger
+                        $("#message").css('color', 'green').text("Your File has succesfully Loaded !!!")
+                        $(".head").empty();
+                        $(".body").empty();
+                        for (var i = 0; i < result.row; i++) {
+                            if (i == 0) {
+                                $(".head").append("<tr>");
                             }
                             else {
-                                $("#message").css('color', 'red').text("Your File has failed to Loaded try again!!!")
+                                $(".body").append("<tr class='tr" + i + "'>");
+                            }
+                            for (var j = 0; j < result.col; j++) {
+                                if (i == 0) {
+                                    $(".head tr").append("<th>" + result.data[count] + "</th>");
+                                }
+                                else {
+                                    if (result.data[count] != null) {
+                                        $(".body .tr" + i + "").append("<td>" + result.data[count] + "</td>");
+                                    }
+                                    else {
+                                        $(".body .tr" + i + "").append("<td></td>");
+                                    }
+                                }
+                                count++;
+                            }
+                            if (i == 0) {
+                                $(".head").append("</tr>");
+
+                            }
+                            else {
+                                $(".body .tr" + i + "").append("</tr>");
                             }
                         }
-                    })
-                });
-            });
-            function fileLoad() {
-                debugger
-                $('#txtfile').val("");
-                $('#fileLoadDoc').val("");
-                $('#btnFileLoad').val("");
-                $("#fileLoadDoc").trigger('click');
-            }
+                    }
+                    else {
+                        $("#message").css('color', 'red').text("Your File has failed to Loaded try again!!!")
+                    }
+                }
+            })
+        });
+    });
+    function fileLoad() {
+        debugger
+        $('#txtfile').val("");
+        $('#fileLoadDoc').val("");
+        $('#btnFileLoad').val("");
+        $("#fileLoadDoc").trigger('click');
+    }
     </script>
+
 </div>
