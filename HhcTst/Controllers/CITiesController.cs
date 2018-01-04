@@ -120,7 +120,21 @@ namespace HhcTst.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult Active(int id)
+        {
+            CITy city = db.CITies.Find(id);
+            if (city.ACTIVE == "n")
+            {
+                city.ACTIVE = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                city.ACTIVE = "n";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

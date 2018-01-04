@@ -299,6 +299,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CITiesController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\hhcAdminLoginsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HproductslistdescriptionsController.cs" />
@@ -308,8 +309,7 @@
     <Compile Include="Controllers\StockistController.cs" />
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
-    <Compile Include="Controllers\subareaCITiesController.cs" />
-    <Compile Include="Controllers\testController.cs" />
+    <Compile Include="Controllers\SubAreaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallOfLoveController.cs" />
     <Compile Include="Controllers\ZonesController.cs" />
@@ -424,12 +424,13 @@
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StockistLoginVM.cs" />
-    <Compile Include="Models\subareaCITy.cs">
+    <Compile Include="Models\SubArea.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TestUploadExcel.cs" />
     <Compile Include="Models\UploadFileName.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
@@ -1583,19 +1584,18 @@
     <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\test\Index.cshtml" />
-    <Content Include="Views\subareaCITies\Create.cshtml" />
-    <Content Include="Views\subareaCITies\Delete.cshtml" />
-    <Content Include="Views\subareaCITies\Details.cshtml" />
-    <Content Include="Views\subareaCITies\Edit.cshtml" />
-    <Content Include="Views\subareaCITies\Index.cshtml" />
+    <Content Include="Views\SubArea\Create.cshtml" />
+    <Content Include="Views\SubArea\Delete.cshtml" />
+    <Content Include="Views\SubArea\Details.cshtml" />
+    <Content Include="Views\SubArea\Edit.cshtml" />
+    <Content Include="Views\SubArea\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Hproductslistdescriptions\Create.cshtml" />
-    <Content Include="Views\Hproductslistdescriptions\Delete.cshtml" />
-    <Content Include="Views\Hproductslistdescriptions\Details.cshtml" />
-    <Content Include="Views\Hproductslistdescriptions\Edit.cshtml" />
-    <Content Include="Views\Hproductslistdescriptions\Index.cshtml" />
+    <Content Include="Views\CITies\Hproductslistdescriptions\Create.cshtml" />
+    <Content Include="Views\CITies\Hproductslistdescriptions\Delete.cshtml" />
+    <Content Include="Views\CITies\Hproductslistdescriptions\Details.cshtml" />
+    <Content Include="Views\CITies\Hproductslistdescriptions\Edit.cshtml" />
+    <Content Include="Views\CITies\Hproductslistdescriptions\Index.cshtml" />
     <Content Include="Views\Hproductslists\Create.cshtml" />
     <Content Include="Views\Hproductslists\Delete.cshtml" />
     <Content Include="Views\Hproductslists\Details.cshtml" />
@@ -1632,6 +1632,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Doc\" />
+    <Folder Include="Views\Demo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

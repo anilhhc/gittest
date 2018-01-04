@@ -12,11 +12,13 @@ namespace HhcTst.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class subareaCITy
+    public partial class SubArea
     {
-        public int subareaCITYID { get; set; }
-        public string subareaCITYNAME { get; set; }
+        public int SubAreaID { get; set; }
+        public string SubArea1 { get; set; }
         public Nullable<int> CITYID { get; set; }
         public string ACTIVE { get; set; }
+    
+        public virtual CITy CITy { get; set; }
     }
 }

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<HhcTst.Models.hhcAdminLogin>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Admins</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -51,12 +51,38 @@
             @Html.DisplayFor(modelItem => item.EmailID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ActiveStatus)
+            @{if (item.ActiveStatus == "y")
+            {
+                @Html.Label("Active")
+                @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
+            }
+            else if (item.ActiveStatus == "n")
+            {
+                @Html.Label("DeActive")
+            }
+
+            }
+            @*@Html.DisplayFor(modelItem => item.ActiveStatus)*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.hhcAdminLoginsId }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.hhcAdminLoginsId }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.hhcAdminLoginsId })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.hhcAdminLoginsId })*@
+
+            @{if (item.ActiveStatus == "y")
+            {
+
+                //var v= (item.ACTIVE="n");
+                @Html.ActionLink("DeActivate", "Active", new { id = item.hhcAdminLoginsId })
+
+
+            }
+
+            else
+            {
+                @Html.ActionLink("Activate", "Active", new { id = item.hhcAdminLoginsId })
+            }
+            }
         </td>
     </tr>
 }

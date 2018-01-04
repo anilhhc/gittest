@@ -14,9 +14,19 @@ namespace HhcTst.Models
     
     public partial class STATE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public STATE()
+        {
+            this.CITies = new HashSet<CITy>();
+        }
+    
         public int STATEID { get; set; }
         public string STATENAME { get; set; }
+        public Nullable<int> Zone { get; set; }
         public string ACTIVE { get; set; }
-        public string Zone { get; set; }
+    
+        public virtual Zone Zone1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CITy> CITies { get; set; }
     }
 }

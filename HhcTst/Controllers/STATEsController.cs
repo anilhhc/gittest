@@ -19,7 +19,7 @@ namespace HhcTst.Controllers
         {
          var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
                 ViewBag.Zones=fromDatabaseEF;
-           // var v=from d in db.STATEs
+         //  // var v=from d in db.STATEs
               //    Where 
                 return View(db.STATEs.ToList());
         }
@@ -42,6 +42,8 @@ namespace HhcTst.Controllers
         // GET: STATEs/Create
         public ActionResult Create()
         {
+            var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
+            ViewBag.Zones = fromDatabaseEF;
             return View();
         }
 
@@ -82,7 +84,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "STATEID,STATENAME,COUNTRYID,ACTIVE")] STATE sTATE)
+        public ActionResult Edit([Bind(Include = "STATEID,STATENAME,Zone,ACTIVE")] STATE sTATE)
         {
             if (ModelState.IsValid)
             {
@@ -116,6 +118,21 @@ namespace HhcTst.Controllers
             STATE sTATE = db.STATEs.Find(id);
             db.STATEs.Remove(sTATE);
             db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Active(int id)
+        {
+            STATE state = db.STATEs.Find(id);
+            if (state.ACTIVE == "n")
+            {
+                state.ACTIVE = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                state.ACTIVE = "n";
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
 

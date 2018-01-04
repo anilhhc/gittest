@@ -20,11 +20,12 @@ namespace HhcTst.Controllers
         // GET: Zones
         public ActionResult Index()
         {
-            if (db.Zones.Where(u => u.ACTIVE == "y").Any()) 
-            {
+           //// if (db.Zones.Where(u => u.ACTIVE == "y").Any()) 
+           // {
 
-                return View(db.Zones.ToList());
-            }
+           //  //  return View(db.Zones.ToList());
+           // }
+            //return View(db.Zones.Where(u=>u.ACTIVE=="y").ToList());
             return View(db.Zones.ToList());
         }
 
@@ -150,6 +151,27 @@ namespace HhcTst.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Active(int id)
+        {
+            Zone zone = db.Zones.Find(id);
+            if(zone.ACTIVE=="n")
+            {
+                zone.ACTIVE = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                zone.ACTIVE = "n";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
 
         protected override void Dispose(bool disposing)
         {

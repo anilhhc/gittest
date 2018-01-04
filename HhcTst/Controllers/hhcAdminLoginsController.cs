@@ -137,6 +137,21 @@ namespace HhcTst.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Active(int id)
+        {
+            hhcAdminLogin hhcadminlogin = db.hhcAdminLogins.Find(id);
+            if (hhcadminlogin.ActiveStatus == "n")
+            {
+                hhcadminlogin.ActiveStatus = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                hhcadminlogin.ActiveStatus = "n";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

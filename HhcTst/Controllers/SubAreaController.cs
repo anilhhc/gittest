@@ -10,30 +10,30 @@ using HhcTst.Models;
 
 namespace HhcTst.Controllers
 {
-    public class subareaCITiesController : Controller
+    public class SubAreaController : Controller
     {
         private HhcDbEntities db = new HhcDbEntities();
 
         // GET: subareaCITies
         public ActionResult Index()
         {
-            return View(db.subareaCITies.ToList());
+            return View(db.SubAreas.ToList());
         }
 
         // GET: subareaCITies/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            subareaCITy subareaCITy = db.subareaCITies.Find(id);
-            if (subareaCITy == null)
-            {
-                return HttpNotFound();
-            }
-            return View(subareaCITy);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    SubArea subareaCITy = db.SubAreas.Find(id);
+        //    if (subareaCITy == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(subareaCITy);
+        //}
 
         // GET: subareaCITies/Create
         public ActionResult Create()
@@ -46,16 +46,16 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "subareaCITYID,subareaCITYNAME,CITYID,ACTIVE")] subareaCITy subareaCITy)
+        public ActionResult Create([Bind(Include = "SubAreaID,SubArea1,CITYID,ACTIVE")] SubArea subarea)
         {
             if (ModelState.IsValid)
             {
-                db.subareaCITies.Add(subareaCITy);
+                db.SubAreas.Add(subarea);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(subareaCITy);
+            return View(subarea);
         }
 
         // GET: subareaCITies/Edit/5
@@ -65,7 +65,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            subareaCITy subareaCITy = db.subareaCITies.Find(id);
+            SubArea subareaCITy = db.SubAreas.Find(id);
             if (subareaCITy == null)
             {
                 return HttpNotFound();
@@ -78,43 +78,58 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "subareaCITYID,subareaCITYNAME,CITYID,ACTIVE")] subareaCITy subareaCITy)
+        public ActionResult Edit([Bind(Include = "SubAreaID,SubArea1,CITYID,ACTIVE")] SubArea subarea)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(subareaCITy).State = EntityState.Modified;
+                db.Entry(subarea).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(subareaCITy);
+            return View(subarea);
         }
 
-        // GET: subareaCITies/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            subareaCITy subareaCITy = db.subareaCITies.Find(id);
-            if (subareaCITy == null)
-            {
-                return HttpNotFound();
-            }
-            return View(subareaCITy);
-        }
+        //// GET: subareaCITies/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    SubArea subareaCITy = db.SubAreas.Find(id);
+        //    if (subareaCITy == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(subareaCITy);
+        //}
 
-        // POST: subareaCITies/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        //// POST: subareaCITies/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    SubArea subareaCITy = db.SubAreas.Find(id);
+        //    db.SubAreas.Remove(subareaCITy);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+        public ActionResult Active(int id)
         {
-            subareaCITy subareaCITy = db.subareaCITies.Find(id);
-            db.subareaCITies.Remove(subareaCITy);
-            db.SaveChanges();
+            SubArea subarea = db.SubAreas.Find(id);
+            if (subarea.ACTIVE == "n")
+            {
+                subarea.ACTIVE = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                subarea.ACTIVE = "n";
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)

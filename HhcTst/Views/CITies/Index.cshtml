@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HhcTst.Models.CITy>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.CITYNAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.STATEID)
+            @Html.DisplayNameFor(model => model.STATE.STATENAME)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
@@ -30,15 +30,40 @@
             @Html.DisplayFor(modelItem => item.CITYNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.STATEID)
+            @Html.DisplayFor(modelItem => item.STATE.STATENAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ACTIVE)
+            @{if (item.ACTIVE == "y")
+            {
+                @Html.Label("Active")
+                @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
+            }
+            else if (item.ACTIVE == "n")
+            {
+                @Html.Label("DeActive")
+            }
+
+            }
+            @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CITYID }) |
             @*@Html.ActionLink("Details", "Details", new { id=item.CITYID }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.CITYID })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.CITYID })*@
+            @{if (item.ACTIVE == "y")
+            {
+
+                //var v= (item.ACTIVE="n");
+                @Html.ActionLink("DeActivate", "Active", new { id = item.CITYID })
+
+
+            }
+
+            else
+            {
+                @Html.ActionLink("Activate", "Active", new { id = item.CITYID })
+            }
+            }
         </td>
     </tr>
 }

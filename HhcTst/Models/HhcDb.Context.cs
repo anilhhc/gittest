@@ -45,9 +45,7 @@ namespace HhcTst.Models
         public virtual DbSet<OtherAdminLogin> OtherAdminLogins { get; set; }
         public virtual DbSet<OtherAdminPermission> OtherAdminPermissions { get; set; }
         public virtual DbSet<secondarysale> secondarysales { get; set; }
-        public virtual DbSet<STATE> STATEs { get; set; }
         public virtual DbSet<Stockist> Stockists { get; set; }
-        public virtual DbSet<subareaCITy> subareaCITies { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UploadFileName> UploadFileNames { get; set; }
         public virtual DbSet<UserAdminLogin> UserAdminLogins { get; set; }
@@ -60,6 +58,8 @@ namespace HhcTst.Models
         public virtual DbSet<VENDORTYPESpecialisationsentry> VENDORTYPESpecialisationsentries { get; set; }
         public virtual DbSet<Zone> Zones { get; set; }
         public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
+        public virtual DbSet<STATE> STATEs { get; set; }
+        public virtual DbSet<SubArea> SubAreas { get; set; }
     
         public virtual ObjectResult<Nullable<int>> spSkCountId(string stockistname, string stockistId)
         {

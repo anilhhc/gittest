@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HhcTst.Models.Stockist>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <h2>Stockists</h2>
@@ -36,7 +36,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StockistId }) |
           @*  @Html.ActionLink("Details", "Details", new { id=item.StockistId }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id=item.StockistId })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.StockistId })*@
         </td>
     </tr>
 }
