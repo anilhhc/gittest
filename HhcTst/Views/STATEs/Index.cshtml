@@ -6,16 +6,17 @@
 }
 
 <h2>States</h2>
-
+<p> Populating With Database and EF</p>
+@Html.DropDownList("Zones", (SelectList)ViewBag.Zones)
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table table-danger">
     <tr>
-        <td class="text-danger"> Populating With Database and EF </td>
-        <td class="dropdown-toggle">
-            @Html.DropDownList("Zones",(SelectList)ViewBag.Zones)
+        <td class="text-danger"> </td>
+        <td>
+          
         </td>
     </tr>
     

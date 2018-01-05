@@ -63,6 +63,7 @@ namespace HhcTst.Controllers
                    var dateandtime=DateTime.Now;
                    var date=dateandtime.Date;
                    cITy.CreatedOn = date;
+                   //cITy.ACTIVE = "y";
                     db.CITies.Add(cITy);
                     db.SaveChanges();
                 }
