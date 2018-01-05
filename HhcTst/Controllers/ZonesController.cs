@@ -70,6 +70,10 @@ namespace HhcTst.Controllers
                 }
                 else
                 {
+                    var dateandtime = DateTime.Now;
+                    var date = dateandtime.Date;
+                    zone.CreatedOn = date;
+                    zone.ACTIVE = "y";
                     db.Zones.Add(zone);
                     db.SaveChanges();
                     return RedirectToAction("Index");

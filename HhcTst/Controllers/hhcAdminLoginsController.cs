@@ -60,6 +60,9 @@ namespace HhcTst.Controllers
                 }
                 else
                 {
+                    var Dt = DateTime.Now;
+                    var d = Dt.Date;
+                    hhcAdminLogin.CreatedOn = d;
                     db.hhcAdminLogins.Add(hhcAdminLogin);
                     db.SaveChanges();
                     return RedirectToAction("Index");

@@ -56,9 +56,20 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.STATEs.Add(sTATE);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.STATEs.Where(u => u.STATENAME == sTATE.STATENAME).Where(u => u.STATEID != sTATE.STATEID).Any())
+                {
+                    ModelState.AddModelError("ZoneName", "Zone Name already taken");
+                    return View(sTATE);
+                }
+                else
+                {
+                    var dateandtime = DateTime.Now;
+                    var date = dateandtime.Date;
+                    sTATE.CreatedOn = date;
+                    db.STATEs.Add(sTATE);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(sTATE);

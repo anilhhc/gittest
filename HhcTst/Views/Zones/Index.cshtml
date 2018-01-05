@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
         </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.CreatedOn)
+        </th>
         <th></th>
     </tr>
 
@@ -37,6 +40,9 @@
                   }
                 
                 }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem=>item.CreatedOn)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ZoneID }) |
@@ -60,3 +66,4 @@
     }
 
 </table>
+

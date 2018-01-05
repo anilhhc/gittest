@@ -19,6 +19,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Password)
         </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.CreatedOn)
+        </th>
         <th></th>
     </tr>
 
@@ -34,9 +40,40 @@
             @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
+            @{if (item.ACTIVE == "y")
+            {
+                @Html.Label("Active")
+                @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
+            }
+            else if (item.ACTIVE == "n")
+            {
+                @Html.Label("DeActive")
+            }
+
+            }
+            @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.StockistId }) |
           @*  @Html.ActionLink("Details", "Details", new { id=item.StockistId }) |*@
             @*@Html.ActionLink("Delete", "Delete", new { id=item.StockistId })*@
+            @{if (item.ACTIVE == "y")
+            {
+
+                //var v= (item.ACTIVE="n");
+                @Html.ActionLink("DeActivate", "Active", new { id = item.StockistId })
+
+
+            }
+
+            else
+            {
+                @Html.ActionLink("Activate", "Active", new { id = item.StockistId })
+            }
+            }
         </td>
     </tr>
 }

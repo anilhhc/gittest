@@ -11,6 +11,7 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class hhcAdminLogin
     {
@@ -21,5 +22,7 @@ namespace HhcTst.Models
         public string Permissions { get; set; }
         public string EmailID { get; set; }
         public string ActiveStatus { get; set; }
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> CreatedOn { get; set; }
     }
 }

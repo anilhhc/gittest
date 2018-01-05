@@ -52,9 +52,17 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                //if(db.CITies.Count(cITy.CITYID)>0)
-               if (cta.cityprimarycount(cITy.CITYNAME) > 0)
+                if (db.CITies.Where(u => u.CITYNAME == cITy.CITYNAME).Where(u => u.CITYID != cITy.CITYID).Any())
                 {
+                    ModelState.AddModelError("ZoneName", "Zone Name already taken");
+                    return View(cITy);
+                }
+                //if(db.CITies.Count(cITy.CITYID)>0)
+               else
+                {
+                   var dateandtime=DateTime.Now;
+                   var date=dateandtime.Date;
+                   cITy.CreatedOn = date;
                     db.CITies.Add(cITy);
                     db.SaveChanges();
                 }

@@ -64,6 +64,10 @@ namespace HhcTst.Controllers
                 }
                 else
                 {
+                    var dt = DateTime.Now;
+                    var d = dt.Date;
+                    stockist.CreatedOn = d;
+                    stockist.ACTIVE = "y";
                     db.Stockists.Add(stockist);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -142,7 +146,21 @@ namespace HhcTst.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult Active(int id)
+        {
+            Stockist stockist = db.Stockists.Find(id);
+            if (stockist.ACTIVE == "n")
+            {
+                stockist.ACTIVE = "y";
+                db.SaveChanges();
+            }
+            else
+            {
+                stockist.ACTIVE = "n";
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

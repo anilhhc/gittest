@@ -50,9 +50,20 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.SubAreas.Add(subarea);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.SubAreas.Where(u => u.SubArea1 == subarea.SubArea1).Where(u => u.SubAreaID != subarea.SubAreaID).Any())
+                {
+                    ModelState.AddModelError("ZoneName", "Zone Name already taken");
+                    return View(subarea);
+                }
+                else
+                {
+                    var DT = DateTime.Now;
+                    var d = DT.Date;
+                    subarea.CreatedOn = d;
+                    db.SubAreas.Add(subarea);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(subarea);

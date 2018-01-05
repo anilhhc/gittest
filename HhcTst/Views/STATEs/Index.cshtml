@@ -29,6 +29,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ACTIVE)
         </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.CreatedOn)
+        </th>
         <th></th>
     </tr>
 
@@ -53,6 +56,9 @@
 
             }
             @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.CreatedOn)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.STATEID }) |

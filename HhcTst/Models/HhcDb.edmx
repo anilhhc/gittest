@@ -22,6 +22,7 @@
           <Property Name="CITYNAME" Type="nvarchar" MaxLength="100" />
           <Property Name="STATEID" Type="int" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
@@ -55,6 +56,7 @@
           <Property Name="Permissions" Type="nvarchar(max)" />
           <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
           <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <EntityType Name="hhcControlPanelIPStats">
           <Key>
@@ -276,6 +278,7 @@
           <Property Name="STATENAME" Type="nvarchar" MaxLength="100" />
           <Property Name="Zone" Type="int" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <EntityType Name="Stockists">
           <Key>
@@ -285,6 +288,8 @@
           <Property Name="StockistName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <EntityType Name="SubArea">
           <Key>
@@ -294,6 +299,7 @@
           <Property Name="SubArea" Type="nvarchar" MaxLength="100" />
           <Property Name="CITYID" Type="int" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -437,6 +443,7 @@
           <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ZoneName" Type="nvarchar" MaxLength="100" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
         </EntityType>
         <Association Name="FK_CITies_STATEs">
           <End Role="STATEs" Type="Self.STATEs" Multiplicity="0..1" />
@@ -548,6 +555,7 @@
           <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="STATE" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="CITy" ToRole="STATE" />
           <NavigationProperty Name="SubAreas" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="CITy" ToRole="SubArea" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -790,6 +798,8 @@
           <Property Name="StockistName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -985,6 +995,7 @@
           <Property Name="ZoneName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="STATEs" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="Zone" ToRole="STATE" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="hhcAdminLogin">
           <Key>
@@ -997,6 +1008,7 @@
           <Property Name="Permissions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ActiveStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="STATE">
           <Key>
@@ -1008,6 +1020,7 @@
           <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="Zone1" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="STATE" ToRole="Zone" />
           <NavigationProperty Name="CITies" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="STATE" ToRole="CITy" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_STATEs_Zones">
           <End Type="HhcDbModel.Zone" Role="Zone" Multiplicity="0..1" />
@@ -1042,6 +1055,7 @@
           <Property Name="CITYID" Type="Int32" />
           <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="CITy" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="SubArea" ToRole="CITy" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="FK_subareaCITies_CITies">
           <End Type="HhcDbModel.CITy" Role="CITy" Multiplicity="0..1" />
@@ -1074,7 +1088,8 @@
     <EntitySetMapping Name="CITies">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.CITy)">
         <MappingFragment StoreEntitySet="CITies">
-          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
           <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
           <ScalarProperty Name="STATEID" ColumnName="STATEID" />
           <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
@@ -1333,7 +1348,9 @@
     <EntitySetMapping Name="Stockists">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.Stockist)">
         <MappingFragment StoreEntitySet="Stockists">
-          <ScalarProperty Name="StockistId" ColumnName="StockistId" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="StockistId" ColumnName="StockistId" />
           <ScalarProperty Name="StockistName" ColumnName="StockistName" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -1488,7 +1505,8 @@
     <EntitySetMapping Name="Zones">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.Zone)">
         <MappingFragment StoreEntitySet="Zones">
-          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
           <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
           <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
         </MappingFragment>
@@ -1498,6 +1516,7 @@
           <EntitySetMapping Name="hhcAdminLogins">
             <EntityTypeMapping TypeName="HhcDbModel.hhcAdminLogin">
               <MappingFragment StoreEntitySet="hhcAdminLogins">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
                 <ScalarProperty Name="EmailID" ColumnName="EmailID" />
                 <ScalarProperty Name="Permissions" ColumnName="Permissions" />
@@ -1511,6 +1530,7 @@
           <EntitySetMapping Name="STATEs">
             <EntityTypeMapping TypeName="HhcDbModel.STATE">
               <MappingFragment StoreEntitySet="STATEs">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
                 <ScalarProperty Name="Zone" ColumnName="Zone" />
                 <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
@@ -1521,6 +1541,7 @@
           <EntitySetMapping Name="SubAreas">
             <EntityTypeMapping TypeName="HhcDbModel.SubArea">
               <MappingFragment StoreEntitySet="SubArea">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
                 <ScalarProperty Name="CITYID" ColumnName="CITYID" />
                 <ScalarProperty Name="SubArea1" ColumnName="SubArea" />
