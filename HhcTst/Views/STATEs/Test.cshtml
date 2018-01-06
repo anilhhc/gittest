@@ -1,0 +1,24 @@
+﻿@model HhcTst.Models.CascadingTestModel  
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<h2>Test</h2>
+<table>
+    <tr>
+        <td>
+            Zones
+        </td>
+        <td>
+            @Html.DropDownListFor(x => x.ZoneNames, Model.ZoneNames, "--Select--", new { @id = "ddlZone" })
+        </td>
+        <td>
+            <label>State</label>
+        </td>
+        <td>
+            
+            @Html.DropDownListFor(x => x.StateNames, Model.StateNames, "--Select--", new { @id = "ddlState" })
+        </td>
+    </tr>
+</table>  

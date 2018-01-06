@@ -15,13 +15,32 @@ namespace HhcTst.Controllers
         private HhcDbEntities db = new HhcDbEntities();
 
         // GET: STATEs
+        public ActionResult Test()
+        {
+            List<SelectListItem> zoneNames = new List<SelectListItem>();
+            List<SelectListItem> stateNames = new List<SelectListItem>();
+            CascadingTestModel cstModel = new CascadingTestModel();
+            List<Zone> zones = db.Zones.ToList();
+            List<STATE> states = db.STATEs.ToList();
+            zones.ForEach(x =>
+            {
+                zoneNames.Add(new SelectListItem { Text = x.ZoneName, Value = x.ZoneID.ToString() });
+            });
+            states.ForEach(x =>
+            {
+                stateNames.Add(new SelectListItem { Text = x.STATENAME, Value = x.STATEID.ToString() });
+            });
+            cstModel.StateNames = stateNames;
+            cstModel.ZoneNames=zoneNames;
+            return View(cstModel);
+        }
         public ActionResult Index()
         {
-         var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
-                ViewBag.Zones=fromDatabaseEF;
-         //  // var v=from d in db.STATEs
-              //    Where 
-                return View(db.STATEs.ToList());
+            var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
+            ViewBag.Zones = fromDatabaseEF;
+            //  // var v=from d in db.STATEs
+            //    Where 
+            return View(db.STATEs.ToList());
         }
 
         // GET: STATEs/Details/5
