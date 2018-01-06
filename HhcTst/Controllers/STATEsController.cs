@@ -14,26 +14,65 @@ namespace HhcTst.Controllers
     {
         private HhcDbEntities db = new HhcDbEntities();
 
-        // GET: STATEs
-        public ActionResult Test()
+        public JsonResult GetZones()
         {
-            List<SelectListItem> zoneNames = new List<SelectListItem>();
-            List<SelectListItem> stateNames = new List<SelectListItem>();
-            CascadingTestModel cstModel = new CascadingTestModel();
-            List<Zone> zones = db.Zones.ToList();
-            List<STATE> states = db.STATEs.ToList();
-            zones.ForEach(x =>
-            {
-                zoneNames.Add(new SelectListItem { Text = x.ZoneName, Value = x.ZoneID.ToString() });
-            });
-            states.ForEach(x =>
-            {
-                stateNames.Add(new SelectListItem { Text = x.STATENAME, Value = x.STATEID.ToString() });
-            });
-            cstModel.StateNames = stateNames;
-            cstModel.ZoneNames=zoneNames;
-            return View(cstModel);
+            var ZoneList = db.Zones.ToList();
+            return this.Json(ZoneList, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult GetStates(int ZoneID)
+        {
+            var StateList = db.STATEs.Where(m => m.Zone1.ZoneID == ZoneID).ToList();
+
+            return this.Json(StateList);
+        }  
+
+
+       
+
+        // GET: STATEs
+        //public ActionResult Test()
+        //{
+        //    List<SelectListItem> zoneNames = new List<SelectListItem>();
+        //    List<SelectListItem> stateNames = new List<SelectListItem>();
+        //    List<SelectListItem> cityNames = new List<SelectListItem>();
+        //    CascadingTestModel cstModel = new CascadingTestModel();
+        //    List<Zone> zones = db.Zones.ToList();
+        //    List<STATE> states = db.STATEs.ToList();
+        //    List<CITy> cities = db.CITies.ToList();
+        //    zones.ForEach(x =>
+        //    {
+        //        zoneNames.Add(new SelectListItem { Text = x.ZoneName, Value = x.ZoneID.ToString() });
+        //    });
+        //    states.ForEach(x =>
+        //    {
+        //        stateNames.Add(new SelectListItem { Text = x.STATENAME, Value = x.STATEID.ToString()});
+        //    });
+        //    cities.ForEach(x =>
+        //    {
+        //        cityNames.Add(new SelectListItem { Text = x.CITYNAME, Value = x.CITYID.ToString() });
+        //    });
+        //    cstModel.StateNames = stateNames;
+        //    cstModel.ZoneNames=zoneNames;
+        //    return View(cstModel);
+        //}
+        //[HttpPost]
+        //public ActionResult GetStates(string zoneId)
+        //{
+        //    int statId;
+        //    List<SelectListItem> stateNames = new List<SelectListItem>();
+        //    if (!string.IsNullOrEmpty(zoneId))
+        //    {
+        //        statId = Convert.ToInt32(zoneId);
+        //        List<STATE> states = db.STATEs.Where(x => x.Zone1.ZoneID == statId).ToList();
+        //        states.ForEach(x =>
+        //        {
+        //            stateNames.Add(new SelectListItem { Text = x.STATENAME, Value = x.STATEID.ToString() });
+        //        });
+        //    }
+        //    return Json(stateNames, JsonRequestBehavior.AllowGet);
+        //}  
         public ActionResult Index()
         {
             var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");

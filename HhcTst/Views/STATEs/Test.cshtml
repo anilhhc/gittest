@@ -16,9 +16,53 @@
         <td>
             <label>State</label>
         </td>
-        <td>
-            
-            @Html.DropDownListFor(x => x.StateNames, Model.StateNames, "--Select--", new { @id = "ddlState" })
-        </td>
+        <td id="District">
+            @Html.DropDownListFor(x => x.StateNames, new List<SelectListItem>(), "--Select--", new { @id = "ddlState" })
+        </td> 
     </tr>
-</table>  
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('ddlZone').change(function () {
+            $.ajax({
+                type: "post",
+                url: "/STATEs/GetStates",
+                data: { zoneId: $('#ddlZone').val() },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    var states = "<select id='ddlState'>";
+                    states = states + '<option value="">--Select--</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        states = states + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    }
+                    states = states + '</select>';
+                    $('#State').html(states);
+                }
+            });
+        });
+    })
+</script>  
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $('#ddlState').change(function () {
+            $.ajax({
+                type: "post",
+                url: "/DropDownList/GetDistrict",
+                data: { stateId: $('#ddlState').val() },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    var district = "<select id='ddlDistrict'>";
+                    district = district + '<option value="">--Select--</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                    }
+                    district = district + '</select>';
+                    $('#District').html(district);
+                }
+            });
+        });
+    });
+</script>*@
+  

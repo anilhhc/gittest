@@ -310,6 +310,7 @@
     <Compile Include="Controllers\StockistsApiController.cs" />
     <Compile Include="Controllers\StockistsController.cs" />
     <Compile Include="Controllers\SubAreaController.cs" />
+    <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallOfLoveController.cs" />
     <Compile Include="Controllers\ZonesController.cs" />

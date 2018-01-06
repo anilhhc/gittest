@@ -4,7 +4,75 @@
     ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+@Scripts.Render("~/Scripts/angular.min.js")  
+<script type="text/javascript">
 
+    //Module
+    var myApp = angular.module('myApp', []);
+
+    //Controller
+    myApp.controller('MainCtrl', ['$scope', '$http',
+        function ($scope, $http) {
+            //$http service for Getting the Country
+            $http({
+                method: 'GET',
+                url: '/STATEs/GetZones'
+            }).
+            success(function (data) {
+                $scope.zone = data;
+            });
+
+            //$http service for getting States
+            $scope.GetStates = function () {
+                if ($scope.countr) {
+                    $http({
+                        method: 'POST',
+                        url: '/STATEs/GetStates/',
+                        data: JSON.stringify({ ZoneID: $scope.countr })
+                    }).
+                    success(function (data) {
+                        $scope.states = data;
+                    });
+                }
+                else {
+                    $scope.cities = null;
+                }
+            }
+        }]);
+</script>  
+<div data-ng-app="myApp">
+    {{1+2}}
+    <div data-ng-controller="MainCtrl">
+        <div class="editor-label">
+            <label>Name</label>
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("Name")
+        </div>
+        <div class="editor-label">
+            <label>Zone</label><br />
+        </div>
+        <div class="editor-field">
+            <select data-ng-model="countr"
+                    data-ng-options="c.ZoneID as c.ZoneName for c in Zone"
+                    data-ng-change="GetStates()">
+                <option value="">--Select Country--</option>
+            </select><br />
+        </div>
+        <div class="editor-label">
+            <br />
+            <label>State</label><br />
+        </div>
+        <div class="editor-field">
+            <select data-ng-model="state" data-ng-disabled="!states"
+                    data-ng-options="s.StateID as s.StateName for s in states">
+                <option value="">--Select State--</option>
+            </select>
+        </div>
+
+
+    </div>
+</div>  
 <h2>States</h2>
 <p> Populating With Database and EF</p>
 @Html.DropDownList("Zones", (SelectList)ViewBag.Zones)
