@@ -23,13 +23,10 @@ namespace HhcTst.Controllers
         [HttpPost]
         public JsonResult GetStates(int ZoneID)
         {
-            var StateList = db.STATEs.Where(m => m.Zone1.ZoneID == ZoneID).ToList();
+            var StateList = db.STATEs.Where(m => m.Zone == ZoneID).ToList();
 
             return this.Json(StateList);
         }  
-
-
-       
 
         // GET: STATEs
         //public ActionResult Test()

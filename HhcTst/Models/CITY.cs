@@ -11,7 +11,6 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class CITy
     {
@@ -25,7 +24,6 @@ namespace HhcTst.Models
         public string CITYNAME { get; set; }
         public Nullable<int> STATEID { get; set; }
         public string ACTIVE { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedOn { get; set; }
     
         public virtual STATE STATE { get; set; }

@@ -1,0 +1,1589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2EF3CA0B-51A5-4D69-BDF0-899E231D3E75}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HhcBetaTest</RootNamespace>
+    <AssemblyName>HhcBetaTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="admin-hhc\admin-files2\css\admin.css" />
+    <Content Include="admin-hhc\admin-files2\css\bootstrap.css" />
+    <Content Include="admin-hhc\admin-files2\css\bootstrap.min.css" />
+    <Content Include="admin-hhc\admin-files2\js\bootstrap.js" />
+    <Content Include="admin-hhc\admin-files2\js\bootstrap.min.js" />
+    <Content Include="admin-hhc\admin-hhc-files\css\avana.css" />
+    <Content Include="admin-hhc\admin-hhc-files\css\bootstrap.css" />
+    <Content Include="admin-hhc\admin-hhc-files\css\bootstrap.min.css" />
+    <Content Include="admin-hhc\admin-hhc-files\js\bootstrap.js" />
+    <Content Include="admin-hhc\admin-hhc-files\js\bootstrap.min.js" />
+    <Content Include="admin-hhc\assets\css\bootstrap.css" />
+    <Content Include="admin-hhc\assets\css\bootstrap.min.css" />
+    <Content Include="admin-hhc\assets\css\demo.css" />
+    <Content Include="admin-hhc\assets\css\main.css" />
+    <Content Include="admin-hhc\assets\img\apple-icon.png" />
+    <Content Include="admin-hhc\assets\img\favicon.png" />
+    <Content Include="admin-hhc\assets\img\login-bg.jpg" />
+    <Content Include="admin-hhc\assets\img\logo-dark.png" />
+    <Content Include="admin-hhc\assets\img\profile-bg.png" />
+    <Content Include="admin-hhc\assets\img\user-medium.png" />
+    <Content Include="admin-hhc\assets\img\user.png" />
+    <Content Include="admin-hhc\assets\img\user1.png" />
+    <Content Include="admin-hhc\assets\img\user2.png" />
+    <Content Include="admin-hhc\assets\img\user3.png" />
+    <Content Include="admin-hhc\assets\img\user4.png" />
+    <Content Include="admin-hhc\assets\img\user5.png" />
+    <Content Include="admin-hhc\assets\scripts\avana.js" />
+    <Content Include="admin-hhc\assets\scripts\klorofil-common.js" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="admin-hhc\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="admin-hhc\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="admin-hhc\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="admin-hhc\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="admin-hhc\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin-hhc\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery\jquery.js" />
+    <Content Include="admin-hhc\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\style.css" />
+    <Content Include="admin-hhc\assets\vendor\toastr\toastr.css" />
+    <Content Include="admin-hhc\assets\vendor\toastr\toastr.js" />
+    <Content Include="admin-hhc\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="admin-hhc\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="admin-hhc\change-password.aspx" />
+    <Content Include="admin-hhc\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\css\dataTables.bootstrap.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\css\dataTables.bootstrap.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\favicon.ico" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\sort_asc.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\sort_both.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\sort_desc.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\js\dataTables.bootstrap.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\js\dataTables.bootstrap.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.date.extensions.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.dependencyLib.jquery.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.extensions.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.phone.extensions.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\inputmask.regex.extensions.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\inputmask\jquery.inputmask.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-knob\jquery.knob.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\jquery.sparkline.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\base.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-bar.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-box.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-bullet.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-discrete.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-line.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-pie.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\chart-tristate.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\defaults.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\footer.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\header.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\interact.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\jquery.sparkline.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\rangemap.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\simpledraw.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\utils.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\vcanvas-base.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\vcanvas-canvas.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-sparkline\src\vcanvas-vml.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-spinner\css\bootstrap-spinner.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-spinner\css\bootstrap-spinner.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-spinner\js\jquery.spinner.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-spinner\js\jquery.spinner.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-steps\jquery.steps.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-steps\jquery.steps.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-steps\jquery.steps.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\additional-methods.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\jquery.validate.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ar.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_bg.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_bn_BD.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ca.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_cs.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_da.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_de.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_el.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_es.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_es_AR.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_es_PE.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_et.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_eu.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_fa.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_fi.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_fr.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ge.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_gl.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_he.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_hr.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_hu.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_hy_AM.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_id.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_is.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_it.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ja.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ka.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_kk.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ko.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_lt.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_lv.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_mk.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_my.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_nl.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_no.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_pl.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ro.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_ru.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_si.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_sk.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_sl.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_sr.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_sr_lat.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_sv.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_th.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_tj.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_tr.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_uk.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_vi.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_zh.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\methods_de.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\methods_es_CL.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\methods_fi.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\methods_nl.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\methods_pt.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jvectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lg-fb-comment-box.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lg-fb-comment-box.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lg-transitions.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lg-transitions.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lightgallery.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\css\lightgallery.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\fonts\lg.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\img\loading.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\img\video-play.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\img\vimeo-play.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\img\youtube-play.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-autoplay.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-autoplay.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-fullscreen.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-fullscreen.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-hash.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-hash.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-pager.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-pager.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-thumbnail.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-thumbnail.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-video.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-video.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-zoom.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lg-zoom.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lightgallery-all.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lightgallery-all.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lightgallery.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\js\lightgallery.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\css\materialize.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\css\materialize.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\js\materialize.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\js\materialize.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\momentjs\ender.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\momentjs\moment.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\momentjs\package.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\.gitignore" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\area-as-line.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\area.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\bar-colors.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\bar-no-axes.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\bar.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\days.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\decimal-custom-hover.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\diagonal-xlabels-bar.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\diagonal-xlabels.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\donut-colors.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\donut-formatter.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\donut.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\dst.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\events.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\goals.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\lib\example.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\lib\example.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\months-no-smooth.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\negative.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\no-grid.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\non-continuous.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\non-date.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\quarters.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\resize.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\stacked_bars.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\timestamps.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\updating.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\weeks.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\years.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\examples\_template.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\Gruntfile.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\morris.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\morris.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\morris.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\specs.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\examples.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\exemplary\area0.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\exemplary\bar0.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\exemplary\line0.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\exemplary\stacked_bar0.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\test.html" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\visual_specs.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\multi-select\css\multi-select.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\multi-select\img\switch.png" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\multi-select\js\jquery.multi-select.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\nestable\jquery-nestable.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\nestable\jquery.nestable.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\node-waves\waves.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\node-waves\waves.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\node-waves\waves.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\node-waves\waves.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\nouislider\nouislider.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\nouislider\nouislider.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\nouislider\nouislider.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\Gruntfile.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\raphael.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\raphael.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\raphael.no-deps.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\raphael.no-deps.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\raphael\webpack.config.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\sweetalert\sweetalert-dev.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\sweetalert\sweetalert.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\changelog.txt" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\jquery.tinymce.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\jquery.tinymce.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\license.txt" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\code\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\hr\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\image\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\layer\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\link\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\lists\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\media\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\paste\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\preview\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\print\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\save\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\table\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\template\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\themes\inlite\theme.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\themes\modern\theme.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\themes\modern\theme.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\tinymce.jquery.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\tinymce.jquery.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\tinymce.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\tinymce.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\waitme\img.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\waitme\waitMe.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\waitme\waitMe.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\waitme\waitMe.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\waitme\waitMe.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\add-details\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\add-details\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\add-details\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\change-password\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\change-password\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\change-password\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\forgot-password\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\forgot-password\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\forgot-password\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-add-details.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-add-details.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-add-details.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-change-password.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-change-password.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-change-password.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-forgot-password.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-forgot-password.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-forgot-password.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-printcard.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-printcard.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-printcard.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-profile.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-profile.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-profile.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-proofs.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-proofs.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-proofs.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-register.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-register.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-register.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-signin.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-signin.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-ascx\privilege-signin.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-inner.Master.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-inner.Master.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-profile.Master.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-profile.Master.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\profile\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\profile\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\profile\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\proofs\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\proofs\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\proofs\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\register\defaul.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\register\defaul.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\register\defaul.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\signin\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\signin\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\signin\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\bootstrap.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\bootstrap.min.js" />
+    <None Include="admin-hhc\gautham\betatesting\betatesting\Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\jquery-1.10.2.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\modernizr-2.6.2.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\respond.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\respond.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\DetailsView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\Focus.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\GridView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\Menu.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\SmartNav.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\TreeView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\WebForms.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\WebParts.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\WebForms\WebUIValidation.js" />
+    <None Include="admin-hhc\gautham\betatesting\betatesting\Scripts\_references.js" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\add-details\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\add-details\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\add-details\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\change-password\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\change-password\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\change-password\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\details\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\details\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\details\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\forgot-password\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\forgot-password\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\forgot-password\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\profile\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\profile\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\profile\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\register\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\register\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\register\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-add-details.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-add-details.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-add-details.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-change-password.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-change-password.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-change-password.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-details.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-details.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-details.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-forgot-password.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-forgot-password.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-forgot-password.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-profile.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-profile.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-profile.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-register.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-register.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-register.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-signin.ascx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-signin.ascx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-ascx\second-opinion-signin.ascx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-inner.Master.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-inner.Master.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-profile.Master.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-profile.Master.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\signin\default.aspx" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\signin\default.aspx.designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\signin\default.aspx.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\avana.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\cms.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\corp.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Corporates.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\DataSetCare.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Doctors.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\HeaderBanner.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\hhc.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Jobs.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\newsevents.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\OurHospitals.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Packages.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\SCM.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Vendors.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\WebAdmins.Designer.vb" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.pdb" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\Content\bootstrap.css" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\Content\bootstrap.min.css" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\Scripts\bootstrap.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\Scripts\bootstrap.min.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\tools\about_EntityFramework.help.txt" />
+    <None Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.min.js" />
+    <None Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Tools\jquery-1.10.2.intellisense.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net40\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Providers.Core.1.2\readme.html" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\DetailsView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\Focus.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\GridView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\Menu.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\SmartNav.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\TreeView.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebForms.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebParts.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\system.web.optimization.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\portable-wp8%252Bnetcore45%252Bnet45\System.Net.Http.Formatting.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.2.0.0\lib\net40\Microsoft.Owin.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net40\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.XML" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\portable-net40%252Bsl4%252Bwp7%252Bwin8\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\lib\portable-net45%252Bwp80%252Bwin8\Newtonsoft.Json.xml" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Respond.1.2.0\content\Scripts\respond.js" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Respond.1.2.0\content\Scripts\respond.min.js" />
+    <Content Include="admin-hhc\nadmin\admins\manage-admins.aspx" />
+    <Content Include="admin-hhc\nadmin\change-password.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-city.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-country.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-division.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-product-description.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-product-division.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-products.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-state.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-stockist-details.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-stockist.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-sub-area-new.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-sub-area.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-therapatic.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\manage-vendor-products.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\upload-file.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\upload-primary-sales.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\upload-secondary-sales.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\upload-stockist-secondary-sales.aspx" />
+    <Content Include="admin-hhc\nadmin\cms\WebForms_Basic.xml" />
+    <Content Include="admin-hhc\nadmin\default.aspx" />
+    <Content Include="admin-stockist\assets\css\bootstrap.css" />
+    <Content Include="admin-stockist\assets\css\bootstrap.min.css" />
+    <Content Include="admin-stockist\assets\css\demo.css" />
+    <Content Include="admin-stockist\assets\css\main.css" />
+    <Content Include="admin-stockist\assets\img\apple-icon.png" />
+    <Content Include="admin-stockist\assets\img\favicon.png" />
+    <Content Include="admin-stockist\assets\img\login-bg.jpg" />
+    <Content Include="admin-stockist\assets\img\logo-dark.png" />
+    <Content Include="admin-stockist\assets\img\profile-bg.png" />
+    <Content Include="admin-stockist\assets\img\user-medium.png" />
+    <Content Include="admin-stockist\assets\img\user.png" />
+    <Content Include="admin-stockist\assets\img\user1.png" />
+    <Content Include="admin-stockist\assets\img\user2.png" />
+    <Content Include="admin-stockist\assets\img\user3.png" />
+    <Content Include="admin-stockist\assets\img\user4.png" />
+    <Content Include="admin-stockist\assets\img\user5.png" />
+    <Content Include="admin-stockist\assets\scripts\avana.js" />
+    <Content Include="admin-stockist\assets\scripts\klorofil-common.js" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\js\npm.js" />
+    <Content Include="admin-stockist\assets\vendor\chartist\css\chartist-custom.css" />
+    <Content Include="admin-stockist\assets\vendor\chartist\css\chartist.css" />
+    <Content Include="admin-stockist\assets\vendor\chartist\css\chartist.min.css" />
+    <Content Include="admin-stockist\assets\vendor\chartist\js\chartist.js" />
+    <Content Include="admin-stockist\assets\vendor\chartist\js\chartist.min.js" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin-stockist\assets\vendor\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\angular.easypiechart.min.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\easypiechart.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\easypiechart.min.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery.easy-pie-chart\jquery.easypiechart.min.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery\jquery.js" />
+    <Content Include="admin-stockist\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\style.css" />
+    <Content Include="admin-stockist\assets\vendor\toastr\toastr.css" />
+    <Content Include="admin-stockist\assets\vendor\toastr\toastr.js" />
+    <Content Include="admin-stockist\assets\vendor\toastr\toastr.min.css" />
+    <Content Include="admin-stockist\assets\vendor\toastr\toastr.min.js" />
+    <Content Include="admin-stockist\change-password\default.aspx" />
+    <Content Include="admin-stockist\change-password\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\change-password\default.aspx.vb" />
+    <Content Include="admin-stockist\change-password\default2.aspx" />
+    <Content Include="admin-stockist\change-password\default2.aspx.designer.vb" />
+    <Content Include="admin-stockist\change-password\default2.aspx.vb" />
+    <Content Include="admin-stockist\default.aspx" />
+    <Content Include="admin-stockist\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\default.aspx.vb" />
+    <Content Include="admin-stockist\forgot-password\default.aspx" />
+    <Content Include="admin-stockist\forgot-password\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\forgot-password\default.aspx.vb" />
+    <Content Include="admin-stockist\forgot-password\default2.aspx" />
+    <Content Include="admin-stockist\forgot-password\default2.aspx.designer.vb" />
+    <Content Include="admin-stockist\forgot-password\default2.aspx.vb" />
+    <Content Include="admin-stockist\innebasepage.master.designer.vb" />
+    <Content Include="admin-stockist\innebasepage.master.vb" />
+    <Content Include="admin-stockist\products\default.aspx" />
+    <Content Include="admin-stockist\products\default2.aspx" />
+    <Content Include="admin-stockist\products\invoice.aspx" />
+    <Content Include="admin-stockist\profile\default.aspx" />
+    <Content Include="admin-stockist\profile\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\profile\default.aspx.vb" />
+    <Content Include="admin-stockist\profile\default2.aspx" />
+    <Content Include="admin-stockist\profile\default2.aspx.designer.vb" />
+    <Content Include="admin-stockist\profile\default2.aspx.vb" />
+    <Content Include="admin-stockist\register\default.aspx" />
+    <Content Include="admin-stockist\register\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\register\default.aspx.vb" />
+    <Content Include="admin-stockist\register\default2.aspx" />
+    <Content Include="admin-stockist\register\default2.aspx.designer.vb" />
+    <Content Include="admin-stockist\register\default2.aspx.vb" />
+    <Content Include="admin-stockist\sign-in\default.aspx" />
+    <Content Include="admin-stockist\sign-in\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\sign-in\default.aspx.vb" />
+    <Content Include="admin-stockist\sign-in\default2.aspx" />
+    <Content Include="admin-stockist\sign-in\default2.aspx.designer.vb" />
+    <Content Include="admin-stockist\sign-in\default2.aspx.vb" />
+    <Content Include="admin-stockist\upload-file.aspx" />
+    <Content Include="admin-stockist\upload-file\default.aspx" />
+    <Content Include="admin-stockist\upload-file\default.aspx.designer.vb" />
+    <Content Include="admin-stockist\upload-file\default.aspx.vb" />
+    <Content Include="ascx-hhc\admins\login.ascx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="admin-stockist\assets\css\demo.css.map" />
+    <Content Include="admin-stockist\assets\css\main.css.map" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="admin-stockist\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="admin-stockist\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="admin-stockist\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="admin-stockist\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="admin-stockist\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin-stockist\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="admin-stockist\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="admin-stockist\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="admin-stockist\innebasepage.master" />
+    <Content Include="admin-stockist\stockistprofile.master" />
+    <Content Include="admin-hhc\adminbasepage.master" />
+    <Content Include="admin-hhc\admininner.master" />
+    <Content Include="admin-hhc\assets\css\demo.css.map" />
+    <Content Include="admin-hhc\assets\css\main.css.map" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="admin-hhc\assets\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="admin-hhc\assets\vendor\chartist\css\chartist-custom.css.map" />
+    <Content Include="admin-hhc\assets\vendor\chartist\map\chartist.css.map" />
+    <Content Include="admin-hhc\assets\vendor\chartist\map\chartist.min.js.map" />
+    <Content Include="admin-hhc\assets\vendor\chartist\scss\chartist.scss" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin-hhc\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="admin-hhc\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="admin-hhc\assets\vendor\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-datatable\skin\bootstrap\images\Sorting icons.psd" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-spinner\css\bootstrap-spinner.css.map" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\jquery-validation\localization\messages_az" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\fonts\lg.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\fonts\lg.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\light-gallery\fonts\lg.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\materialize-css\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\.travis.yml" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\bower.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\bower.travis.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\less\morris.core.less" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.area.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.bar.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.donut.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.grid.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.hover.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\lib\morris.line.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\package.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\README.md" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\area\area_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\bar\bar_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\bar\colours.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\commas_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\donut\donut_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\grid\auto_grid_lines_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\grid\set_data_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\grid\y_label_format_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\hover_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\label_series_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\line\line_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\pad_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\lib\parse_time_spec.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\support\placeholder.coffee" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\morrisjs\spec\viz\run.sh" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\node-waves\waves.min.js.map" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\bower.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\composer.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\package.json" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\readme.md" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\mokshamedia-admin-files\plugins\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-inner.Master" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\privilege-card\privilege-card-profile.Master" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-inner.Master" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\second-opinion-profile.Master" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Appointments.xsc">
+      <DependentUpon>Appointments.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Appointments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Appointments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Appointments.xss">
+      <DependentUpon>Appointments.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\avana.xsc">
+      <DependentUpon>avana.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\avana.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>avana.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\avana.xss">
+      <DependentUpon>avana.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\cms.xsc">
+      <DependentUpon>cms.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\cms.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cms.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\cms.xss">
+      <DependentUpon>cms.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\corp.xsc">
+      <DependentUpon>corp.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\corp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>corp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\corp.xss">
+      <DependentUpon>corp.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Corporates.xsc">
+      <DependentUpon>Corporates.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Corporates.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Corporates.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Corporates.xss">
+      <DependentUpon>Corporates.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\DataSetCare.xsc" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\DataSetCare.xss" />
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Doctors.xsc">
+      <DependentUpon>Doctors.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Doctors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Doctors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Doctors.xss">
+      <DependentUpon>Doctors.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\HeaderBanner.xsc">
+      <DependentUpon>HeaderBanner.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\HeaderBanner.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HeaderBanner.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\HeaderBanner.xss">
+      <DependentUpon>HeaderBanner.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\hhc.xsc">
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\hhc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hhc.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\hhc.xss">
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Jobs.xsc">
+      <DependentUpon>Jobs.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Jobs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Jobs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Jobs.xss">
+      <DependentUpon>Jobs.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\newsevents.xsc">
+      <DependentUpon>newsevents.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\newsevents.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>newsevents.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\newsevents.xss">
+      <DependentUpon>newsevents.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\OurHospitals.xsc">
+      <DependentUpon>OurHospitals.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\OurHospitals.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OurHospitals.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\OurHospitals.xss">
+      <DependentUpon>OurHospitals.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Packages.xsc">
+      <DependentUpon>Packages.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Packages.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Packages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Packages.xss">
+      <DependentUpon>Packages.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\SCM.xsc">
+      <DependentUpon>SCM.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\SCM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SCM.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\SCM.xss">
+      <DependentUpon>SCM.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Vendors.xsc">
+      <DependentUpon>Vendors.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\Vendors.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Vendors.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\Vendors.xss">
+      <DependentUpon>Vendors.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\WebAdmins.xsc">
+      <DependentUpon>WebAdmins.xsd</DependentUpon>
+    </Content>
+    <None Include="admin-hhc\gautham\betatesting\betatesting\xsds\WebAdmins.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WebAdmins.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="admin-hhc\gautham\betatesting\betatesting\xsds\WebAdmins.xss">
+      <DependentUpon>WebAdmins.xsd</DependentUpon>
+    </Content>
+    <Content Include="admin-hhc\gautham\betatesting\packages\Antlr.3.4.1.9004\Antlr.3.4.1.9004.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.bootstrap.3.0.0\AspNet.ScriptManager.bootstrap.3.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.jQuery.1.10.2\AspNet.ScriptManager.jQuery.1.10.2.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\bootstrap.3.0.0.nupkg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\bootstrap.3.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\bootstrap.3.0.0\content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\Content\App.config.transform" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\Content\Web.config.transform" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\EntityFramework.6.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\tools\EntityFramework.psd1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\tools\EntityFramework.psm1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\tools\init.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\EntityFramework.6.0.0\tools\install.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Content\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\jQuery.1.10.2.nupkg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\jQuery.1.10.2.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Tools\common.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Tools\install.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\jQuery.1.10.2\Tools\uninstall.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\Microsoft.AspNet.FriendlyUrls.Core.1.0.2.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.Core.1.0.0\Microsoft.AspNet.Identity.Core.1.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\Microsoft.AspNet.Identity.EntityFramework.1.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Identity.Owin.1.0.0\Microsoft.AspNet.Identity.Owin.1.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Providers.Core.1.2\Microsoft.AspNet.Providers.Core.1.2.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\Microsoft.AspNet.ScriptManager.WebForms.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Web.Optimization.1.1.1\Microsoft.AspNet.Web.Optimization.1.1.1.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\content\web.config.transform" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.5.0.0\Microsoft.AspNet.WebApi.5.0.0.nupkg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.5.0.0\Microsoft.AspNet.WebApi.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Client.5.0.0\Microsoft.AspNet.WebApi.Client.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Core.5.0.0\content\web.config.transform" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.Core.5.0.0\Microsoft.AspNet.WebApi.Core.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\Microsoft.AspNet.WebApi.WebHost.5.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Net.Http.2.0.20710.0\lib\net45\_._" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Net.Http.2.0.20710.0\Microsoft.Net.Http.2.0.20710.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.2.0.0\Microsoft.Owin.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\Microsoft.Owin.Host.SystemWeb.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.2.0.0\Microsoft.Owin.Security.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Cookies.2.0.0\Microsoft.Owin.Security.Cookies.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Facebook.2.0.0\Microsoft.Owin.Security.Facebook.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Google.2.0.0\Microsoft.Owin.Security.Google.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\Microsoft.Owin.Security.MicrosoftAccount.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.OAuth.2.0.0\Microsoft.Owin.Security.OAuth.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Owin.Security.Twitter.2.0.0\Microsoft.Owin.Security.Twitter.2.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\tools\Install.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\tools\Uninstall.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\tools\VS.psd1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\tools\VS.psm1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Modernizr.2.6.2.nupkg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Modernizr.2.6.2.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Tools\common.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Tools\install.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Modernizr.2.6.2\Tools\uninstall.ps1" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Newtonsoft.Json.5.0.6\Newtonsoft.Json.5.0.6.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Owin.1.0\Owin.1.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\repositories.config" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Respond.1.2.0\Respond.1.2.0.nupkg" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\Respond.1.2.0\Respond.1.2.0.nuspec" />
+    <Content Include="admin-hhc\gautham\betatesting\packages\WebGrease.1.5.2\WebGrease.1.5.2.nuspec" />
+    <Content Include="admin-hhc\innerbasepage.master" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Appointments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appointments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\avana.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>avana.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\cms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cms.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\corp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>corp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Corporates.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Corporates.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Doctors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Doctors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\HeaderBanner.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeaderBanner.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\hhc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Jobs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Jobs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\newsevents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newsevents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\OurHospitals.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OurHospitals.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Packages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Packages.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\SCM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SCM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\Vendors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vendors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="admin-hhc\gautham\betatesting\betatesting\xsds\WebAdmins.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebAdmins.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin-hhc\gautham\betatesting\betatesting\second-opinion\reports\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net40\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net40\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\lib\net45\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\Owin.1.0\lib\net40\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\WebGrease.1.5.2\lib\" />
+    <Folder Include="admin-hhc\gautham\betatesting\packages\WebGrease.1.5.2\tools\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="xsds\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>46438</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9951/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

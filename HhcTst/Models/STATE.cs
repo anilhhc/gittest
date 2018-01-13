@@ -11,7 +11,6 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class STATE
     {
@@ -25,7 +24,6 @@ namespace HhcTst.Models
         public string STATENAME { get; set; }
         public Nullable<int> Zone { get; set; }
         public string ACTIVE { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedOn { get; set; }
     
         public virtual Zone Zone1 { get; set; }

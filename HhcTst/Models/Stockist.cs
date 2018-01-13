@@ -11,7 +11,6 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Stockist
     {
@@ -19,7 +18,6 @@ namespace HhcTst.Models
         public string StockistName { get; set; }
         public string Description { get; set; }
         public string Password { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public string ACTIVE { get; set; }
     }

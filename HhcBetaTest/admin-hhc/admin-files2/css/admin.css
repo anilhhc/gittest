@@ -1,0 +1,5 @@
+.heading1 {text-align:center;}
+.header {text-align:center; background:#fff; border-bottom:1px #ccc solid;}
+.footer {text-align:center; border:1px #ccc solid; padding:1% 0; background:#eee;}
+.container { margin:0 auto;}
+.logoutbtn {padding:2% 0; color:#eee; border-bottom:#ccc;}

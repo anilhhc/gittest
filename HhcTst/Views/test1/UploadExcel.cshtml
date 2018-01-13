@@ -1,0 +1,97 @@
+﻿@model IEnumerable<HhcTst.Models.tbl_registration>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>tst1Index</title>
+</head>
+<body>
+    @{
+        var results = ViewBag.msg;
+    }
+    <p>@results</p>
+    <div>
+        @using (Html.BeginForm("UploadExcel", "test1", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return myFunction()" }))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="control-label col-md-2">Download Format:</div>
+                    <div class="col-md-10">
+                        <a href="/User/DownloadExcel/"><img src="~/excel.ico" width="25" height="25" title="Download Excel format" alt="excel" /></a>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="control-label col-md-2">Excel:</div>
+                    <div class="col-md-10">
+                        <input type="file" id="FileUpload" name="FileUpload" class="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Upload" id="btnSubmit" class="btn btn-primary" />
+
+                    </div>
+                </div>
+            </div>
+        }  
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.CreatedOn)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                   <td>
+                       @Html.DisplayFor(m=>item.Password)
+                   </td>
+                    <td>
+                        @Html.DisplayFor(m=>item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m=>item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m=>item.CreatedOn)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</body>
+</html>

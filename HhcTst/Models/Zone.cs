@@ -11,7 +11,6 @@ namespace HhcTst.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Zone
     {
@@ -24,7 +23,6 @@ namespace HhcTst.Models
         public int ZoneID { get; set; }
         public string ZoneName { get; set; }
         public string ACTIVE { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> CreatedOn { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

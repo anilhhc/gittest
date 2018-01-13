@@ -60,6 +60,7 @@ namespace HhcTst.Models
         public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
         public virtual DbSet<STATE> STATEs { get; set; }
         public virtual DbSet<SubArea> SubAreas { get; set; }
+        public virtual DbSet<tbl_registration> tbl_registration { get; set; }
     
         public virtual ObjectResult<Nullable<int>> spSkCountId(string stockistname, string stockistId)
         {

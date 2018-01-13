@@ -25,7 +25,7 @@
     $(document).ready(function () {
         $('ddlZone').change(function () {
             $.ajax({
-                type: "post",
+                type: "Post",
                 url: "/STATEs/GetStates",
                 data: { zoneId: $('#ddlZone').val() },
                 datatype: "json",
