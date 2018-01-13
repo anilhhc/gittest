@@ -64,52 +64,53 @@ namespace HhcTst.Controllers
 
                     foreach (var a in artistAlbums)
                     {
-                        try
-                        {
-                            if (a.Name != "" && a.Address != "" && a.ContactNo!="" && a.Email != "" &&a.Password!="" &&a.City!="")
+                       
+                            try
                             {
-                               tbl_registration TU = new tbl_registration();
-                                TU.Name = a.Name;
-                                TU.Address = a.Address;
-                                TU.ContactNo = a.ContactNo;
-                                TU.Email = a.Email;
-                                TU.Password = a.Password;
-                                TU.City = a.City;
-                                TU.CreatedOn = DateTime.Now;
-                                db.tbl_registration.Add(TU);
-                               
-                                db.SaveChanges();
-                               // IEnumerable<tbl_registration> v = ;
-                               // return View(db.tbl_registration.ToList());
-                               // ViewBag.msg ="Uploaded successfully";
-                            }
-                            else
-                            {
-                                
-                                data.Add("<ul>");
-                                if (a.Name == "" || a.Name == null) data.Add("<li> name is required</li>");
-                                if (a.Address == "" || a.Address == null) data.Add("<li> Address is required</li>");
-                                if (a.Email == "" || a.Email == null) data.Add("<li>ContactNo is required</li>");
+                                if (a.Name != "" && a.Address != "" && a.ContactNo != "" && a.Email != "" && a.Password != "" && a.City != "")
+                                {
+                                    tbl_registration TU = new tbl_registration();
+                                    TU.Name = a.Name;
+                                    TU.Address = a.Address;
+                                    TU.ContactNo = a.ContactNo;
+                                    TU.Email = a.Email;
+                                    TU.Password = a.Password;
+                                    TU.City = a.City;
+                                    TU.CreatedOn = DateTime.Now;
+                                    db.tbl_registration.Add(TU);
 
-                                data.Add("</ul>");
-                                data.ToArray();
-                                return View(dt);
-                            }
-                        }
-                        catch (DbEntityValidationException ex)
-                        {
-                            foreach (var entityValidationErrors in ex.EntityValidationErrors)
-                            {
-
-                                foreach (var validationError in entityValidationErrors.ValidationErrors)
+                                    db.SaveChanges();
+                                    // IEnumerable<tbl_registration> v = ;
+                                    // return View(db.tbl_registration.ToList());
+                                    // ViewBag.msg ="Uploaded successfully";
+                                }
+                                else
                                 {
 
-                                    Response.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                                    data.Add("<ul>");
+                                    if (a.Name == "" || a.Name == null) data.Add("<li> name is required</li>");
+                                    if (a.Address == "" || a.Address == null) data.Add("<li> Address is required</li>");
+                                    if (a.Email == "" || a.Email == null) data.Add("<li>ContactNo is required</li>");
+
+                                    data.Add("</ul>");
+                                    data.ToArray();
+                                    return Json(data, JsonRequestBehavior.AllowGet);
+                                }
+                            }
+                            catch (DbEntityValidationException ex)
+                            {
+                                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                                {
+
+                                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                                    {
+
+                                        Response.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+
+                                    }
 
                                 }
-
                             }
-                        }
                     }
                     //deleting excel file from folder  
                     if ((System.IO.File.Exists(pathToExcelFile)))
