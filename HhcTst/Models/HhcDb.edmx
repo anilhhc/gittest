@@ -324,6 +324,17 @@
           <Property Name="Address" Type="varchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetime" />
         </EntityType>
+        <EntityType Name="UploadedFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="FileDescription" Type="nvarchar(max)" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="UploadedTime" Type="datetime" />
+          <Property Name="States" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="UploadFileNames">
           <Key>
             <PropertyRef Name="UploadFileId" />
@@ -523,6 +534,7 @@
           <EntitySet Name="SubArea" EntityType="Self.SubArea" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_registration" EntityType="Self.tbl_registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UploadedFiles" EntityType="Self.UploadedFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UploadFileNames" EntityType="Self.UploadFileNames" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAdminLogins" EntityType="Self.UserAdminLogins" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
@@ -1001,6 +1013,7 @@
             <End Role="SubArea" EntitySet="SubAreas" />
           </AssociationSet>
           <EntitySet Name="tbl_registration" EntityType="HhcDbModel.tbl_registration" />
+          <EntitySet Name="UploadedFiles" EntityType="HhcDbModel.UploadedFile" />
         </EntityContainer>
         <EntityType Name="Zone">
           <Key>
@@ -1096,6 +1109,17 @@
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UploadedFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="FileDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadedTime" Type="DateTime" Precision="3" />
+          <Property Name="States" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1587,6 +1611,18 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UploadedFiles">
+            <EntityTypeMapping TypeName="HhcDbModel.UploadedFile">
+              <MappingFragment StoreEntitySet="UploadedFiles">
+                <ScalarProperty Name="States" ColumnName="States" />
+                <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

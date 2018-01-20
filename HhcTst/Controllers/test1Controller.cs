@@ -15,8 +15,10 @@ namespace HhcTst.Controllers
     {
         HhcDbEntities db = new HhcDbEntities();
         // GET: test1
+        
         public ActionResult UploadExcel()
         {
+            TempData["a"] = "Hello aaa mvc";
             var v = db.tbl_registration.ToList();
             return View(v);
         }
@@ -64,8 +66,7 @@ namespace HhcTst.Controllers
 
                     foreach (var a in artistAlbums)
                     {
-                       
-                            try
+                          try
                             {
                                 if (a.Name != "" && a.Address != "" && a.ContactNo != "" && a.Email != "" && a.Password != "" && a.City != "")
                                 {

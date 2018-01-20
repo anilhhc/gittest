@@ -42,6 +42,7 @@
         <EntityTypeShape EntityType="HhcDbModel.SubArea" Width="1.5" PointX="5.125" PointY="24.25" />
         <AssociationConnector Association="HhcDbModel.FK_subareaCITies_CITies" />
         <EntityTypeShape EntityType="HhcDbModel.tbl_registration" Width="1.5" PointX="3.375" PointY="16.75" />
+        <EntityTypeShape EntityType="HhcDbModel.UploadedFile" Width="1.5" PointX="17.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

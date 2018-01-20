@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using(Html.BeginForm("Index", "test3", FormMethod.Post, new { enctype="multipart/form-data"}))
+        
+        {
+        <span>Select file</span>
+        <input type="file" name="postedFile" />
+        <hr/>
+        <input type="submit" value="Upload" />
+        <br/>
+        <span style="color:green">@ViewBag.msg</span>
+        }
+    </div>
+</body>
+</html>

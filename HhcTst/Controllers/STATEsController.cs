@@ -12,22 +12,30 @@ namespace HhcTst.Controllers
 {
     public class STATEsController : Controller
     {
-        private HhcDbEntities db = new HhcDbEntities();
 
+        private HhcDbEntities db = new HhcDbEntities();
+        
         public JsonResult GetZones()
         {
-            var ZoneList = db.Zones.ToList();
-            return this.Json(ZoneList, JsonRequestBehavior.AllowGet);
-        }
+            List<Zone> allZones = new List<Zone>();
 
+            allZones = db.Zones.ToList();
+            return new JsonResult{Data=allZones,JsonRequestBehavior=JsonRequestBehavior.AllowGet};
+        }
+        //fetch states by zone id
         [HttpPost]
         public JsonResult GetStates(int ZoneID)
         {
-            var StateList = db.STATEs.Where(m => m.Zone == ZoneID).ToList();
+            List<STATE> allStates = new List<STATE>();
 
-            return this.Json(StateList);
-        }  
+            allStates= db.STATEs.Where(m => m.Zone == ZoneID).ToList();
 
+            return new JsonResult { Data = allStates, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+        public ActionResult Part5()
+        {
+            return View();
+        }
         // GET: STATEs
         //public ActionResult Test()
         //{

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html ng-app="MyApp" ng-controller="MyController">
+<head>
+    @*<meta name="viewport" content="width=device-width" />*@
+    <title>Part5</title>
+    @*@Scripts.Render("~/bundles/Angular")*@
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/MyAngular/My-ng.js"></script>
+</head>
+<body>
+    <div> {{1+4}}</div>
+    <div>
+        Zone : <select ng-model="ZoneID" ng-options="I.ZoneID as I.ZoneName for I in ZonesList" ng-change="GetStates()">
+            <option value="">Select Zone</option>
+        </select>
+        State : <select ng-model="StateID" ng-options="I.StateID as I.StateName for I in StatesList">
+            <option value="">{{StateTextToShow}}</option>
+        </select>
+        <input type="button" value="Get Selected Values" ng-click="ShowResult()" />
+        <div style="padding:10px; font-weight:bold; border:1px solid #f3f3f3">
+            {{Result}}
+            {{2+3}}<br />
+        </div>
+    </div>
+</body>
+</html>
+<h4>Part5 - Cascade Dropdown using AngularJS and MVC4</h4>
+
+
+@*@section scripts{
+    <script src="~/Scripts/MyAngular/My-ng.js"></script>
+}*@

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<HhcTst.Models.UploadedFile>
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index3</title>
+</head>
+<body>
+    <div> 
+        <table class="table table-bordered table-hover table-striped">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model=>model.FileName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.FileDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=>model.FilePath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UploadedTime)
+            </th>
+              </tr>
+            @foreach (var up in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(a=>up.FileName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a=>up.FileDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a=>up.FilePath)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(a=>up.UploadedTime)
+                    </td>
+                </tr>
+            }
+            
+        </table>
+    </div>
+</body>
+</html>

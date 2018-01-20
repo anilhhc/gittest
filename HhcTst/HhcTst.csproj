@@ -145,6 +145,10 @@
       <HintPath>..\packages\mongocsharpdriver.2.4.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
@@ -163,6 +167,14 @@
     </Reference>
     <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rock.Core, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rock.Core.0.9.5\lib\net45\Rock.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rock.Core.Newtonsoft, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rock.Core.Newtonsoft.0.9.2\lib\net45\Rock.Core.Newtonsoft.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -193,9 +205,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -316,6 +325,8 @@
     <Compile Include="Controllers\StockistsController.cs" />
     <Compile Include="Controllers\SubAreaController.cs" />
     <Compile Include="Controllers\test1Controller.cs" />
+    <Compile Include="Controllers\test3Controller.cs" />
+    <Compile Include="Controllers\test4Controller.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallOfLoveController.cs" />
@@ -442,6 +453,9 @@
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TestUploadExcel.cs" />
+    <Compile Include="Models\UploadedFile.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UploadFileName.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
@@ -632,18 +646,7 @@
     <Content Include="Scripts\cldr\supplemental.js" />
     <Content Include="Scripts\cldr\unresolved.js" />
     <Content Include="Scripts\Custom\Myscript.js" />
-    <Content Include="Scripts\errors.json" />
-    <Content Include="Scripts\angular-touch.min.js.map" />
-    <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
-    <Content Include="Scripts\angular-resource.min.js.map" />
-    <Content Include="Scripts\angular-parse-ext.min.js.map" />
-    <Content Include="Scripts\angular-messages.min.js.map" />
-    <Content Include="Scripts\angular-message-format.min.js.map" />
-    <Content Include="Scripts\angular-loader.min.js.map" />
-    <Content Include="Scripts\angular-cookies.min.js.map" />
-    <Content Include="Scripts\angular-aria.min.js.map" />
-    <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -684,6 +687,18 @@
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-parse-ext.min.js.map" />
+    <Content Include="Scripts\angular-messages.min.js.map" />
+    <Content Include="Scripts\angular-message-format.min.js.map" />
+    <Content Include="Scripts\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
+    <Content Include="Scripts\angular-aria.min.js.map" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -1422,7 +1437,6 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
@@ -1480,10 +1494,18 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MyAngular\My-ng.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\Uploadify\Change Log.txt" />
+    <Content Include="Scripts\Uploadify\jquery.uploadify.js" />
+    <Content Include="Scripts\Uploadify\jquery.uploadify.min.js" />
+    <Content Include="Scripts\Uploadify\license.txt" />
+    <Content Include="Scripts\Uploadify\uploadify-cancel.png" />
+    <Content Include="Scripts\Uploadify\uploadify.css" />
+    <Content Include="Scripts\Uploadify\uploadify.swf" />
     <Content Include="startbootstrap-sb-admin-gh-pages\.gitignore" />
     <Content Include="startbootstrap-sb-admin-gh-pages\blank.html" />
     <Content Include="startbootstrap-sb-admin-gh-pages\cards.html" />
@@ -1544,7 +1566,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Scripts\version.json" />
     <Content Include="Views\Shared\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\AdminDashBoard.cshtml" />
@@ -1680,6 +1701,19 @@
     <Content Include="Views\Stockist\UploadFileView.cshtml" />
     <Content Include="Views\test\Index.cshtml" />
     <Content Include="Views\test1\UploadExcel.cshtml" />
+    <Content Include="Views\test3\Index.cshtml" />
+    <Content Include="Views\test3\Index1.cshtml" />
+    <Content Include="Uploads1\statesnew - Copy %282%29.xlsx" />
+    <Content Include="Uploads1\statesnew1.xlsx" />
+    <Content Include="Uploads1\tblReg.xlsx" />
+    <Content Include="Views\test3\Index2.cshtml" />
+    <Content Include="Scripts\Uploadify\check-exists.php" />
+    <Content Include="Scripts\Uploadify\index.php" />
+    <Content Include="Scripts\Uploadify\uploadify.php" />
+    <Content Include="Views\test3\Index3.cshtml" />
+    <Content Include="Views\STATEs\Part5.cshtml" />
+    <Content Include="Scripts\version.json" />
+    <Content Include="Views\test4\Index.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -1693,6 +1727,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Doc\" />
     <Folder Include="excelfolder\" />
+    <Folder Include="Uploads\" />
     <Folder Include="Views\Demo\" />
   </ItemGroup>
   <ItemGroup>

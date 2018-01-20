@@ -20,6 +20,7 @@ namespace HhcTst.Controllers
         // GET: Zones
         public ActionResult Index()
         {
+            TempData["a"] = "Hello mvc!";
            //// if (db.Zones.Where(u => u.ACTIVE == "y").Any()) 
            // {
 

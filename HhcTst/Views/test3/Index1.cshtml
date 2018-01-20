@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("Index1", "test3", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <span>Select files</span>
+            <input type="file" name="postedFiles" multiple="multiple" />
+            <hr/>
+            <input type="submit" value="Upload" />
+            <br />
+            <span style="color:green">@Html.Raw(ViewBag.msg1)</span>
+        }
+    </div>
+</body>
+</html>
