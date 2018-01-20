@@ -28,7 +28,7 @@ namespace HhcTst.Controllers
         {
             List<STATE> allStates = new List<STATE>();
 
-            allStates= db.STATEs.Where(m => m.Zone == ZoneID).ToList();
+            allStates= db.STATEs.Where(m => m.Zone1.ZoneID == ZoneID).ToList();
 
             return new JsonResult { Data = allStates, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -36,7 +36,7 @@ namespace HhcTst.Controllers
         {
             return View();
         }
-        // GET: STATEs
+        // GET: STATEs jquery
         //public ActionResult Test()
         //{
         //    List<SelectListItem> zoneNames = new List<SelectListItem>();
@@ -80,13 +80,8 @@ namespace HhcTst.Controllers
         //}  
         public ActionResult Index()
         {
-            var fromDatabaseEF = new SelectList(db.Zones.ToList(), "ZoneID", "ZoneName");
-            ViewBag.Zones = fromDatabaseEF;
-            //  // var v=from d in db.STATEs
-            //    Where 
             return View(db.STATEs.ToList());
         }
-
         // GET: STATEs/Details/5
         public ActionResult Details(int? id)
         {
