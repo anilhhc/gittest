@@ -23,9 +23,11 @@ namespace HhcTst
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.min.js",
-                "~/Scripts/MyAngular/My-ng.js"
+                "~/Scripts/MyAngular/My-ng.js",
+                "~/Scripts/MyAngular/a1.js"
                 ));
         }
     }

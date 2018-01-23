@@ -43,6 +43,7 @@ namespace HhcTst.Controllers
                     foreach (var city in cities)
                     {
                         items.Add(new SelectListItem { Text = city.CITYNAME, Value = city.CITYID.ToString() });
+                       
                     }
                     break;
             }
