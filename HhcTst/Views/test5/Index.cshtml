@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+@*@Scripts.Render("~/bundles/angular")*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/angular.js"></script>
+    @*<script src="~/Scripts/MyAngular/a1.js"></script>*@
+</head>
+<body>
+    <script type="text/javascript">
+        var StudentApp = angular.module('StudentApp', []);
+        StudentApp.controller('StudentController', function ($scope, StudentService) {
+            getStudents();
+            $scope.msg = "something here";
+            function getStudents() {
+                StudentService.getStudents()
+                    .then(function(studs) {
+                        $scope.students = studs;
+                        console.log(studs);
+                    })
+                    .catch(function(er) {
+                        $scope.status = 'Unable to load customer data: ' + er.message;
+                        console.log($scope.status);
+                    });
+            }
+        });
+        StudentApp.factory('StudentService', ['$http', function ($http) {
+            var StudentService = {};
+            StudentService.getStudents = function () {
+                return $http.get('/test5/GetPersons');
+            };
+            return StudentService;
+        }]);
+    </script>
+
+
+    <div ng-app="StudentApp" class="container">
+        {{1+1}}
+
+        <div ng-controller="StudentController">
+            <input type="text" placeholder="Search Student" ng-model="searchStudent" /><br />
+            <table class="table">
+                <tr ng-repeat="r in students|filter:searchStudent">
+                    <td>{{r.StockistId}}</td>
+                    <td>{{r.StockistName}}</td>
+                    <td>{{r.Description}}</td>
+                </tr>
+            </table>
+            {{msg}}
+        </div>
+
+        <h1 style="color:red" class="font-weight-bold">  {{name}} </h1>
+    </div>
+</body>
+</html>

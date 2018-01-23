@@ -42,20 +42,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="C1.Web.Mvc, Version=4.0.20173.143, Culture=neutral, PublicKeyToken=9b75583953471eea, processorArchitecture=MSIL">
       <HintPath>..\packages\C1.Web.Mvc.4.0.20173.143\lib\net40\C1.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="C1.Web.Mvc.FlexSheet, Version=4.0.20173.143, Culture=neutral, PublicKeyToken=9b75583953471eea, processorArchitecture=MSIL">
       <HintPath>..\packages\C1.Web.Mvc.FlexSheet.4.0.20173.143\lib\net40\C1.Web.Mvc.FlexSheet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
-      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -83,8 +75,8 @@
       <HintPath>..\packages\ExcelDataReader.DataSet.3.3.0\lib\net45\ExcelDataReader.DataSet.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GemBox.Spreadsheet, Version=41.3.30.1136, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\packages\GemBox.Spreadsheet.41.3.30.1136\lib\net30\GemBox.Spreadsheet.dll</HintPath>
+    <Reference Include="GemBox.Spreadsheet, Version=41.3.30.1132, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\packages\GemBox.Spreadsheet.41.3.30.1132\lib\net30\GemBox.Spreadsheet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GridMvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -129,10 +121,6 @@
       <HintPath>..\packages\Microsoft.Owin.Security.Google.3.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
@@ -141,20 +129,20 @@
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Bson.2.5.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharp.linqindexers.1.8.1.1\lib\net35\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.2.5.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    <Reference Include="MongoDB.Driver, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharp.linqindexers.1.8.1.1\lib\net35\MongoDB.Driver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.5.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Driver.Legacy, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\mongocsharpdriver.2.5.0\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.4.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -182,7 +170,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rock.Core, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Rock.Core.0.9.13\lib\net45\Rock.Core.dll</HintPath>
+      <HintPath>..\packages\Rock.Core.0.9.5\lib\net45\Rock.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rock.Core.Newtonsoft, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -190,20 +178,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Entity" />
@@ -262,9 +246,13 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    <Reference Include="WebGrease">
       <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +268,9 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.Owin">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
     </Reference>
@@ -291,34 +282,34 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
-    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
-    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
-    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
-    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
-    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
-    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
-    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
-    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Content\Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Content\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Content\Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Content\Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Content\Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Content\Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Content\Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Content\Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CITiesController.cs" />
@@ -336,12 +327,21 @@
     <Compile Include="Controllers\test1Controller.cs" />
     <Compile Include="Controllers\test3Controller.cs" />
     <Compile Include="Controllers\test4Controller.cs" />
+    <Compile Include="Controllers\test5Controller.cs" />
+    <Compile Include="Controllers\test6Controller.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallOfLoveController.cs" />
     <Compile Include="Controllers\ZonesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -492,6 +492,13 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="xsds\datacare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -499,7 +506,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\admin-lte\css\AdminLTE.min.css" />
     <Content Include="Content\admin-lte\css\blue.css" />
     <Content Include="Content\admin-lte\css\blue.png" />
@@ -513,17 +520,8 @@
     <Content Include="Content\admin-lte\js\icheck.min.js" />
     <Content Include="Content\admin-lte\js\jquery.min.js" />
     <Content Include="Content\bootstrap-datepicker.css" />
-    <Content Include="Content\bootstrap-datepicker.min.css" />
-    <Content Include="Content\bootstrap-datepicker.standalone.css" />
-    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
-    <Content Include="Content\bootstrap-datepicker3.css" />
-    <Content Include="Content\bootstrap-datepicker3.min.css" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Gridmvc.css" />
@@ -572,11 +570,13 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPages\HtmlPage1.html" />
     <Content Include="HtmlPages\HtmlPage2.html" />
     <Content Include="HtmlPages\HtmlPage3.html" />
     <Content Include="HtmlPages\HtmlPage4.html" />
+    <Content Include="default.aspx" />
     <Content Include="Models\HhcDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
@@ -627,30 +627,27 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Areas\HelpPage\Views\Web.config" />
-    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
-    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Web.config" />
+    <Content Include="Content\Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker-globalize.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
-    <Content Include="Scripts\bootstrap-datepicker.min.js" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cldr.js" />
@@ -660,6 +657,14 @@
     <Content Include="Scripts\Custom\Myscript.js" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Grid.mvc.readme" />
     <EntityDeploy Include="Models\HhcDb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -681,10 +686,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\globalize.js" />
     <Content Include="Scripts\globalize\currency.js" />
     <Content Include="Scripts\globalize\date.js" />
@@ -692,7 +693,6 @@
     <Content Include="Scripts\globalize\number.js" />
     <Content Include="Scripts\globalize\plural.js" />
     <Content Include="Scripts\globalize\relative-time.js" />
-    <Content Include="Scripts\globalize\unit.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
@@ -707,24 +707,6 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
-    <Content Include="Content\bootstrap-datepicker3.css.map" />
-    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
-    <Content Include="Content\bootstrap-datepicker.css.map" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1470,113 +1452,63 @@
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.globalize.js" />
     <Content Include="Scripts\jquery.validate.globalize.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker-en-CA.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ar-tn.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.bn.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.br.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.en-AU.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.en-IE.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.en-NZ.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.en-ZA.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.hi.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.km.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.nb.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.oc.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.si.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.ta.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.tg.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.uz-cyrl.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.uz-latn.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
-    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyAngular\a1.js" />
     <Content Include="Scripts\MyAngular\My-ng.js" />
-    <Content Include="HtmlPage1.html" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\toastr.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\Uploadify\Change Log.txt" />
     <Content Include="Scripts\Uploadify\jquery.uploadify.js" />
     <Content Include="Scripts\Uploadify\jquery.uploadify.min.js" />
@@ -1637,7 +1569,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
@@ -1667,6 +1599,7 @@
     <Content Include="Views\CITies\Details.cshtml" />
     <Content Include="Views\CITies\Edit.cshtml" />
     <Content Include="Views\CITies\Index.cshtml" />
+    <Content Include="WebForm1.aspx" />
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
@@ -1792,15 +1725,8 @@
     <Content Include="Views\STATEs\Part5.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\test4\Index.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\test5\Index.cshtml" />
+    <Content Include="Views\test6\Index.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
