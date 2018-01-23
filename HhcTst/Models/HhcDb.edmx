@@ -4,561 +4,557 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HhcDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Categories">
-          <Key>
-            <PropertyRef Name="CategoryId" />
-          </Key>
-          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CategoryName" Type="varchar" MaxLength="40" />
-          <Property Name="ParentCategoryId" Type="int" />
-          <Property Name="Remarks" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="CITies">
-          <Key>
-            <PropertyRef Name="CITYID" />
-          </Key>
-          <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CITYNAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="STATEID" Type="int" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <EntityType Name="Employees">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Mobile" Type="nvarchar" MaxLength="10" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Hdivisions">
-          <Key>
-            <PropertyRef Name="HdivisionID" />
-          </Key>
-          <Property Name="HdivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HdivisionDESC" Type="nvarchar(max)" />
-          <Property Name="heterodivisoncode" Type="nvarchar" MaxLength="50" />
-          <Property Name="hdname" Type="nvarchar" MaxLength="50" />
-          <Property Name="Active" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="hhcAdminLogins">
-          <Key>
-            <PropertyRef Name="hhcAdminLoginsId" />
-          </Key>
-          <Property Name="hhcAdminLoginsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Permissions" Type="nvarchar(max)" />
-          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
-          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <EntityType Name="hhcControlPanelIPStats">
-          <Key>
-            <PropertyRef Name="CPIPID" />
-          </Key>
-          <Property Name="CPIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CPIP" Type="nvarchar" MaxLength="50" />
-          <Property Name="CPLoginTime" Type="datetime" />
-          <Property Name="CPLogoutTime" Type="datetime" />
-          <Property Name="CPLoginID" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="hhcprimarysales">
-          <Key>
-            <PropertyRef Name="hhcprimarysalesID" />
-          </Key>
-          <Property Name="hhcprimarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="billingdocument" Type="nvarchar" MaxLength="500" />
-          <Property Name="billingdate" Type="datetime" />
-          <Property Name="stockistcode" Type="nvarchar" MaxLength="50" />
-          <Property Name="stockistsapid" Type="nvarchar" MaxLength="50" />
-          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
-          <Property Name="headquarter" Type="nvarchar" MaxLength="200" />
-          <Property Name="heterosapproductcode" Type="nvarchar" MaxLength="100" />
-          <Property Name="heterosapproductname" Type="nvarchar(max)" />
-          <Property Name="sapproductquantity" Type="nvarchar" MaxLength="50" />
-          <Property Name="rate" Type="int" />
-          <Property Name="value" Type="int" />
-        </EntityType>
-        <EntityType Name="hhcsecondarysales">
-          <Key>
-            <PropertyRef Name="hhcsecondarysalesID" />
-          </Key>
-          <Property Name="hhcsecondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
-          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
-          <Property Name="month" Type="nvarchar" MaxLength="50" />
-          <Property Name="year" Type="nvarchar" MaxLength="50" />
-          <Property Name="stockistproductcode" Type="nvarchar" MaxLength="500" />
-          <Property Name="stockistproductname" Type="nvarchar" MaxLength="500" />
-          <Property Name="package" Type="nvarchar" MaxLength="50" />
-          <Property Name="openingstock" Type="int" />
-          <Property Name="purshcasequantity" Type="int" />
-          <Property Name="salequanitity" Type="int" />
-          <Property Name="purchasereturn" Type="int" />
-          <Property Name="salereturn" Type="int" />
-          <Property Name="closing" Type="int" />
-          <Property Name="filepath" Type="nvarchar(max)" />
-          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
-          <Property Name="heteroproductname" Type="nvarchar(max)" />
-          <Property Name="headquaterid" Type="nvarchar" MaxLength="50" />
-          <Property Name="headquartername" Type="nvarchar" MaxLength="500" />
-          <Property Name="heteroproductsapid" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Hproductslistdescriptions">
-          <Key>
-            <PropertyRef Name="HproductslistdescriptionID" />
-          </Key>
-          <Property Name="HproductslistdescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HproductslistdescriptionDESC" Type="nvarchar(max)" />
-          <Property Name="STATUS" Type="nvarchar" MaxLength="60" />
-          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdquantityperpack" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdquantityperstrip" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdratevalidform" Type="datetime" />
-          <Property Name="hpdpricetoretailer" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdmrp" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdstandardrate" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdpricetostockist" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpdbrandname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hdpcategoryname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hpddivisionname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hdpmanfacturename" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Hproductslists">
-          <Key>
-            <PropertyRef Name="HproductslistID" />
-          </Key>
-          <Property Name="HproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HproductslistNAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="HproductslistDESC" Type="nvarchar(max)" />
-          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Hstockistdetails">
-          <Key>
-            <PropertyRef Name="HstockistdetailsID" />
-          </Key>
-          <Property Name="HstockistdetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="hsfullname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hslastname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsemailid" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsmobile" Type="nvarchar" MaxLength="50" />
-          <Property Name="hspwd" Type="nvarchar" MaxLength="50" />
-          <Property Name="hssapcustomerid" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsplotno" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsadressone" Type="nvarchar(max)" />
-          <Property Name="hsadresstwo" Type="nvarchar(max)" />
-          <Property Name="hscountry" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsstate" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsheadquater" Type="nvarchar" MaxLength="50" />
-          <Property Name="hssubarea" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsdivision" Type="nvarchar" MaxLength="50" />
-          <Property Name="hscnf" Type="nvarchar" MaxLength="50" />
-          <Property Name="hstherapatic" Type="nvarchar" MaxLength="50" />
-          <Property Name="hspincode" Type="nvarchar" MaxLength="50" />
-          <Property Name="hstelephone" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsfax" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsgstprovisionalid" Type="nvarchar" MaxLength="50" />
-          <Property Name="hspan" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsspocname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsspocmobile" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsssistatus" Type="nvarchar" MaxLength="50" />
-          <Property Name="hsdruglicenceno" Type="nvarchar" MaxLength="50" />
-          <Property Name="hszone" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="hstockistuploads">
-          <Key>
-            <PropertyRef Name="hstockistuploadID" />
-          </Key>
-          <Property Name="hstockistuploadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="filedescription" Type="nvarchar(max)" />
-          <Property Name="month" Type="int" />
-          <Property Name="year" Type="int" />
-          <Property Name="filenumber" Type="int" />
-          <Property Name="fileuploaddate" Type="datetime" />
-          <Property Name="filepath" Type="nvarchar(max)" />
-          <Property Name="monthname" Type="nvarchar" MaxLength="50" />
-          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
-          <Property Name="Status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Htherapatics">
-          <Key>
-            <PropertyRef Name="HtherapaticID" />
-          </Key>
-          <Property Name="HtherapaticID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HtherapaticDESC" Type="nvarchar(max)" />
-          <Property Name="HtherapaticSTATUS" Type="nvarchar" MaxLength="60" />
-          <Property Name="htheterocode" Type="nvarchar" MaxLength="50" />
-          <Property Name="hthetroname" Type="nvarchar" MaxLength="50" />
-          <Property Name="htdivisionid" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Hvendordetails">
-          <Key>
-            <PropertyRef Name="HvendordetailsID" />
-          </Key>
-          <Property Name="HvendordetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="vfullname" Type="nvarchar" MaxLength="200" />
-          <Property Name="vlogo" Type="nvarchar" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="Hvproductslists">
-          <Key>
-            <PropertyRef Name="HvproductslistID" />
-          </Key>
-          <Property Name="HvproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HvproductslistNAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="HvproductslistDESC" Type="nvarchar(max)" />
-          <Property Name="Hvproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-          <Property Name="hvstockistid" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hproductslistcompanyname" Type="nvarchar" MaxLength="50" />
-          <Property Name="hvstockistname" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Hvsales">
-          <Key>
-            <PropertyRef Name="HvsalesID" />
-          </Key>
-          <Property Name="HvsalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="HvproductslistNAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="HvproductslistDESC" Type="nvarchar" MaxLength="16" />
-          <Property Name="Hvproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hproductslistcompanyid" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hproductsquantity" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="OtherAdminLogins">
-          <Key>
-            <PropertyRef Name="OtherAdminId" />
-          </Key>
-          <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Branch" Type="nvarchar" MaxLength="50" />
-          <Property Name="Permissions" Type="nvarchar(max)" />
-          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
-          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
-        </EntityType>
-        <EntityType Name="OtherAdminPermissions">
-          <Key>
-            <PropertyRef Name="OtherAdminPermissionID" />
-          </Key>
-          <Property Name="OtherAdminPermissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OtherAdminId" Type="int" />
-          <Property Name="SectionPermitted" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="secondarysales">
-          <Key>
-            <PropertyRef Name="secondarysalesID" />
-          </Key>
-          <Property Name="secondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="month" Type="nvarchar" MaxLength="50" />
-          <Property Name="year" Type="nvarchar" MaxLength="50" />
-          <Property Name="filepath" Type="nvarchar(max)" />
-          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
-          <Property Name="productcode" Type="nvarchar" MaxLength="500" />
-          <Property Name="productname" Type="nvarchar" MaxLength="500" />
-          <Property Name="pack" Type="nvarchar" MaxLength="50" />
-          <Property Name="purshcasequantity" Type="int" />
-          <Property Name="purchasereturn" Type="int" />
-          <Property Name="openingquantity" Type="int" />
-          <Property Name="salequanitity" Type="int" />
-          <Property Name="salereturn" Type="int" />
-          <Property Name="closing" Type="int" />
-          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="STATEs">
-          <Key>
-            <PropertyRef Name="STATEID" />
-          </Key>
-          <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="STATENAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="Zone" Type="int" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <EntityType Name="Stockists">
-          <Key>
-            <PropertyRef Name="StockistId" />
-          </Key>
-          <Property Name="StockistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StockistName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <EntityType Name="SubArea">
-          <Key>
-            <PropertyRef Name="SubAreaID" />
-          </Key>
-          <Property Name="SubAreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SubArea" Type="nvarchar" MaxLength="100" />
-          <Property Name="CITYID" Type="int" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="tbl_registration">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="ContactNo" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="City" Type="varchar" MaxLength="50" />
-          <Property Name="Address" Type="varchar" MaxLength="50" />
-          <Property Name="CreatedOn" Type="datetime" />
-        </EntityType>
-        <EntityType Name="UploadedFiles">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
-          <Property Name="FileDescription" Type="nvarchar(max)" />
-          <Property Name="FilePath" Type="nvarchar(max)" />
-          <Property Name="UploadedTime" Type="datetime" />
-          <Property Name="States" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="UploadFileNames">
-          <Key>
-            <PropertyRef Name="UploadFileId" />
-          </Key>
-          <Property Name="UploadFileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UploadFileName1" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="FileType" Type="nvarchar" MaxLength="50" />
-          <Property Name="FilePath" Type="nvarchar" MaxLength="200" />
-          <Property Name="Section" Type="nvarchar" MaxLength="200" />
-          <Property Name="UploadedDate" Type="datetime" />
-          <Property Name="UploadedBy" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="UserAdminLogins">
-          <Key>
-            <PropertyRef Name="OtherAdminId" />
-          </Key>
-          <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Permissions" Type="nvarchar(max)" />
-          <Property Name="Adress" Type="nvarchar" MaxLength="50" />
-          <Property Name="ActiveStatus" Type="nchar" MaxLength="1" />
-          <Property Name="State" Type="nvarchar" MaxLength="50" />
-          <Property Name="country" Type="nvarchar" MaxLength="50" />
-          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="USERS">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
-          <Property Name="UserPwd" Type="nvarchar" MaxLength="10" />
-          <Property Name="UserRole" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Usershetroes">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Address" Type="nvarchar" MaxLength="150" />
-          <Property Name="ContactNo" Type="varchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="VENDORSPECIALIZATIONs">
-          <Key>
-            <PropertyRef Name="SPECIALIZATIONID" />
-          </Key>
-          <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SPECIALIZATIONNAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="SPECIALIZATIONDESC" Type="nvarchar" MaxLength="16" />
-          <Property Name="Procedures" Type="nvarchar" MaxLength="50" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Vendortype" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="VENDORSPECIALIZATIONs1">
-          <Key>
-            <PropertyRef Name="SPECIALIZATIONID" />
-          </Key>
-          <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SPECIALIZATIONNAME" Type="nvarchar" MaxLength="255" />
-          <Property Name="SPECIALIZATIONDESC" Type="nvarchar" MaxLength="16" />
-          <Property Name="Procedures" Type="nvarchar" MaxLength="50" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="Vendortype" Type="nvarchar" MaxLength="50" />
-          <Property Name="ratingrtype" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="VENDORSUsers">
-          <Key>
-            <PropertyRef Name="VENDORID" />
-          </Key>
-          <Property Name="VENDORID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VendorSPECIALISATION" Type="nvarchar" MaxLength="400" />
-          <Property Name="QUALIFICATION" Type="nvarchar" MaxLength="400" />
-          <Property Name="AGE" Type="int" />
-          <Property Name="GENDER" Type="nchar" MaxLength="1" />
-          <Property Name="ADDRESS" Type="nvarchar" MaxLength="1000" />
-          <Property Name="CITY" Type="nvarchar" MaxLength="50" />
-          <Property Name="STATE" Type="nvarchar" MaxLength="50" />
-          <Property Name="COUNTRY" Type="nchar" MaxLength="10" />
-          <Property Name="ZIP" Type="int" />
-          <Property Name="MOBILE" Type="nvarchar" MaxLength="50" />
-          <Property Name="ACTIVE" Type="nchar" MaxLength="1" Nullable="false" />
-          <Property Name="PHOTO" Type="nvarchar" MaxLength="60" />
-          <Property Name="Designation" Type="nvarchar" MaxLength="500" />
-          <Property Name="BriefProfile" Type="nvarchar(max)" />
-          <Property Name="PresentPosition" Type="nvarchar(max)" />
-          <Property Name="Qualifications" Type="nvarchar(max)" />
-          <Property Name="SpecialTraining" Type="nvarchar(max)" />
-          <Property Name="Experience" Type="nvarchar(max)" />
-          <Property Name="Expertise" Type="nvarchar(max)" />
-          <Property Name="AchievementsBreakthroughCases" Type="nvarchar(max)" />
-          <Property Name="Publications" Type="nvarchar(max)" />
-          <Property Name="AwardsAndHonors" Type="nvarchar(max)" />
-          <Property Name="AcademicExposure" Type="nvarchar(max)" />
-          <Property Name="TalkDelivered" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
-          <Property Name="Media" Type="nvarchar(max)" />
-          <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
-          <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
-          <Property Name="vendortype" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="VENDORTYPES">
-          <Key>
-            <PropertyRef Name="VENDORTYPEID" />
-          </Key>
-          <Property Name="VENDORTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VENDORTYPENAME" Type="nvarchar" MaxLength="100" />
-          <Property Name="HomePageText" Type="nvarchar(max)" />
-          <Property Name="About" Type="nvarchar(max)" />
-          <Property Name="DisplayOrder" Type="int" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-        </EntityType>
-        <EntityType Name="VENDORTYPESpecialisationsentries">
-          <Key>
-            <PropertyRef Name="BSID" />
-          </Key>
-          <Property Name="BSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DivisionID" Type="int" />
-          <Property Name="BranchID" Type="int" />
-        </EntityType>
-        <EntityType Name="Zones">
-          <Key>
-            <PropertyRef Name="ZoneID" />
-          </Key>
-          <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ZoneName" Type="nvarchar" MaxLength="100" />
-          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
-          <Property Name="CreatedOn" Type="date" />
-        </EntityType>
-        <Association Name="FK_CITies_STATEs">
-          <End Role="STATEs" Type="Self.STATEs" Multiplicity="0..1" />
-          <End Role="CITies" Type="Self.CITies" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="STATEs">
-              <PropertyRef Name="STATEID" />
-            </Principal>
-            <Dependent Role="CITies">
-              <PropertyRef Name="STATEID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_STATEs_Zones">
-          <End Role="Zones" Type="Self.Zones" Multiplicity="0..1" />
-          <End Role="STATEs" Type="Self.STATEs" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Zones">
-              <PropertyRef Name="ZoneID" />
-            </Principal>
-            <Dependent Role="STATEs">
-              <PropertyRef Name="Zone" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_subareaCITies_CITies">
-          <End Role="CITies" Type="Self.CITies" Multiplicity="0..1" />
-          <End Role="SubArea" Type="Self.SubArea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CITies">
-              <PropertyRef Name="CITYID" />
-            </Principal>
-            <Dependent Role="SubArea">
-              <PropertyRef Name="CITYID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Function Name="spSkCountId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="stockistname" Type="varchar" Mode="In" />
-          <Parameter Name="StockistId" Type="varchar" Mode="In" />
-        </Function>
-        <EntityContainer Name="HhcDbModelStoreContainer">
-          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CITies" EntityType="Self.CITies" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hdivisions" EntityType="Self.Hdivisions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="hhcAdminLogins" EntityType="Self.hhcAdminLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="hhcControlPanelIPStats" EntityType="Self.hhcControlPanelIPStats" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="hhcprimarysales" EntityType="Self.hhcprimarysales" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysales" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hproductslistdescriptions" EntityType="Self.Hproductslistdescriptions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hproductslists" EntityType="Self.Hproductslists" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetails" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="hstockistuploads" EntityType="Self.hstockistuploads" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Htherapatics" EntityType="Self.Htherapatics" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hvendordetails" EntityType="Self.Hvendordetails" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hvproductslists" EntityType="Self.Hvproductslists" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Hvsales" EntityType="Self.Hvsales" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OtherAdminLogins" EntityType="Self.OtherAdminLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OtherAdminPermissions" EntityType="Self.OtherAdminPermissions" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="secondarysales" EntityType="Self.secondarysales" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="STATEs" EntityType="Self.STATEs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Stockists" EntityType="Self.Stockists" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SubArea" EntityType="Self.SubArea" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tbl_registration" EntityType="Self.tbl_registration" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UploadedFiles" EntityType="Self.UploadedFiles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UploadFileNames" EntityType="Self.UploadFileNames" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserAdminLogins" EntityType="Self.UserAdminLogins" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usershetroes" EntityType="Self.Usershetroes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORSPECIALIZATIONs" EntityType="Self.VENDORSPECIALIZATIONs" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORSPECIALIZATIONs1" EntityType="Self.VENDORSPECIALIZATIONs1" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORSUsers" EntityType="Self.VENDORSUsers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORTYPES" EntityType="Self.VENDORTYPES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VENDORTYPESpecialisationsentries" EntityType="Self.VENDORTYPESpecialisationsentries" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Zones" EntityType="Self.Zones" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_CITies_STATEs" Association="Self.FK_CITies_STATEs">
-            <End Role="STATEs" EntitySet="STATEs" />
-            <End Role="CITies" EntitySet="CITies" />
-          </AssociationSet>
-          <AssociationSet Name="FK_STATEs_Zones" Association="Self.FK_STATEs_Zones">
-            <End Role="Zones" EntitySet="Zones" />
-            <End Role="STATEs" EntitySet="STATEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_subareaCITies_CITies" Association="Self.FK_subareaCITies_CITies">
-            <End Role="CITies" EntitySet="CITies" />
-            <End Role="SubArea" EntitySet="SubArea" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="HhcDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="HhcDbModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="HhcDbModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CITies" EntityType="HhcDbModel.Store.CITies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="HhcDbModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hdivisions" EntityType="HhcDbModel.Store.Hdivisions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hhcControlPanelIPStats" EntityType="HhcDbModel.Store.hhcControlPanelIPStats" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hhcprimarysales" EntityType="HhcDbModel.Store.hhcprimarysales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hhcsecondarysales" EntityType="HhcDbModel.Store.hhcsecondarysales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hproductslistdescriptions" EntityType="HhcDbModel.Store.Hproductslistdescriptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hproductslists" EntityType="HhcDbModel.Store.Hproductslists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hstockistdetails" EntityType="HhcDbModel.Store.Hstockistdetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hstockistuploads" EntityType="HhcDbModel.Store.hstockistuploads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Htherapatics" EntityType="HhcDbModel.Store.Htherapatics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hvendordetails" EntityType="HhcDbModel.Store.Hvendordetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hvproductslists" EntityType="HhcDbModel.Store.Hvproductslists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hvsales" EntityType="HhcDbModel.Store.Hvsales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OtherAdminLogins" EntityType="HhcDbModel.Store.OtherAdminLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OtherAdminPermissions" EntityType="HhcDbModel.Store.OtherAdminPermissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="secondarysales" EntityType="HhcDbModel.Store.secondarysales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stockists" EntityType="HhcDbModel.Store.Stockists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="HhcDbModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UploadFileNames" EntityType="HhcDbModel.Store.UploadFileNames" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserAdminLogins" EntityType="HhcDbModel.Store.UserAdminLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="USERS" EntityType="HhcDbModel.Store.USERS" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usershetroes" EntityType="HhcDbModel.Store.Usershetroes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VENDORSPECIALIZATIONs" EntityType="HhcDbModel.Store.VENDORSPECIALIZATIONs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VENDORSPECIALIZATIONs1" EntityType="HhcDbModel.Store.VENDORSPECIALIZATIONs1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VENDORSUsers" EntityType="HhcDbModel.Store.VENDORSUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VENDORTYPES" EntityType="HhcDbModel.Store.VENDORTYPES" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VENDORTYPESpecialisationsentries" EntityType="HhcDbModel.Store.VENDORTYPESpecialisationsentries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Zones" EntityType="HhcDbModel.Store.Zones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="hhcAdminLogins" EntityType="HhcDbModel.Store.hhcAdminLogins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="STATEs" EntityType="HhcDbModel.Store.STATEs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubAreas" EntityType="HhcDbModel.Store.SubAreas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_registration" EntityType="HhcDbModel.Store.tbl_registration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UploadedFiles" EntityType="HhcDbModel.Store.UploadedFiles" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_STATEs_Zones" Association="HhcDbModel.Store.FK_STATEs_Zones">
+      <End Role="Zone" EntitySet="Zones" />
+      <End Role="STATE" EntitySet="STATEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CITies_STATEs" Association="HhcDbModel.Store.FK_CITies_STATEs">
+      <End Role="STATE" EntitySet="STATEs" />
+      <End Role="CITy" EntitySet="CITies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subareaCITies_CITies" Association="HhcDbModel.Store.FK_subareaCITies_CITies">
+      <End Role="CITy" EntitySet="CITies" />
+      <End Role="SubArea" EntitySet="SubAreas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" Nullable="true" MaxLength="40" />
+    <Property Name="ParentCategoryId" Type="int" Nullable="true" />
+    <Property Name="Remarks" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CITies">
+    <Key>
+      <PropertyRef Name="CITYID" />
+    </Key>
+    <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CITYNAME" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="STATEID" Type="int" Nullable="true" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Hdivisions">
+    <Key>
+      <PropertyRef Name="HdivisionID" />
+    </Key>
+    <Property Name="HdivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HdivisionDESC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="heterodivisoncode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hdname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hhcControlPanelIPStats">
+    <Key>
+      <PropertyRef Name="CPIPID" />
+    </Key>
+    <Property Name="CPIPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CPIP" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="CPLoginTime" Type="datetime" Nullable="true" />
+    <Property Name="CPLogoutTime" Type="datetime" Nullable="true" />
+    <Property Name="CPLoginID" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="hhcprimarysales">
+    <Key>
+      <PropertyRef Name="hhcprimarysalesID" />
+    </Key>
+    <Property Name="hhcprimarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="billingdocument" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="billingdate" Type="datetime" Nullable="true" />
+    <Property Name="stockistcode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="stockistsapid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="stockistname" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="headquarter" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="heterosapproductcode" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="heterosapproductname" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="sapproductquantity" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="rate" Type="int" Nullable="true" />
+    <Property Name="value" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="hhcsecondarysales">
+    <Key>
+      <PropertyRef Name="hhcsecondarysalesID" />
+    </Key>
+    <Property Name="hhcsecondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stockistname" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="stockistid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="month" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="year" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="stockistproductcode" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="stockistproductname" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="package" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="openingstock" Type="int" Nullable="true" />
+    <Property Name="purshcasequantity" Type="int" Nullable="true" />
+    <Property Name="salequanitity" Type="int" Nullable="true" />
+    <Property Name="purchasereturn" Type="int" Nullable="true" />
+    <Property Name="salereturn" Type="int" Nullable="true" />
+    <Property Name="closing" Type="int" Nullable="true" />
+    <Property Name="filepath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="heteroproductid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="heteroproductname" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="headquaterid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="headquartername" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="heteroproductsapid" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hproductslistdescriptions">
+    <Key>
+      <PropertyRef Name="HproductslistdescriptionID" />
+    </Key>
+    <Property Name="HproductslistdescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HproductslistdescriptionDESC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="STATUS" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="Hproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdquantityperpack" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdquantityperstrip" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdratevalidform" Type="datetime" Nullable="true" />
+    <Property Name="hpdpricetoretailer" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdmrp" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdstandardrate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdpricetostockist" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpdbrandname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hdpcategoryname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hpddivisionname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hdpmanfacturename" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hproductslists">
+    <Key>
+      <PropertyRef Name="HproductslistID" />
+    </Key>
+    <Property Name="HproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HproductslistNAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="HproductslistDESC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Hproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hstockistdetails">
+    <Key>
+      <PropertyRef Name="HstockistdetailsID" />
+    </Key>
+    <Property Name="HstockistdetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hsfullname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hslastname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsemailid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsmobile" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hspwd" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hssapcustomerid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsplotno" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsadressone" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="hsadresstwo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="hscountry" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsstate" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsheadquater" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hssubarea" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsdivision" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hscnf" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hstherapatic" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hspincode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hstelephone" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsfax" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsgstprovisionalid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hspan" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsspocname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsspocmobile" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsssistatus" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hsdruglicenceno" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hszone" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hstockistuploads">
+    <Key>
+      <PropertyRef Name="hstockistuploadID" />
+    </Key>
+    <Property Name="hstockistuploadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filedescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="month" Type="int" Nullable="true" />
+    <Property Name="year" Type="int" Nullable="true" />
+    <Property Name="filenumber" Type="int" Nullable="true" />
+    <Property Name="fileuploaddate" Type="datetime" Nullable="true" />
+    <Property Name="filepath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="monthname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="stockistid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Htherapatics">
+    <Key>
+      <PropertyRef Name="HtherapaticID" />
+    </Key>
+    <Property Name="HtherapaticID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HtherapaticDESC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="HtherapaticSTATUS" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="htheterocode" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hthetroname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="htdivisionid" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hvendordetails">
+    <Key>
+      <PropertyRef Name="HvendordetailsID" />
+    </Key>
+    <Property Name="HvendordetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vfullname" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="vlogo" Type="nvarchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Hvproductslists">
+    <Key>
+      <PropertyRef Name="HvproductslistID" />
+    </Key>
+    <Property Name="HvproductslistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HvproductslistNAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="HvproductslistDESC" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Hvproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Hproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hvstockistid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Hproductslistcompanyname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="hvstockistname" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hvsales">
+    <Key>
+      <PropertyRef Name="HvsalesID" />
+    </Key>
+    <Property Name="HvsalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HvproductslistNAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="HvproductslistDESC" Type="nvarchar" Nullable="true" MaxLength="16" />
+    <Property Name="Hvproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Hproductslistcompanyid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Hproductsquantity" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OtherAdminLogins">
+    <Key>
+      <PropertyRef Name="OtherAdminId" />
+    </Key>
+    <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserPwd" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Branch" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Permissions" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmailID" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ActiveStatus" Type="nchar" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="OtherAdminPermissions">
+    <Key>
+      <PropertyRef Name="OtherAdminPermissionID" />
+    </Key>
+    <Property Name="OtherAdminPermissionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OtherAdminId" Type="int" Nullable="true" />
+    <Property Name="SectionPermitted" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="secondarysales">
+    <Key>
+      <PropertyRef Name="secondarysalesID" />
+    </Key>
+    <Property Name="secondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="month" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="year" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="filepath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="stockistid" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="productcode" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="productname" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="pack" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="purshcasequantity" Type="int" Nullable="true" />
+    <Property Name="purchasereturn" Type="int" Nullable="true" />
+    <Property Name="openingquantity" Type="int" Nullable="true" />
+    <Property Name="salequanitity" Type="int" Nullable="true" />
+    <Property Name="salereturn" Type="int" Nullable="true" />
+    <Property Name="closing" Type="int" Nullable="true" />
+    <Property Name="heteroproductid" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Stockists">
+    <Key>
+      <PropertyRef Name="StockistId" />
+    </Key>
+    <Property Name="StockistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockistName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ACTIVE" Type="char" Nullable="true" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="UploadFileNames">
+    <Key>
+      <PropertyRef Name="UploadFileId" />
+    </Key>
+    <Property Name="UploadFileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UploadFileName1" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="FileType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FilePath" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="Section" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="UploadedDate" Type="datetime" Nullable="true" />
+    <Property Name="UploadedBy" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserAdminLogins">
+    <Key>
+      <PropertyRef Name="OtherAdminId" />
+    </Key>
+    <Property Name="OtherAdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserPwd" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Permissions" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Adress" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ActiveStatus" Type="nchar" Nullable="true" MaxLength="1" />
+    <Property Name="State" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="UserPwd" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="UserRole" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Usershetroes">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="ContactNo" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VENDORSPECIALIZATIONs">
+    <Key>
+      <PropertyRef Name="SPECIALIZATIONID" />
+    </Key>
+    <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SPECIALIZATIONNAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="SPECIALIZATIONDESC" Type="nvarchar" Nullable="true" MaxLength="16" />
+    <Property Name="Procedures" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Vendortype" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VENDORSPECIALIZATIONs1">
+    <Key>
+      <PropertyRef Name="SPECIALIZATIONID" />
+    </Key>
+    <Property Name="SPECIALIZATIONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SPECIALIZATIONNAME" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="SPECIALIZATIONDESC" Type="nvarchar" Nullable="true" MaxLength="16" />
+    <Property Name="Procedures" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="Vendortype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ratingrtype" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VENDORSUsers">
+    <Key>
+      <PropertyRef Name="VENDORID" />
+    </Key>
+    <Property Name="VENDORID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorSPECIALISATION" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="QUALIFICATION" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="AGE" Type="int" Nullable="true" />
+    <Property Name="GENDER" Type="nchar" Nullable="true" MaxLength="1" />
+    <Property Name="ADDRESS" Type="nvarchar" Nullable="true" MaxLength="1000" />
+    <Property Name="CITY" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="STATE" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="COUNTRY" Type="nchar" Nullable="true" MaxLength="10" />
+    <Property Name="ZIP" Type="int" Nullable="true" />
+    <Property Name="MOBILE" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ACTIVE" Type="nchar" Nullable="false" MaxLength="1" />
+    <Property Name="PHOTO" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="Designation" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="BriefProfile" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PresentPosition" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Qualifications" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SpecialTraining" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Experience" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Expertise" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AchievementsBreakthroughCases" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Publications" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AwardsAndHonors" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AcademicExposure" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TalkDelivered" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Other" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Media" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Firstname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="vendortype" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VENDORTYPES">
+    <Key>
+      <PropertyRef Name="VENDORTYPEID" />
+    </Key>
+    <Property Name="VENDORTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VENDORTYPENAME" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="HomePageText" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="About" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DisplayOrder" Type="int" Nullable="true" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="VENDORTYPESpecialisationsentries">
+    <Key>
+      <PropertyRef Name="BSID" />
+    </Key>
+    <Property Name="BSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DivisionID" Type="int" Nullable="true" />
+    <Property Name="BranchID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Zones">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ZoneName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="hhcAdminLogins">
+    <Key>
+      <PropertyRef Name="hhcAdminLoginsId" />
+    </Key>
+    <Property Name="hhcAdminLoginsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="UserPwd" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Permissions" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EmailID" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ActiveStatus" Type="nchar" Nullable="true" MaxLength="1" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="STATEs">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STATENAME" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Zone" Type="int" Nullable="true" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SubAreas">
+    <Key>
+      <PropertyRef Name="SubAreaID" />
+    </Key>
+    <Property Name="SubAreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubArea1" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CITYID" Type="int" Nullable="true" />
+    <Property Name="ACTIVE" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tbl_registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="City" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Address" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="true" />
+    <Property Name="ContactNo" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UploadedFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="FileDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FilePath" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="UploadedTime" Type="datetime" Nullable="true" />
+    <Property Name="States" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_STATEs_Zones">
+    <End Role="Zone" Type="HhcDbModel.Store.Zones" Multiplicity="0..1" />
+    <End Role="STATE" Type="HhcDbModel.Store.STATEs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zone">
+        <PropertyRef Name="ZoneID" />
+      </Principal>
+      <Dependent Role="STATE">
+        <PropertyRef Name="Zone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CITies_STATEs">
+    <End Role="STATE" Type="HhcDbModel.Store.STATEs" Multiplicity="0..1" />
+    <End Role="CITy" Type="HhcDbModel.Store.CITies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STATE">
+        <PropertyRef Name="STATEID" />
+      </Principal>
+      <Dependent Role="CITy">
+        <PropertyRef Name="STATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subareaCITies_CITies">
+    <End Role="CITy" Type="HhcDbModel.Store.CITies" Multiplicity="0..1" />
+    <End Role="SubArea" Type="HhcDbModel.Store.SubAreas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITy">
+        <PropertyRef Name="CITYID" />
+      </Principal>
+      <Dependent Role="SubArea">
+        <PropertyRef Name="CITYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HhcDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1140,11 +1136,11 @@
     <EntitySetMapping Name="CITies">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.CITy)">
         <MappingFragment StoreEntitySet="CITies">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
           <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
           <ScalarProperty Name="STATEID" ColumnName="STATEID" />
           <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1400,12 +1396,12 @@
     <EntitySetMapping Name="Stockists">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.Stockist)">
         <MappingFragment StoreEntitySet="Stockists">
-          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="StockistId" ColumnName="StockistId" />
+          <ScalarProperty Name="StockistId" ColumnName="StockistId" />
           <ScalarProperty Name="StockistName" ColumnName="StockistName" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1557,76 +1553,75 @@
     <EntitySetMapping Name="Zones">
       <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.Zone)">
         <MappingFragment StoreEntitySet="Zones">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
           <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
           <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spSkCountId" FunctionName="HhcDbModel.Store.spSkCountId" />
-          <EntitySetMapping Name="hhcAdminLogins">
-            <EntityTypeMapping TypeName="HhcDbModel.hhcAdminLogin">
-              <MappingFragment StoreEntitySet="hhcAdminLogins">
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
-                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
-                <ScalarProperty Name="Permissions" ColumnName="Permissions" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="hhcAdminLoginsId" ColumnName="hhcAdminLoginsId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STATEs">
-            <EntityTypeMapping TypeName="HhcDbModel.STATE">
-              <MappingFragment StoreEntitySet="STATEs">
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-                <ScalarProperty Name="Zone" ColumnName="Zone" />
-                <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
-                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SubAreas">
-            <EntityTypeMapping TypeName="HhcDbModel.SubArea">
-              <MappingFragment StoreEntitySet="SubArea">
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
-                <ScalarProperty Name="SubArea1" ColumnName="SubArea" />
-                <ScalarProperty Name="SubAreaID" ColumnName="SubAreaID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_registration">
-            <EntityTypeMapping TypeName="HhcDbModel.tbl_registration">
-              <MappingFragment StoreEntitySet="tbl_registration">
-                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UploadedFiles">
-            <EntityTypeMapping TypeName="HhcDbModel.UploadedFile">
-              <MappingFragment StoreEntitySet="UploadedFiles">
-                <ScalarProperty Name="States" ColumnName="States" />
-                <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
-                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
-                <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
-                <ScalarProperty Name="FileName" ColumnName="FileName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+    <EntitySetMapping Name="hhcAdminLogins">
+      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.hhcAdminLogin)">
+        <MappingFragment StoreEntitySet="hhcAdminLogins">
+          <ScalarProperty Name="hhcAdminLoginsId" ColumnName="hhcAdminLoginsId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Permissions" ColumnName="Permissions" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATEs">
+      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.STATE)">
+        <MappingFragment StoreEntitySet="STATEs">
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+          <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
+          <ScalarProperty Name="Zone" ColumnName="Zone" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubAreas">
+      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.SubArea)">
+        <MappingFragment StoreEntitySet="SubAreas">
+          <ScalarProperty Name="SubAreaID" ColumnName="SubAreaID" />
+          <ScalarProperty Name="SubArea1" ColumnName="SubArea1" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_registration">
+      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.tbl_registration)">
+        <MappingFragment StoreEntitySet="tbl_registration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedFiles">
+      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.UploadedFile)">
+        <MappingFragment StoreEntitySet="UploadedFiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="UploadedTime" ColumnName="UploadedTime" />
+          <ScalarProperty Name="States" ColumnName="States" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
