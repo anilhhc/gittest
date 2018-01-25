@@ -329,9 +329,11 @@
     <Compile Include="Controllers\test4Controller.cs" />
     <Compile Include="Controllers\test5Controller.cs" />
     <Compile Include="Controllers\test6Controller.cs" />
+    <Compile Include="Controllers\test7ZonesController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\WallOfLoveController.cs" />
+    <Compile Include="Controllers\ZoneApiTstController.cs" />
     <Compile Include="Controllers\ZonesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1727,6 +1729,7 @@
     <Content Include="Views\test4\Index.cshtml" />
     <Content Include="Views\test5\Index.cshtml" />
     <Content Include="Views\test6\Index.cshtml" />
+    <Content Include="Views\test7Zones\Index.cshtml" />
     <None Include="xsds\datacare.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
