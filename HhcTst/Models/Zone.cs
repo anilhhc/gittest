@@ -24,7 +24,7 @@ namespace HhcTst.Models
         public string ZoneName { get; set; }
         public string ACTIVE { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STATE> STATEs { get; set; }
     }

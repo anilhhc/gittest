@@ -48,13 +48,13 @@
                         <input type="text" ng-model="m.ZoneName" ng-show="m.EditMode" />
                     </td>
                     <td>
-                        <span ng-hide="m.EditMode">{{m.ACTIVE}}</span>
-                        <input type="text" ng-model="m.ACTIVE" ng-show="m.EditMode" />
-                    </td>
-                    <td>
-                        <span ng-hide="m.EditMode">{{m.CreatedOn}}</span>
-                        <input type="text" ng-model="m.CreatedOn" ng-show="m.EditMode" />
-                    </td>
+        <span ng-hide="m.EditMode">{{m.ACTIVE}}</span>
+        <input type="text" ng-model="m.ACTIVE" ng-show="m.EditMode" />
+    </td>
+    <td>
+        <span ng-hide="m.EditMode">{{m.CreatedOn}}</span>
+        <input type="text" ng-model="m.CreatedOn" ng-show="m.EditMode" />
+    </td>
                     <td>
                         <a class="Edit" href="javascript:;" ng-hide="m.EditMode" ng-click="Edit($index)">Edit</a>
                         <a class="Update" href="javascript:;" ng-show="m.EditMode" ng-click="Update($index)">Update</a>
@@ -95,7 +95,7 @@
             });
             post.success(function (data, status) {
                 //The received response is saved in Customers array.
-                $scope.Zones = data;
+                $scope.Zones = JSON.parse(data);
             });
 
             //Adding new record to database.

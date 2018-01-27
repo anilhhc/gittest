@@ -16,25 +16,27 @@ namespace HhcTst.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public JsonResult GetZones()
         {
           //  CustomersEntities entities = new CustomersEntities();
-            var v = db.Zones.ToList();
-            return Json(v,JsonRequestBehavior.AllowGet);
+
+            Zone zone = new Zone();
+            string json = JsonConvert.SerializeObject(zone);
+            //var v = db.Zones.AsEnumerable();
+            return Json(json);
         }
 
         [HttpPost]
         public JsonResult InsertZones(Zone zone)
         {
-                db.Zones.Add(zone);
+              var    v=  db.Zones.Add(zone);
                 db.SaveChanges();
             return Json(zone);
         }
 
         [HttpPost]
-        public ActionResult UpdateCustomer(Zone zone)
+        public ActionResult UpdateZones(Zone zone)
         {
            
                 Zone updatedZone = (from c in db.Zones
@@ -48,7 +50,7 @@ namespace HhcTst.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteCustomer(int ZoneID)
+        public ActionResult DeleteZones(int ZoneID)
         {
             
                 Zone zone = (from c in db.Zones
