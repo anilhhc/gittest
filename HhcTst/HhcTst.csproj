@@ -282,6 +282,72 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\hetero_healthController.cs" />
+    <Compile Include="Areas\Admin\Models\AdminDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AdminDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\AdminDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\hhcprimarysale.cs">
+      <DependentUpon>AdminDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Admin\Models\hhcsecondarysale.cs">
+      <DependentUpon>AdminDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\CITy.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\hhcsecondarysale.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\Hstockistdetail.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\hstockistupload.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\secondarysale.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\STATE.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\StkDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StkDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\StkDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\StkDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StkDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\Stockist.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\SubArea.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\Models\Zone.cs">
+      <DependentUpon>StkDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Stockist\StockistAreaRegistration.cs" />
     <Compile Include="Content\Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Content\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Content\Areas\HelpPage\Controllers\HelpController.cs" />
@@ -350,69 +416,86 @@
     <Compile Include="Models\CascadingTestModel.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CITy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Employee.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\foursolarwalloflove.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Hdivision.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcControlPanelIPStat.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\HhcDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb.Context.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\HhcDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\HhcDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>HhcDb.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\hhcprimarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcsecondarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hproductslist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hproductslistdescription.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hstockistdetail.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hstockistupload.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Htherapatic.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvendordetail.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvproductslist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvsale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginVm.cs" />
@@ -433,62 +516,81 @@
     </Compile>
     <Compile Include="Models\OtherAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\OtherAdminPermission.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\secondarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\STATE.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Stockist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\StockistLoginVM.cs" />
     <Compile Include="Models\SubArea.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\tbl_registration.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\TestUploadExcel.cs" />
     <Compile Include="Models\UploadedFile.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\UploadFileName.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\USER.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\UserAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Usershetro.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORSPECIALIZATION.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORSPECIALIZATIONs1.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORSUser.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORTYPE.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Zone.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -508,6 +610,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Models\AdminDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminDb.edmx</DependentUpon>
+      <LastGenOutput>AdminDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Admin\Models\AdminDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminDb.edmx</DependentUpon>
+      <LastGenOutput>AdminDb.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Stockist\Models\StkDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StkDb.edmx</DependentUpon>
+      <LastGenOutput>StkDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Stockist\Models\StkDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StkDb.edmx</DependentUpon>
+      <LastGenOutput>StkDb.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\admin-lte\css\AdminLTE.min.css" />
     <Content Include="Content\admin-lte\css\blue.css" />
@@ -580,14 +702,17 @@
     <Content Include="HtmlPages\HtmlPage4.html" />
     <Content Include="default.aspx" />
     <Content Include="Models\HhcDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HhcDb.edmx.diagram">
+      <DependentUpon>HhcDb.edmx</DependentUpon>
     </Content>
     <Content Include="Models\HhcDb.edmx.sql" />
     <Content Include="Models\HhcDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HhcDb.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HhcDb.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.Context.tt">
@@ -668,19 +793,16 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Grid.mvc.readme" />
-    <EntityDeploy Include="Models\HhcDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\HhcDb.edmx.diagram">
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\admin-lte\fonts\ionicons.woff" />
     <Content Include="Content\admin-lte\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\admin-lte\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\admin-lte\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\admin-lte\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\admin-lte\css\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\HhcDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -709,6 +831,23 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Stockist\Views\web.config" />
+    <EntityDeploy Include="Areas\Stockist\Models\StkDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StkDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Stockist\Models\StkDb.edmx.diagram">
+      <DependentUpon>StkDb.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Areas\Admin\Models\AdminDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdminDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Admin\Models\AdminDb.edmx.diagram">
+      <DependentUpon>AdminDb.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\hetero_health\Index.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1741,6 +1880,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Stockist\Controllers\" />
+    <Folder Include="Areas\Stockist\Views\Shared\" />
+    <Folder Include="Content\Areas\testArea\Controllers\" />
+    <Folder Include="Content\Areas\testArea\Models\" />
+    <Folder Include="Content\Areas\testArea\Views\Shared\" />
     <Folder Include="Doc\" />
     <Folder Include="excelfolder\" />
     <Folder Include="Uploads\" />

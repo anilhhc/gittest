@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HhcDbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="hhcprimarysales">
+          <Key>
+            <PropertyRef Name="hhcprimarysalesID" />
+          </Key>
+          <Property Name="hhcprimarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="billingdocument" Type="nvarchar" MaxLength="500" />
+          <Property Name="billingdate" Type="datetime" />
+          <Property Name="stockistcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistsapid" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
+          <Property Name="headquarter" Type="nvarchar" MaxLength="200" />
+          <Property Name="heterosapproductcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="heterosapproductname" Type="nvarchar(max)" />
+          <Property Name="sapproductquantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="rate" Type="int" />
+          <Property Name="value" Type="int" />
+        </EntityType>
+        <EntityType Name="hhcsecondarysales">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="month" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistproductcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistproductname" Type="nvarchar" MaxLength="500" />
+          <Property Name="package" Type="nvarchar" MaxLength="50" />
+          <Property Name="openingstock" Type="int" />
+          <Property Name="purshcasequantity" Type="int" />
+          <Property Name="salequanitity" Type="int" />
+          <Property Name="purchasereturn" Type="int" />
+          <Property Name="salereturn" Type="int" />
+          <Property Name="closing" Type="int" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
+          <Property Name="heteroproductname" Type="nvarchar(max)" />
+          <Property Name="headquaterid" Type="nvarchar" MaxLength="50" />
+          <Property Name="headquartername" Type="nvarchar" MaxLength="500" />
+          <Property Name="heteroproductsapid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="HhcDbModel1StoreContainer">
+          <EntitySet Name="hhcprimarysales" EntityType="Self.hhcprimarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysales" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HhcDbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hhcprimarysale">
+          <Key>
+            <PropertyRef Name="hhcprimarysalesID" />
+          </Key>
+          <Property Name="hhcprimarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="billingdocument" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="billingdate" Type="DateTime" Precision="3" />
+          <Property Name="stockistcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="headquarter" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="heterosapproductcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="heterosapproductname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sapproductquantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rate" Type="Int32" />
+          <Property Name="value" Type="Int32" />
+        </EntityType>
+        <EntityType Name="hhcsecondarysale">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stockistname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="package" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="openingstock" Type="Int32" />
+          <Property Name="purshcasequantity" Type="Int32" />
+          <Property Name="salequanitity" Type="Int32" />
+          <Property Name="purchasereturn" Type="Int32" />
+          <Property Name="salereturn" Type="Int32" />
+          <Property Name="closing" Type="Int32" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="headquaterid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="headquartername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="AdminDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hhcprimarysales" EntityType="Self.hhcprimarysale" />
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysale" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HhcDbModel1StoreContainer" CdmEntityContainer="AdminDbEntities">
+          <EntitySetMapping Name="hhcprimarysales">
+            <EntityTypeMapping TypeName="HhcDbModel1.hhcprimarysale">
+              <MappingFragment StoreEntitySet="hhcprimarysales">
+                <ScalarProperty Name="hhcprimarysalesID" ColumnName="hhcprimarysalesID" />
+                <ScalarProperty Name="billingdocument" ColumnName="billingdocument" />
+                <ScalarProperty Name="billingdate" ColumnName="billingdate" />
+                <ScalarProperty Name="stockistcode" ColumnName="stockistcode" />
+                <ScalarProperty Name="stockistsapid" ColumnName="stockistsapid" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="headquarter" ColumnName="headquarter" />
+                <ScalarProperty Name="heterosapproductcode" ColumnName="heterosapproductcode" />
+                <ScalarProperty Name="heterosapproductname" ColumnName="heterosapproductname" />
+                <ScalarProperty Name="sapproductquantity" ColumnName="sapproductquantity" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hhcsecondarysales">
+            <EntityTypeMapping TypeName="HhcDbModel1.hhcsecondarysale">
+              <MappingFragment StoreEntitySet="hhcsecondarysales">
+                <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="stockistproductcode" ColumnName="stockistproductcode" />
+                <ScalarProperty Name="stockistproductname" ColumnName="stockistproductname" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="openingstock" ColumnName="openingstock" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+                <ScalarProperty Name="heteroproductname" ColumnName="heteroproductname" />
+                <ScalarProperty Name="headquaterid" ColumnName="headquaterid" />
+                <ScalarProperty Name="headquartername" ColumnName="headquartername" />
+                <ScalarProperty Name="heteroproductsapid" ColumnName="heteroproductsapid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
