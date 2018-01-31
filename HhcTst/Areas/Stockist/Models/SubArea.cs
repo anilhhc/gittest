@@ -7,25 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HhcTst.Models
+namespace HhcTst.Areas.Stockist.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Zone
+    public partial class SubArea
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Zone()
-        {
-            this.STATEs = new HashSet<STATE>();
-        }
-    
-        public int ZoneID { get; set; }
-        public string ZoneName { get; set; }
+        public int SubAreaID { get; set; }
+        public string SubArea1 { get; set; }
+        public Nullable<int> CITYID { get; set; }
         public string ACTIVE { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<STATE> STATEs { get; set; }
+    
+        public virtual CITy CITy { get; set; }
     }
 }

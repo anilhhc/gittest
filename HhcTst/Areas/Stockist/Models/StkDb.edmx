@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StkDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CITies">
+          <Key>
+            <PropertyRef Name="CITYID" />
+          </Key>
+          <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CITYNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATEID" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="hhcsecondarysales">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stockistname" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="month" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistproductcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="stockistproductname" Type="nvarchar" MaxLength="500" />
+          <Property Name="package" Type="nvarchar" MaxLength="50" />
+          <Property Name="openingstock" Type="int" />
+          <Property Name="purshcasequantity" Type="int" />
+          <Property Name="salequanitity" Type="int" />
+          <Property Name="purchasereturn" Type="int" />
+          <Property Name="salereturn" Type="int" />
+          <Property Name="closing" Type="int" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
+          <Property Name="heteroproductname" Type="nvarchar(max)" />
+          <Property Name="headquaterid" Type="nvarchar" MaxLength="50" />
+          <Property Name="headquartername" Type="nvarchar" MaxLength="500" />
+          <Property Name="heteroproductsapid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Hstockistdetails">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hsfullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hslastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsemailid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssapcustomerid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsplotno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsadressone" Type="nvarchar(max)" />
+          <Property Name="hsadresstwo" Type="nvarchar(max)" />
+          <Property Name="hscountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsstate" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsheadquater" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssubarea" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdivision" Type="nvarchar" MaxLength="50" />
+          <Property Name="hscnf" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstherapatic" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsfax" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsgstprovisionalid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspan" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsssistatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdruglicenceno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hszone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hstockistuploads">
+          <Key>
+            <PropertyRef Name="hstockistuploadID" />
+          </Key>
+          <Property Name="hstockistuploadID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filedescription" Type="nvarchar(max)" />
+          <Property Name="month" Type="int" />
+          <Property Name="year" Type="int" />
+          <Property Name="filenumber" Type="int" />
+          <Property Name="fileuploaddate" Type="datetime" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="monthname" Type="nvarchar" MaxLength="50" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="secondarysales">
+          <Key>
+            <PropertyRef Name="secondarysalesID" />
+          </Key>
+          <Property Name="secondarysalesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="month" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="filepath" Type="nvarchar(max)" />
+          <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
+          <Property Name="productcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="productname" Type="nvarchar" MaxLength="500" />
+          <Property Name="pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="purshcasequantity" Type="int" />
+          <Property Name="purchasereturn" Type="int" />
+          <Property Name="openingquantity" Type="int" />
+          <Property Name="salequanitity" Type="int" />
+          <Property Name="salereturn" Type="int" />
+          <Property Name="closing" Type="int" />
+          <Property Name="heteroproductid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="STATEs">
+          <Key>
+            <PropertyRef Name="STATEID" />
+          </Key>
+          <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STATENAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="Zone" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="Stockists">
+          <Key>
+            <PropertyRef Name="StockistId" />
+          </Key>
+          <Property Name="StockistId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StockistName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlotNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Zone" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubArea" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SubArea">
+          <Key>
+            <PropertyRef Name="SubAreaID" />
+          </Key>
+          <Property Name="SubAreaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubArea" Type="nvarchar" MaxLength="100" />
+          <Property Name="CITYID" Type="int" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="Zones">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="CreatedOn" Type="date" />
+        </EntityType>
+        <Association Name="FK_CITies_STATEs">
+          <End Role="STATEs" Type="Self.STATEs" Multiplicity="0..1" />
+          <End Role="CITies" Type="Self.CITies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATEs">
+              <PropertyRef Name="STATEID" />
+            </Principal>
+            <Dependent Role="CITies">
+              <PropertyRef Name="STATEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STATEs_Zones">
+          <End Role="Zones" Type="Self.Zones" Multiplicity="0..1" />
+          <End Role="STATEs" Type="Self.STATEs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="ZoneID" />
+            </Principal>
+            <Dependent Role="STATEs">
+              <PropertyRef Name="Zone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subareaCITies_CITies">
+          <End Role="CITies" Type="Self.CITies" Multiplicity="0..1" />
+          <End Role="SubArea" Type="Self.SubArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CITies">
+              <PropertyRef Name="CITYID" />
+            </Principal>
+            <Dependent Role="SubArea">
+              <PropertyRef Name="CITYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StkDbModelStoreContainer">
+          <EntitySet Name="CITies" EntityType="Self.CITies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hstockistuploads" EntityType="Self.hstockistuploads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="secondarysales" EntityType="Self.secondarysales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STATEs" EntityType="Self.STATEs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stockists" EntityType="Self.Stockists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubArea" EntityType="Self.SubArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zones" EntityType="Self.Zones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CITies_STATEs" Association="Self.FK_CITies_STATEs">
+            <End Role="STATEs" EntitySet="STATEs" />
+            <End Role="CITies" EntitySet="CITies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STATEs_Zones" Association="Self.FK_STATEs_Zones">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="STATEs" EntitySet="STATEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subareaCITies_CITies" Association="Self.FK_subareaCITies_CITies">
+            <End Role="CITies" EntitySet="CITies" />
+            <End Role="SubArea" EntitySet="SubArea" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StkDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hhcsecondarysale">
+          <Key>
+            <PropertyRef Name="hhcsecondarysalesID" />
+          </Key>
+          <Property Name="hhcsecondarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stockistname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stockistproductname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="package" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="openingstock" Type="Int32" />
+          <Property Name="purshcasequantity" Type="Int32" />
+          <Property Name="salequanitity" Type="Int32" />
+          <Property Name="purchasereturn" Type="Int32" />
+          <Property Name="salereturn" Type="Int32" />
+          <Property Name="closing" Type="Int32" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="headquaterid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="headquartername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="heteroproductsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Hstockistdetail">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hsfullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hslastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsemailid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssapcustomerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsplotno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsadressone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hsadresstwo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hscountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsheadquater" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssubarea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdivision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hscnf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstherapatic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsfax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsgstprovisionalid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsssistatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdruglicenceno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hszone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hstockistupload">
+          <Key>
+            <PropertyRef Name="hstockistuploadID" />
+          </Key>
+          <Property Name="hstockistuploadID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filedescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="filenumber" Type="Int32" />
+          <Property Name="fileuploaddate" Type="DateTime" Precision="3" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="monthname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="secondarysale">
+          <Key>
+            <PropertyRef Name="secondarysalesID" />
+          </Key>
+          <Property Name="secondarysalesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filepath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="productcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="productname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="purshcasequantity" Type="Int32" />
+          <Property Name="purchasereturn" Type="Int32" />
+          <Property Name="openingquantity" Type="Int32" />
+          <Property Name="salequanitity" Type="Int32" />
+          <Property Name="salereturn" Type="Int32" />
+          <Property Name="closing" Type="Int32" />
+          <Property Name="heteroproductid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="STATEID" />
+          </Key>
+          <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Zone" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Zone1" Relationship="Self.FK_STATEs_Zones" FromRole="STATEs" ToRole="Zones" />
+          <NavigationProperty Name="CITies" Relationship="StkDbModel.FK_CITies_STATEs" FromRole="STATE" ToRole="CITy" />
+        </EntityType>
+        <EntityType Name="Stockist">
+          <Key>
+            <PropertyRef Name="StockistId" />
+          </Key>
+          <Property Name="StockistId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StockistName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlotNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Zone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SubArea">
+          <Key>
+            <PropertyRef Name="SubAreaID" />
+          </Key>
+          <Property Name="SubAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubArea1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CITYID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CITy" Relationship="StkDbModel.FK_subareaCITies_CITies" FromRole="SubArea" ToRole="CITy" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="STATEs" Relationship="Self.FK_STATEs_Zones" FromRole="Zones" ToRole="STATEs" />
+        </EntityType>
+        <Association Name="FK_STATEs_Zones">
+          <End Role="Zones" Type="Self.Zone" Multiplicity="0..1" />
+          <End Role="STATEs" Type="Self.STATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zones">
+              <PropertyRef Name="ZoneID" />
+            </Principal>
+            <Dependent Role="STATEs">
+              <PropertyRef Name="Zone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StkDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hhcsecondarysales" EntityType="Self.hhcsecondarysale" />
+          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetail" />
+          <EntitySet Name="hstockistuploads" EntityType="Self.hstockistupload" />
+          <EntitySet Name="secondarysales" EntityType="Self.secondarysale" />
+          <EntitySet Name="STATEs" EntityType="Self.STATE" />
+          <EntitySet Name="Stockists" EntityType="Self.Stockist" />
+          <EntitySet Name="SubAreas" EntityType="Self.SubArea" />
+          <EntitySet Name="Zones" EntityType="Self.Zone" />
+          <AssociationSet Name="FK_STATEs_Zones" Association="Self.FK_STATEs_Zones">
+            <End Role="Zones" EntitySet="Zones" />
+            <End Role="STATEs" EntitySet="STATEs" />
+          </AssociationSet>
+          <EntitySet Name="CITies" EntityType="StkDbModel.CITy" />
+          <AssociationSet Name="FK_CITies_STATEs" Association="StkDbModel.FK_CITies_STATEs">
+            <End Role="STATE" EntitySet="STATEs" />
+            <End Role="CITy" EntitySet="CITies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subareaCITies_CITies" Association="StkDbModel.FK_subareaCITies_CITies">
+            <End Role="CITy" EntitySet="CITies" />
+            <End Role="SubArea" EntitySet="SubAreas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CITy">
+          <Key>
+            <PropertyRef Name="CITYID" />
+          </Key>
+          <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATEID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="STATE" Relationship="StkDbModel.FK_CITies_STATEs" FromRole="CITy" ToRole="STATE" />
+          <NavigationProperty Name="SubAreas" Relationship="StkDbModel.FK_subareaCITies_CITies" FromRole="CITy" ToRole="SubArea" />
+        </EntityType>
+        <Association Name="FK_CITies_STATEs">
+          <End Type="StkDbModel.STATE" Role="STATE" Multiplicity="0..1" />
+          <End Type="StkDbModel.CITy" Role="CITy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATE">
+              <PropertyRef Name="STATEID" />
+            </Principal>
+            <Dependent Role="CITy">
+              <PropertyRef Name="STATEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subareaCITies_CITies">
+          <End Type="StkDbModel.CITy" Role="CITy" Multiplicity="0..1" />
+          <End Type="StkDbModel.SubArea" Role="SubArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CITy">
+              <PropertyRef Name="CITYID" />
+            </Principal>
+            <Dependent Role="SubArea">
+              <PropertyRef Name="CITYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StkDbModelStoreContainer" CdmEntityContainer="StkDbEntities">
+          <EntitySetMapping Name="hhcsecondarysales">
+            <EntityTypeMapping TypeName="StkDbModel.hhcsecondarysale">
+              <MappingFragment StoreEntitySet="hhcsecondarysales">
+                <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="stockistproductcode" ColumnName="stockistproductcode" />
+                <ScalarProperty Name="stockistproductname" ColumnName="stockistproductname" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="openingstock" ColumnName="openingstock" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+                <ScalarProperty Name="heteroproductname" ColumnName="heteroproductname" />
+                <ScalarProperty Name="headquaterid" ColumnName="headquaterid" />
+                <ScalarProperty Name="headquartername" ColumnName="headquartername" />
+                <ScalarProperty Name="heteroproductsapid" ColumnName="heteroproductsapid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hstockistdetails">
+            <EntityTypeMapping TypeName="StkDbModel.Hstockistdetail">
+              <MappingFragment StoreEntitySet="Hstockistdetails">
+                <ScalarProperty Name="HstockistdetailsID" ColumnName="HstockistdetailsID" />
+                <ScalarProperty Name="hsfullname" ColumnName="hsfullname" />
+                <ScalarProperty Name="hslastname" ColumnName="hslastname" />
+                <ScalarProperty Name="hsemailid" ColumnName="hsemailid" />
+                <ScalarProperty Name="hsmobile" ColumnName="hsmobile" />
+                <ScalarProperty Name="hspwd" ColumnName="hspwd" />
+                <ScalarProperty Name="hssapcustomerid" ColumnName="hssapcustomerid" />
+                <ScalarProperty Name="hsplotno" ColumnName="hsplotno" />
+                <ScalarProperty Name="hsadressone" ColumnName="hsadressone" />
+                <ScalarProperty Name="hsadresstwo" ColumnName="hsadresstwo" />
+                <ScalarProperty Name="hscountry" ColumnName="hscountry" />
+                <ScalarProperty Name="hsstate" ColumnName="hsstate" />
+                <ScalarProperty Name="hsheadquater" ColumnName="hsheadquater" />
+                <ScalarProperty Name="hssubarea" ColumnName="hssubarea" />
+                <ScalarProperty Name="hsdivision" ColumnName="hsdivision" />
+                <ScalarProperty Name="hscnf" ColumnName="hscnf" />
+                <ScalarProperty Name="hstherapatic" ColumnName="hstherapatic" />
+                <ScalarProperty Name="hspincode" ColumnName="hspincode" />
+                <ScalarProperty Name="hstelephone" ColumnName="hstelephone" />
+                <ScalarProperty Name="hsfax" ColumnName="hsfax" />
+                <ScalarProperty Name="hsgstprovisionalid" ColumnName="hsgstprovisionalid" />
+                <ScalarProperty Name="hspan" ColumnName="hspan" />
+                <ScalarProperty Name="hsspocname" ColumnName="hsspocname" />
+                <ScalarProperty Name="hsspocmobile" ColumnName="hsspocmobile" />
+                <ScalarProperty Name="hsssistatus" ColumnName="hsssistatus" />
+                <ScalarProperty Name="hsdruglicenceno" ColumnName="hsdruglicenceno" />
+                <ScalarProperty Name="hszone" ColumnName="hszone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hstockistuploads">
+            <EntityTypeMapping TypeName="StkDbModel.hstockistupload">
+              <MappingFragment StoreEntitySet="hstockistuploads">
+                <ScalarProperty Name="hstockistuploadID" ColumnName="hstockistuploadID" />
+                <ScalarProperty Name="filedescription" ColumnName="filedescription" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="filenumber" ColumnName="filenumber" />
+                <ScalarProperty Name="fileuploaddate" ColumnName="fileuploaddate" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="monthname" ColumnName="monthname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="secondarysales">
+            <EntityTypeMapping TypeName="StkDbModel.secondarysale">
+              <MappingFragment StoreEntitySet="secondarysales">
+                <ScalarProperty Name="secondarysalesID" ColumnName="secondarysalesID" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="productcode" ColumnName="productcode" />
+                <ScalarProperty Name="productname" ColumnName="productname" />
+                <ScalarProperty Name="pack" ColumnName="pack" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="openingquantity" ColumnName="openingquantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATEs">
+            <EntityTypeMapping TypeName="StkDbModel.STATE">
+              <MappingFragment StoreEntitySet="STATEs">
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+                <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stockists">
+            <EntityTypeMapping TypeName="StkDbModel.Stockist">
+              <MappingFragment StoreEntitySet="Stockists">
+                <ScalarProperty Name="StockistId" ColumnName="StockistId" />
+                <ScalarProperty Name="StockistName" ColumnName="StockistName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="PlotNo" ColumnName="PlotNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="SubArea" ColumnName="SubArea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubAreas">
+            <EntityTypeMapping TypeName="StkDbModel.SubArea">
+              <MappingFragment StoreEntitySet="SubArea">
+                <ScalarProperty Name="SubAreaID" ColumnName="SubAreaID" />
+                <ScalarProperty Name="SubArea1" ColumnName="SubArea" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="StkDbModel.Zone">
+              <MappingFragment StoreEntitySet="Zones">
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CITies">
+            <EntityTypeMapping TypeName="StkDbModel.CITy">
+              <MappingFragment StoreEntitySet="CITies">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+                <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -2,78 +2,112 @@
 @{
     ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
-}
-<script src="~/Scripts/angular.js"></script>
+}<h2 style="color:blue">States</h2>
+@*<script src="~/Scripts/angular.js"></script>*@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
 <script type="text/javascript">
-    
-    //Module
-    var myApp = angular.module('myApp', []);
-    //Controller
-    myApp.controller('MainCtrl', ['$scope', '$http',
-        function ($scope, $http) {
-            //$http service for Getting the Country
-            $http({
-                method: 'GET',
-                url:'/STATEs/GetZones'
-            }).
-            success(function (data) {
-                $scope.zone = data;
-            });
-
-            //$http service for getting States
-            $scope.GetStates = function () {
-                if ($scope.zone) {
-                    $http({
-                        method: 'POST',
-                        url: '/STATEs/GetStates/',
-                        data: JSON.stringify({ ZoneID: $scope.countr })
-                    }).
-                    success(function (data) {
-                        $scope.states = data;
-                    });
-                }
-                else {
-                    $scope.cities = null;
-                }
+    var app = angular.module('MyApp', [])
+    app.controller('MyController', function ($scope, $http, $window) {
+        $scope.LoadDropDown = function (type, value) {
+            switch (type) {
+                default:
+                    $scope.SelectedZoneId = 0;
+                    $scope.ZoneDefaultLabel = "Loading.....";
+                    $scope.Zones = null;
+                    break;
+                case "ZoneId":
+                    $scope.SelectedStateId = 0;
+                    $scope.StateDefaultLabel = "Loading.....";
+                    $scope.CityDefaultLabel = "";
+                    $scope.States = null;
+                    $scope.Cities = null;
+                    break;
+                case "STATEID":
+                    $scope.SelectedCityId = 0;
+                    $scope.CityDefaultLabel = "Loading.....";
+                    $scope.Cities = null;
+                    break;
             }
-        }]);
-</script>  
+            $http({
+                method: "POST",
+                url: "/States/AjaxMethod",
+                dataType: 'json',
+                data: '{type: "' + type + '", value: ' + value + '}',
+                headers: { "Content-Type": "application/json" }
+            }).success(function (data, status) {
+                switch (type) {
+                    default:
+                        $scope.ZoneDefaultLabel = "Select Zone";
+                        $scope.Zones = data;
+                        break;
+                    case "ZoneId":
+                        $scope.StateDefaultLabel = "";
+                        if (data.length > 0) {
 
-<div data-ng-app="myApp">
-    {{1+1}}
-    <div data-ng-controller="MainCtrl">
-        <div class="editor-label">
-            <label>Name</label>
-        </div>
-        <div class="editor-field">
-            @Html.TextBox("Name")
-        </div>
-        <div class="editor-label">
-            <label>Zone</label><br />
-        </div>
-        <div class="editor-field">
-            <select data-ng-model="zone"
-                    data-ng-options="c.ZoneID as c.ZoneName for c in zone"
-                    data-ng-change="GetStates()">
-                <option value="">--Select Country--</option>
-            </select><br />
-        </div>
-        <div class="editor-label">
-            <br />
-            <label>State</label><br />
-        </div>
-        <div class="editor-field">
-            <select data-ng-model="state" data-ng-disabled="!states"
-                    data-ng-options="s.StateID as s.StateName for s in states where c.ZoneID">
-                <option value="">--Select State--</option>
-            </select>
-        </div>
+                            $scope.StateDefaultLabel = "Select State";
+                            $scope.States = data;
+                        }
+                        break;
+                    case "STATEID":
+                        $scope.CityDefaultLabel = "";
+                        if (data.length > 0) {
+                            $scope.Cities = data;
+                            $scope.CityDefaultLabel = "Select City";
+                        }
+                        break;
+                }
+            }).error(function (data, status) {
+                $window.alert(data.Message);
+            });
+        };
+        $scope.LoadDropDown('', 0);
+    });
+</script>
+<div ng-app="MyApp" ng-controller="MyController">
+    <table style="align-items:flex-start">
+        <tr>
+            <td>Zone:</td>
+            <td>
+                <select name="Zone" ng-model="SelectedZoneId" ng-change="LoadDropDown('ZoneId', SelectedZoneId)" style="list-style:hanging">
+                    <option value="0">{{ZoneDefaultLabel}}</option>
+                    <option ng-repeat="item in Zones" value="{{item.Value}}">
+                        {{item.Text}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr style="position:inherit">
+            <td>State:</td>
+            <td>
+                <select name="State" ng-model="SelectedStateId" ng-change="LoadDropDown('STATEID', SelectedStateId)" style="list-style:hanging">
+                    <option value=" 0">{{StateDefaultLabel}}</option>
+                    <option ng-repeat="item in States" value="{{item.Value}}">
+                        {{item.Text}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>
+                <select name="City">
+                    <option value="0">{{CityDefaultLabel}}</option>
+                    <option ng-repeat="item in Cities" value="{{item.Value}}">
+                        {{item.Text}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
 
 
-    </div>
-</div>  
-<h2>States</h2>
-<h2 style="color:red">Check in test4 controller for cascading</h2>
 <p>
     
     @Html.ActionLink("Create New", "Create")
