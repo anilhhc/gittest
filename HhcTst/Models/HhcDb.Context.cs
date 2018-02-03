@@ -75,5 +75,46 @@ namespace HhcTst.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("spSkCountId", stockistnameParameter, stockistIdParameter);
         }
+    
+        public virtual ObjectResult<string> osHhcSs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("osHhcSs");
+        }
+    
+        public virtual ObjectResult<Cltive_HhcSs_Result> Cltive_HhcSs(string stockistname, string month, string year, string stockistproductname)
+        {
+            var stockistnameParameter = stockistname != null ?
+                new ObjectParameter("stockistname", stockistname) :
+                new ObjectParameter("stockistname", typeof(string));
+    
+            var monthParameter = month != null ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(string));
+    
+            var yearParameter = year != null ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(string));
+    
+            var stockistproductnameParameter = stockistproductname != null ?
+                new ObjectParameter("stockistproductname", stockistproductname) :
+                new ObjectParameter("stockistproductname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Cltive_HhcSs_Result>("Cltive_HhcSs", stockistnameParameter, monthParameter, yearParameter, stockistproductnameParameter);
+        }
+    
+        public virtual ObjectResult<string> monthHhcSs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("monthHhcSs");
+        }
+    
+        public virtual ObjectResult<string> stockistproductnameHhcSs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("stockistproductnameHhcSs");
+        }
+    
+        public virtual ObjectResult<string> yearHhcSs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("yearHhcSs");
+        }
     }
 }

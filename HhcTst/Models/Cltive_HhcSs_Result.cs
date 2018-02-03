@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HhcTst.Areas.Admin.Models
+namespace HhcTst.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class hhcsecondarysale
+    public partial class Cltive_HhcSs_Result
     {
         public int hhcsecondarysalesID { get; set; }
         public string stockistname { get; set; }

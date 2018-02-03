@@ -68,11 +68,7 @@ namespace HhcTst.Controllers
                                 TU.month = a.month;
                                 TU.year = a.year;
                                 db.secondarysales.Add(TU);
-
                                 db.SaveChanges();
-
-
-
                             }
                             else
                             {

@@ -9,7 +9,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
         <asp:DropDownList ID="DropDownList1" runat="server"
              DataSourceID="SqlDataSource1" DataTextField="purshcasequantity" DataValueField="purshcasequantity"
              Height="30px" Width="180px" AutoPostBack="true">
@@ -17,9 +16,9 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HhcDbConnectionString %>" SelectCommand="SELECT [purshcasequantity] FROM [hhcsecondarysales]"></asp:SqlDataSource>
         <br />
         <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="195px">
-            <asp:ListItem Text="static item 1" Value="1" />
+            <%--<asp:ListItem Text="static item 1" Value="1" />
      <asp:ListItem Text="static item 2" Value="2" />
-     <asp:ListItem Text="static item 3" Value="3" />
+     <asp:ListItem Text="static item 3" Value="3" />--%>
         </asp:DropDownList>
         <br />
         <asp:DropDownList ID="DropDownList3" runat="server" Height="16px" Width="195px">

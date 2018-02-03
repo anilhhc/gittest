@@ -31,6 +31,12 @@ namespace HhcTst.Controllers
         public ActionResult UploadExcel(tbl_registration tbl_rgs, HttpPostedFileBase FileUpload)
         {
 
+            var v = db.tbl_registration.ToList();
+            foreach (var w in v)
+            {
+                db.tbl_registration.Remove(w);
+                db.SaveChanges();
+            }
             IEnumerable<tbl_registration> dt = db.tbl_registration.ToList();
             List<string> data = new List<string>();
             if (FileUpload != null)
@@ -70,6 +76,8 @@ namespace HhcTst.Controllers
                             {
                                 if (a.Name != "" && a.Address != "" && a.ContactNo != "" && a.Email != "" && a.Password != "" && a.City != "")
                                 {
+                                    
+
                                     tbl_registration TU = new tbl_registration();
                                     TU.Name = a.Name;
                                     TU.Address = a.Address;

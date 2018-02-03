@@ -289,7 +289,7 @@
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ACTIVE" Type="char" MaxLength="1" />
-          <Property Name="CreatedOn" Type="date" />
+          <Property Name="CreatedOn" Type="datetime" />
           <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
           <Property Name="PlotNo" Type="nvarchar" MaxLength="50" />
@@ -513,10 +513,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Cltive_HhcSs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="stockistname" Type="varchar" Mode="In" />
+          <Parameter Name="month" Type="varchar" Mode="In" />
+          <Parameter Name="year" Type="varchar" Mode="In" />
+          <Parameter Name="stockistproductname" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="monthHhcSs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="osHhcSs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spSkCountId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="stockistname" Type="varchar" Mode="In" />
           <Parameter Name="StockistId" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="stockistproductnameHhcSs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="yearHhcSs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="HhcDbModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CITies" EntityType="Self.CITies" Schema="dbo" store:Type="Tables" />
@@ -832,7 +842,7 @@
           <Property Name="StockistName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1030,6 +1040,16 @@
           </AssociationSet>
           <EntitySet Name="tbl_registration" EntityType="HhcDbModel.tbl_registration" />
           <EntitySet Name="UploadedFiles" EntityType="HhcDbModel.UploadedFile" />
+          <FunctionImport Name="osHhcSs" ReturnType="Collection(String)" />
+          <FunctionImport Name="Cltive_HhcSs" ReturnType="Collection(HhcDbModel.Cltive_HhcSs_Result)">
+            <Parameter Name="stockistname" Mode="In" Type="String" />
+            <Parameter Name="month" Mode="In" Type="String" />
+            <Parameter Name="year" Mode="In" Type="String" />
+            <Parameter Name="stockistproductname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="monthHhcSs" ReturnType="Collection(String)" />
+          <FunctionImport Name="stockistproductnameHhcSs" ReturnType="Collection(String)" />
+          <FunctionImport Name="yearHhcSs" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="Zone">
           <Key>
@@ -1137,6 +1157,28 @@
           <Property Name="UploadedTime" Type="DateTime" Precision="3" />
           <Property Name="States" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="Cltive_HhcSs_Result">
+          <Property Type="Int32" Name="hhcsecondarysalesID" Nullable="false" />
+          <Property Type="String" Name="stockistname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="stockistid" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="month" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="year" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="stockistproductcode" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="stockistproductname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="package" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="openingstock" Nullable="true" />
+          <Property Type="Int32" Name="purshcasequantity" Nullable="true" />
+          <Property Type="Int32" Name="salequanitity" Nullable="true" />
+          <Property Type="Int32" Name="purchasereturn" Nullable="true" />
+          <Property Type="Int32" Name="salereturn" Nullable="true" />
+          <Property Type="Int32" Name="closing" Nullable="true" />
+          <Property Type="String" Name="filepath" Nullable="true" />
+          <Property Type="String" Name="heteroproductid" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="heteroproductname" Nullable="true" />
+          <Property Type="String" Name="headquaterid" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="headquartername" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="heteroproductsapid" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1651,6 +1693,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="osHhcSs" FunctionName="HhcDbModel.Store.osHhcSs" />
+          <FunctionImportMapping FunctionImportName="Cltive_HhcSs" FunctionName="HhcDbModel.Store.Cltive_HhcSs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HhcDbModel.Cltive_HhcSs_Result">
+                <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="stockistid" ColumnName="stockistid" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="stockistproductcode" ColumnName="stockistproductcode" />
+                <ScalarProperty Name="stockistproductname" ColumnName="stockistproductname" />
+                <ScalarProperty Name="package" ColumnName="package" />
+                <ScalarProperty Name="openingstock" ColumnName="openingstock" />
+                <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
+                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
+                <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
+                <ScalarProperty Name="salereturn" ColumnName="salereturn" />
+                <ScalarProperty Name="closing" ColumnName="closing" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="heteroproductid" ColumnName="heteroproductid" />
+                <ScalarProperty Name="heteroproductname" ColumnName="heteroproductname" />
+                <ScalarProperty Name="headquaterid" ColumnName="headquaterid" />
+                <ScalarProperty Name="headquartername" ColumnName="headquartername" />
+                <ScalarProperty Name="heteroproductsapid" ColumnName="heteroproductsapid" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="monthHhcSs" FunctionName="HhcDbModel.Store.monthHhcSs" />
+          <FunctionImportMapping FunctionImportName="stockistproductnameHhcSs" FunctionName="HhcDbModel.Store.stockistproductnameHhcSs" />
+          <FunctionImportMapping FunctionImportName="yearHhcSs" FunctionName="HhcDbModel.Store.yearHhcSs" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

@@ -282,72 +282,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\hetero_healthController.cs" />
-    <Compile Include="Areas\Admin\Models\AdminDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdminDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\AdminDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdminDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\AdminDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AdminDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\hhcprimarysale.cs">
-      <DependentUpon>AdminDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Admin\Models\hhcsecondarysale.cs">
-      <DependentUpon>AdminDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\CITy.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\hhcsecondarysale.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\Hstockistdetail.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\hstockistupload.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\secondarysale.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\STATE.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\StkDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StkDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\StkDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\StkDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StkDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\Stockist.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\SubArea.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\Models\Zone.cs">
-      <DependentUpon>StkDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Stockist\StockistAreaRegistration.cs" />
     <Compile Include="Content\Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Content\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Content\Areas\HelpPage\Controllers\HelpController.cs" />
@@ -421,6 +355,9 @@
     <Compile Include="Models\CITy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Cltive_HhcSs_Result.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
@@ -603,6 +540,13 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="xsds\datacare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -610,26 +554,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Admin\Models\AdminDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdminDb.edmx</DependentUpon>
-      <LastGenOutput>AdminDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Admin\Models\AdminDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdminDb.edmx</DependentUpon>
-      <LastGenOutput>AdminDb.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Stockist\Models\StkDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StkDb.edmx</DependentUpon>
-      <LastGenOutput>StkDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Areas\Stockist\Models\StkDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StkDb.edmx</DependentUpon>
-      <LastGenOutput>StkDb.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\admin-lte\css\AdminLTE.min.css" />
     <Content Include="Content\admin-lte\css\blue.css" />
@@ -831,23 +755,6 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Stockist\Views\web.config" />
-    <EntityDeploy Include="Areas\Stockist\Models\StkDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StkDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\Stockist\Models\StkDb.edmx.diagram">
-      <DependentUpon>StkDb.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Areas\Admin\Models\AdminDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AdminDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Areas\Admin\Models\AdminDb.edmx.diagram">
-      <DependentUpon>AdminDb.edmx</DependentUpon>
-    </Content>
-    <Content Include="Areas\Admin\Views\hetero_health\Index.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1741,6 +1648,7 @@
     <Content Include="Views\CITies\Edit.cshtml" />
     <Content Include="Views\CITies\Index.cshtml" />
     <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
@@ -1880,9 +1788,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Stockist\Controllers\" />
-    <Folder Include="Areas\Stockist\Views\Shared\" />
     <Folder Include="Content\Areas\testArea\Controllers\" />
     <Folder Include="Content\Areas\testArea\Models\" />
     <Folder Include="Content\Areas\testArea\Views\Shared\" />
