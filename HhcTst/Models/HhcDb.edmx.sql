@@ -2,11 +2,14 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/27/2017 13:53:43
--- Generated from EDMX file: C:\Users\Hetero\documents\visual studio 2013\Projects\HhcTst\HhcTst\Models\HhcDb.edmx
+-- Date Created: 01/21/2018 15:15:04
+-- Generated from EDMX file: C:\Users\ANI\Source\Repos\gittest\HhcTst\Models\HhcDb.edmx
 -- --------------------------------------------------
 
-
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [HhcDb];
+GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
 
@@ -14,14 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_CITies_STATEs]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CITies] DROP CONSTRAINT [FK_CITies_STATEs];
+GO
+IF OBJECT_ID(N'[dbo].[FK_STATEs_Zones]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[STATEs] DROP CONSTRAINT [FK_STATEs_Zones];
+GO
+IF OBJECT_ID(N'[dbo].[FK_subareaCITies_CITies]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[SubArea] DROP CONSTRAINT [FK_subareaCITies_CITies];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Admins]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Admins];
-GO
 IF OBJECT_ID(N'[dbo].[Categories]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Categories];
 GO
@@ -85,11 +94,17 @@ GO
 IF OBJECT_ID(N'[dbo].[Stockists]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Stockists];
 GO
-IF OBJECT_ID(N'[dbo].[subareaCITies]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[subareaCITies];
+IF OBJECT_ID(N'[dbo].[SubArea]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SubArea];
 GO
 IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
     DROP TABLE [dbo].[sysdiagrams];
+GO
+IF OBJECT_ID(N'[dbo].[tbl_registration]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[tbl_registration];
+GO
+IF OBJECT_ID(N'[dbo].[UploadedFiles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UploadedFiles];
 GO
 IF OBJECT_ID(N'[dbo].[UploadFileNames]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UploadFileNames];
@@ -126,14 +141,6 @@ GO
 -- Creating all tables
 -- --------------------------------------------------
 
--- Creating table 'Admins'
-CREATE TABLE [dbo].[Admins] (
-    [AdminNo] int IDENTITY(1,1) NOT NULL,
-    [AdminName] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
-);
-GO
-
 -- Creating table 'Categories'
 CREATE TABLE [dbo].[Categories] (
     [CategoryId] int IDENTITY(1,1) NOT NULL,
@@ -148,7 +155,8 @@ CREATE TABLE [dbo].[CITies] (
     [CITYID] int IDENTITY(1,1) NOT NULL,
     [CITYNAME] nvarchar(100)  NULL,
     [STATEID] int  NULL,
-    [ACTIVE] char(1)  NOT NULL
+    [ACTIVE] char(1)  NOT NULL,
+    [CreatedOn] datetime  NULL
 );
 GO
 
@@ -170,18 +178,6 @@ CREATE TABLE [dbo].[Hdivisions] (
     [heterodivisoncode] nvarchar(50)  NULL,
     [hdname] nvarchar(50)  NULL,
     [Active] nvarchar(50)  NULL
-);
-GO
-
--- Creating table 'hhcAdminLogins'
-CREATE TABLE [dbo].[hhcAdminLogins] (
-    [hhcAdminLoginsId] int IDENTITY(1,1) NOT NULL,
-    [UserName] nvarchar(50)  NULL,
-    [UserPwd] nvarchar(50)  NULL,
-    [Name] nvarchar(50)  NULL,
-    [Permissions] nvarchar(max)  NULL,
-    [EmailID] nvarchar(50)  NULL,
-    [ActiveStatus] nchar(1)  NULL
 );
 GO
 
@@ -397,30 +393,14 @@ CREATE TABLE [dbo].[secondarysales] (
 );
 GO
 
--- Creating table 'STATEs'
-CREATE TABLE [dbo].[STATEs] (
-    [STATEID] int IDENTITY(1,1) NOT NULL,
-    [STATENAME] nvarchar(100)  NULL,
-    [ACTIVE] char(1)  NOT NULL,
-    [Zone] nvarchar(50)  NULL
-);
-GO
-
 -- Creating table 'Stockists'
 CREATE TABLE [dbo].[Stockists] (
     [StockistId] int IDENTITY(1,1) NOT NULL,
     [StockistName] nvarchar(max)  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
-);
-GO
-
--- Creating table 'subareaCITies'
-CREATE TABLE [dbo].[subareaCITies] (
-    [subareaCITYID] int IDENTITY(1,1) NOT NULL,
-    [subareaCITYNAME] nvarchar(100)  NULL,
-    [CITYID] int  NULL,
-    [ACTIVE] char(1)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL,
+    [CreatedOn] datetime  NULL,
+    [ACTIVE] char(1)  NULL
 );
 GO
 
@@ -563,19 +543,71 @@ GO
 CREATE TABLE [dbo].[Zones] (
     [ZoneID] int IDENTITY(1,1) NOT NULL,
     [ZoneName] nvarchar(100)  NULL,
-    [ACTIVE] char(1)  NOT NULL
+    [ACTIVE] char(1)  NOT NULL,
+    [CreatedOn] datetime  NULL
+);
+GO
+
+-- Creating table 'hhcAdminLogins'
+CREATE TABLE [dbo].[hhcAdminLogins] (
+    [hhcAdminLoginsId] int IDENTITY(1,1) NOT NULL,
+    [UserName] nvarchar(50)  NULL,
+    [UserPwd] nvarchar(50)  NULL,
+    [Name] nvarchar(50)  NULL,
+    [Permissions] nvarchar(max)  NULL,
+    [EmailID] nvarchar(50)  NULL,
+    [ActiveStatus] nchar(1)  NULL,
+    [CreatedOn] datetime  NULL
+);
+GO
+
+-- Creating table 'STATEs'
+CREATE TABLE [dbo].[STATEs] (
+    [STATEID] int IDENTITY(1,1) NOT NULL,
+    [STATENAME] nvarchar(100)  NULL,
+    [Zone] int  NULL,
+    [ACTIVE] char(1)  NOT NULL,
+    [CreatedOn] datetime  NULL
+);
+GO
+
+-- Creating table 'SubAreas'
+CREATE TABLE [dbo].[SubAreas] (
+    [SubAreaID] int IDENTITY(1,1) NOT NULL,
+    [SubArea1] nvarchar(100)  NULL,
+    [CITYID] int  NULL,
+    [ACTIVE] char(1)  NOT NULL,
+    [CreatedOn] datetime  NULL
+);
+GO
+
+-- Creating table 'tbl_registration'
+CREATE TABLE [dbo].[tbl_registration] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Name] varchar(50)  NULL,
+    [Email] varchar(50)  NULL,
+    [Password] varchar(50)  NULL,
+    [City] varchar(50)  NULL,
+    [Address] varchar(50)  NULL,
+    [CreatedOn] datetime  NULL,
+    [ContactNo] varchar(50)  NULL
+);
+GO
+
+-- Creating table 'UploadedFiles'
+CREATE TABLE [dbo].[UploadedFiles] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [FileName] nvarchar(500)  NULL,
+    [FileDescription] nvarchar(max)  NULL,
+    [FilePath] nvarchar(max)  NULL,
+    [UploadedTime] datetime  NULL,
+    [States] nvarchar(50)  NULL
 );
 GO
 
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
-
--- Creating primary key on [AdminNo] in table 'Admins'
-ALTER TABLE [dbo].[Admins]
-ADD CONSTRAINT [PK_Admins]
-    PRIMARY KEY CLUSTERED ([AdminNo] ASC);
-GO
 
 -- Creating primary key on [CategoryId] in table 'Categories'
 ALTER TABLE [dbo].[Categories]
@@ -599,12 +631,6 @@ GO
 ALTER TABLE [dbo].[Hdivisions]
 ADD CONSTRAINT [PK_Hdivisions]
     PRIMARY KEY CLUSTERED ([HdivisionID] ASC);
-GO
-
--- Creating primary key on [hhcAdminLoginsId] in table 'hhcAdminLogins'
-ALTER TABLE [dbo].[hhcAdminLogins]
-ADD CONSTRAINT [PK_hhcAdminLogins]
-    PRIMARY KEY CLUSTERED ([hhcAdminLoginsId] ASC);
 GO
 
 -- Creating primary key on [CPIPID] in table 'hhcControlPanelIPStats'
@@ -691,22 +717,10 @@ ADD CONSTRAINT [PK_secondarysales]
     PRIMARY KEY CLUSTERED ([secondarysalesID] ASC);
 GO
 
--- Creating primary key on [STATEID] in table 'STATEs'
-ALTER TABLE [dbo].[STATEs]
-ADD CONSTRAINT [PK_STATEs]
-    PRIMARY KEY CLUSTERED ([STATEID] ASC);
-GO
-
 -- Creating primary key on [StockistId] in table 'Stockists'
 ALTER TABLE [dbo].[Stockists]
 ADD CONSTRAINT [PK_Stockists]
     PRIMARY KEY CLUSTERED ([StockistId] ASC);
-GO
-
--- Creating primary key on [subareaCITYID] in table 'subareaCITies'
-ALTER TABLE [dbo].[subareaCITies]
-ADD CONSTRAINT [PK_subareaCITies]
-    PRIMARY KEY CLUSTERED ([subareaCITYID] ASC);
 GO
 
 -- Creating primary key on [diagram_id] in table 'sysdiagrams'
@@ -775,9 +789,84 @@ ADD CONSTRAINT [PK_Zones]
     PRIMARY KEY CLUSTERED ([ZoneID] ASC);
 GO
 
+-- Creating primary key on [hhcAdminLoginsId] in table 'hhcAdminLogins'
+ALTER TABLE [dbo].[hhcAdminLogins]
+ADD CONSTRAINT [PK_hhcAdminLogins]
+    PRIMARY KEY CLUSTERED ([hhcAdminLoginsId] ASC);
+GO
+
+-- Creating primary key on [STATEID] in table 'STATEs'
+ALTER TABLE [dbo].[STATEs]
+ADD CONSTRAINT [PK_STATEs]
+    PRIMARY KEY CLUSTERED ([STATEID] ASC);
+GO
+
+-- Creating primary key on [SubAreaID] in table 'SubAreas'
+ALTER TABLE [dbo].[SubAreas]
+ADD CONSTRAINT [PK_SubAreas]
+    PRIMARY KEY CLUSTERED ([SubAreaID] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'tbl_registration'
+ALTER TABLE [dbo].[tbl_registration]
+ADD CONSTRAINT [PK_tbl_registration]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'UploadedFiles'
+ALTER TABLE [dbo].[UploadedFiles]
+ADD CONSTRAINT [PK_UploadedFiles]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
+
+-- Creating foreign key on [Zone] in table 'STATEs'
+ALTER TABLE [dbo].[STATEs]
+ADD CONSTRAINT [FK_STATEs_Zones]
+    FOREIGN KEY ([Zone])
+    REFERENCES [dbo].[Zones]
+        ([ZoneID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_STATEs_Zones'
+CREATE INDEX [IX_FK_STATEs_Zones]
+ON [dbo].[STATEs]
+    ([Zone]);
+GO
+
+-- Creating foreign key on [STATEID] in table 'CITies'
+ALTER TABLE [dbo].[CITies]
+ADD CONSTRAINT [FK_CITies_STATEs]
+    FOREIGN KEY ([STATEID])
+    REFERENCES [dbo].[STATEs]
+        ([STATEID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CITies_STATEs'
+CREATE INDEX [IX_FK_CITies_STATEs]
+ON [dbo].[CITies]
+    ([STATEID]);
+GO
+
+-- Creating foreign key on [CITYID] in table 'SubAreas'
+ALTER TABLE [dbo].[SubAreas]
+ADD CONSTRAINT [FK_subareaCITies_CITies]
+    FOREIGN KEY ([CITYID])
+    REFERENCES [dbo].[CITies]
+        ([CITYID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_subareaCITies_CITies'
+CREATE INDEX [IX_FK_subareaCITies_CITies]
+ON [dbo].[SubAreas]
+    ([CITYID]);
+GO
 
 -- --------------------------------------------------
 -- Script has ended
