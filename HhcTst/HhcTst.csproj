@@ -338,12 +338,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CascadingTestModel.cs" />
@@ -539,13 +533,6 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="xsds\datacare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -623,7 +610,6 @@
     <Content Include="HtmlPages\HtmlPage2.html" />
     <Content Include="HtmlPages\HtmlPage3.html" />
     <Content Include="HtmlPages\HtmlPage4.html" />
-    <Content Include="default.aspx" />
     <Content Include="Models\HhcDb.Context.tt">
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1647,7 +1633,6 @@
     <Content Include="Views\CITies\Edit.cshtml" />
     <Content Include="Views\CITies\Index.cshtml" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
