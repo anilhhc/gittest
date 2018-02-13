@@ -4,9 +4,7 @@
     ViewBag.Title = "Hhc";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
 <h2>Admins</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -56,12 +54,12 @@
         <td>
             @{if (item.ActiveStatus == "y")
             {
-                @Html.Label("Active")
+                @Html.Label("Active", new { @style = "color:blue" })
                 @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
             }
             else if (item.ActiveStatus == "n")
             {
-                @Html.Label("DeActive")
+                @Html.Label("DeActive", new { @style = "color:red" })
             }
 
             }

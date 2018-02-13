@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HhcTst
+namespace HhcTst.admin_hhc
 {
     public partial class WebForm1 : System.Web.UI.Page
     {

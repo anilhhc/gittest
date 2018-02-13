@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HhcTst {
+namespace HhcTst.admin_hhc {
     
     
     public partial class WebForm1 {

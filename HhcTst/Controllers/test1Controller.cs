@@ -18,7 +18,14 @@ namespace HhcTst.Controllers
         
         public ActionResult UploadExcel()
         {
-            TempData["a"] = "Hello aaa mvc";
+            var v1 = db.tbl_registration.ToList();
+            foreach (var w in v1)
+            {
+                db.tbl_registration.Remove(w);
+                db.SaveChanges();
+            }
+
+            TempData["a"] = "Hello aaa mvc";        
             var v = db.tbl_registration.ToList();
             return View(v);
         }
@@ -30,13 +37,13 @@ namespace HhcTst.Controllers
         [HttpPost]
         public ActionResult UploadExcel(tbl_registration tbl_rgs, HttpPostedFileBase FileUpload)
         {
-
-            var v = db.tbl_registration.ToList();
-            foreach (var w in v)
+            var v1 = db.tbl_registration.ToList();
+            foreach (var w in v1)
             {
                 db.tbl_registration.Remove(w);
                 db.SaveChanges();
             }
+            
             IEnumerable<tbl_registration> dt = db.tbl_registration.ToList();
             List<string> data = new List<string>();
             if (FileUpload != null)

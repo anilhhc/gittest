@@ -136,7 +136,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr style="color:green">
+    <tr style="color:blue">
         <td>
             @Html.DisplayFor(modelItem => item.STATENAME)
         </td>
@@ -151,7 +151,7 @@
             }
             else if (item.ACTIVE == "n")
             {
-                @Html.Label("DeActive", new { @style = "color:red" })
+                @Html.Label("DeActive", new { @style = "color:gray" })
             }
 
             }
@@ -167,7 +167,7 @@
             @{if (item.ACTIVE == "y")
             {
                 //var v= (item.ACTIVE="n");
-                @Html.ActionLink("DeActivate", "Active", new { id = item.STATEID }, new { @style="color:red" })
+                @Html.ActionLink("DeActivate", "Active", new { id = item.STATEID }, new { @style="color:gray" })
 
 
             }
