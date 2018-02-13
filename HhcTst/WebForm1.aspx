@@ -39,6 +39,10 @@
             <SortedDescendingHeaderStyle BackColor="#00547E" />
         </asp:GridView>
     
+        <br />
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+        </asp:Repeater>
+    
     </div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <br />
