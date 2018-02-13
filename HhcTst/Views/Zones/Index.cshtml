@@ -9,7 +9,7 @@
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table table-bordered table-hover">
-        <tr>
+        <tr style="background-color:lightblue">
             <th>
                 @Html.DisplayNameFor(model => model.ZoneName)
             </th>
@@ -24,19 +24,19 @@
 
         @foreach (var item in Model)
         {
-            <tr>
+            <tr style="color:blue">
                 <td>
                     @Html.DisplayFor(modelItem => item.ZoneName)
                 </td>
                 <td>
                     @{if (item.ACTIVE == "y")
                     {
-                        @Html.Label("Active")
+                        @Html.Label("Active", new { @style = "color:blue" })
                         @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
                     }
                     else if (item.ACTIVE == "n")
                     {
-                        @Html.Label("DeActive")
+                        @Html.Label("DeActive", new { @style = "color:gray" })
                     }
 
                     }
@@ -51,14 +51,11 @@
                     {
 
                         //var v= (item.ACTIVE="n");
-                        @Html.ActionLink("DeActivate", "Active", new { id = item.ZoneID })
-
-
+                        @Html.ActionLink("DeActivate", "Active", new { id = item.ZoneID }, new { @style = "color:gray" })
                     }
-
                     else
                     {
-                        @Html.ActionLink("Activate", "Active", new { id = item.ZoneID })
+                        @Html.ActionLink("Activate", "Active", new { id = item.ZoneID }, new { @style = "color:blue" })
                     }
                     }
                 </td>

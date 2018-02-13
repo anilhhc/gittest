@@ -38,12 +38,12 @@
         <td>
             @{if (item.ACTIVE == "y")
             {
-                @Html.Label("Active")
+                @Html.Label("Active", new { @style = "color:blue" })
                 @*@Html.DisplayFor(modelItem => item.ACTIVE)*@
             }
             else if (item.ACTIVE == "n")
             {
-                @Html.Label("DeActive")
+                @Html.Label("DeActive", new { @style = "color:gray" })
             }
 
             }
@@ -60,14 +60,14 @@
             {
 
                 //var v= (item.ACTIVE="n");
-                @Html.ActionLink("DeActivate", "Active", new { id = item.CITYID })
+                @Html.ActionLink("DeActivate", "Active", new { id = item.CITYID }, new { @style = "color:gray" })
 
 
             }
 
             else
             {
-                @Html.ActionLink("Activate", "Active", new { id = item.CITYID })
+                @Html.ActionLink("Activate", "Active", new { id = item.CITYID }, new { @style = "color:blue" })
             }
             }
         </td>

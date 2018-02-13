@@ -28,7 +28,6 @@ namespace HhcTst.Models
         }
     
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<CITy> CITies { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Hdivision> Hdivisions { get; set; }
         public virtual DbSet<hhcControlPanelIPStat> hhcControlPanelIPStats { get; set; }
@@ -56,12 +55,13 @@ namespace HhcTst.Models
         public virtual DbSet<VENDORSUser> VENDORSUsers { get; set; }
         public virtual DbSet<VENDORTYPE> VENDORTYPES { get; set; }
         public virtual DbSet<VENDORTYPESpecialisationsentry> VENDORTYPESpecialisationsentries { get; set; }
-        public virtual DbSet<Zone> Zones { get; set; }
         public virtual DbSet<hhcAdminLogin> hhcAdminLogins { get; set; }
-        public virtual DbSet<STATE> STATEs { get; set; }
-        public virtual DbSet<SubArea> SubAreas { get; set; }
         public virtual DbSet<tbl_registration> tbl_registration { get; set; }
         public virtual DbSet<UploadedFile> UploadedFiles { get; set; }
+        public virtual DbSet<CITy> CITies { get; set; }
+        public virtual DbSet<STATE> STATEs { get; set; }
+        public virtual DbSet<SubArea> SubAreas { get; set; }
+        public virtual DbSet<Zone> Zones { get; set; }
     
         public virtual ObjectResult<Nullable<int>> spSkCountId(string stockistname, string stockistId)
         {

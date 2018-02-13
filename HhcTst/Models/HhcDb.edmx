@@ -589,18 +589,6 @@
           <Property Name="ParentCategoryId" Type="Int32" />
           <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="CITy">
-          <Key>
-            <PropertyRef Name="CITYID" />
-          </Key>
-          <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="STATEID" Type="Int32" />
-          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="STATE" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="CITy" ToRole="STATE" />
-          <NavigationProperty Name="SubAreas" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="CITy" ToRole="SubArea" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
@@ -990,7 +978,6 @@
         </EntityType>
         <EntityContainer Name="HhcDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Category" />
-          <EntitySet Name="CITies" EntityType="Self.CITy" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Hdivisions" EntityType="Self.Hdivision" />
           <EntitySet Name="hhcControlPanelIPStats" EntityType="Self.hhcControlPanelIPStat" />
@@ -1018,26 +1005,11 @@
           <EntitySet Name="VENDORSUsers" EntityType="Self.VENDORSUser" />
           <EntitySet Name="VENDORTYPES" EntityType="Self.VENDORTYPE" />
           <EntitySet Name="VENDORTYPESpecialisationsentries" EntityType="Self.VENDORTYPESpecialisationsentry" />
-          <EntitySet Name="Zones" EntityType="HhcDbModel.Zone" />
           <FunctionImport Name="spSkCountId" ReturnType="Collection(Int32)">
             <Parameter Name="stockistname" Mode="In" Type="String" />
             <Parameter Name="StockistId" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="hhcAdminLogins" EntityType="HhcDbModel.hhcAdminLogin" />
-          <EntitySet Name="STATEs" EntityType="HhcDbModel.STATE" />
-          <AssociationSet Name="FK_STATEs_Zones" Association="HhcDbModel.FK_STATEs_Zones">
-            <End Role="Zone" EntitySet="Zones" />
-            <End Role="STATE" EntitySet="STATEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CITies_STATEs" Association="HhcDbModel.FK_CITies_STATEs">
-            <End Role="STATE" EntitySet="STATEs" />
-            <End Role="CITy" EntitySet="CITies" />
-          </AssociationSet>
-          <EntitySet Name="SubAreas" EntityType="HhcDbModel.SubArea" />
-          <AssociationSet Name="FK_subareaCITies_CITies" Association="HhcDbModel.FK_subareaCITies_CITies">
-            <End Role="CITy" EntitySet="CITies" />
-            <End Role="SubArea" EntitySet="SubAreas" />
-          </AssociationSet>
           <EntitySet Name="tbl_registration" EntityType="HhcDbModel.tbl_registration" />
           <EntitySet Name="UploadedFiles" EntityType="HhcDbModel.UploadedFile" />
           <FunctionImport Name="osHhcSs" ReturnType="Collection(String)" />
@@ -1050,17 +1022,23 @@
           <FunctionImport Name="monthHhcSs" ReturnType="Collection(String)" />
           <FunctionImport Name="stockistproductnameHhcSs" ReturnType="Collection(String)" />
           <FunctionImport Name="yearHhcSs" ReturnType="Collection(String)" />
+          <EntitySet Name="CITies" EntityType="HhcDbModel.CITy" />
+          <EntitySet Name="STATEs" EntityType="HhcDbModel.STATE" />
+          <EntitySet Name="SubAreas" EntityType="HhcDbModel.SubArea" />
+          <EntitySet Name="Zones" EntityType="HhcDbModel.Zone" />
+          <AssociationSet Name="FK_CITies_STATEs" Association="HhcDbModel.FK_CITies_STATEs">
+            <End Role="STATE" EntitySet="STATEs" />
+            <End Role="CITy" EntitySet="CITies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subareaCITies_CITies" Association="HhcDbModel.FK_subareaCITies_CITies">
+            <End Role="CITy" EntitySet="CITies" />
+            <End Role="SubArea" EntitySet="SubAreas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STATEs_Zones" Association="HhcDbModel.FK_STATEs_Zones">
+            <End Role="Zone" EntitySet="Zones" />
+            <End Role="STATE" EntitySet="STATEs" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Zone">
-          <Key>
-            <PropertyRef Name="ZoneID" />
-          </Key>
-          <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ZoneName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="STATEs" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="Zone" ToRole="STATE" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="hhcAdminLogin">
           <Key>
             <PropertyRef Name="hhcAdminLoginsId" />
@@ -1074,65 +1052,6 @@
           <Property Name="ActiveStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="STATE">
-          <Key>
-            <PropertyRef Name="STATEID" />
-          </Key>
-          <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="STATENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Zone" Type="Int32" />
-          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Zone1" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="STATE" ToRole="Zone" />
-          <NavigationProperty Name="CITies" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="STATE" ToRole="CITy" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-        </EntityType>
-        <Association Name="FK_STATEs_Zones">
-          <End Type="HhcDbModel.Zone" Role="Zone" Multiplicity="0..1" />
-          <End Type="HhcDbModel.STATE" Role="STATE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Zone">
-              <PropertyRef Name="ZoneID" />
-            </Principal>
-            <Dependent Role="STATE">
-              <PropertyRef Name="Zone" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CITies_STATEs">
-          <End Type="HhcDbModel.STATE" Role="STATE" Multiplicity="0..1" />
-          <End Type="HhcDbModel.CITy" Role="CITy" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="STATE">
-              <PropertyRef Name="STATEID" />
-            </Principal>
-            <Dependent Role="CITy">
-              <PropertyRef Name="STATEID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="SubArea">
-          <Key>
-            <PropertyRef Name="SubAreaID" />
-          </Key>
-          <Property Name="SubAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SubArea1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="CITYID" Type="Int32" />
-          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="CITy" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="SubArea" ToRole="CITy" />
-          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
-        </EntityType>
-        <Association Name="FK_subareaCITies_CITies">
-          <End Type="HhcDbModel.CITy" Role="CITy" Multiplicity="0..1" />
-          <End Type="HhcDbModel.SubArea" Role="SubArea" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CITy">
-              <PropertyRef Name="CITYID" />
-            </Principal>
-            <Dependent Role="SubArea">
-              <PropertyRef Name="CITYID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="tbl_registration">
           <Key>
             <PropertyRef Name="Id" />
@@ -1179,6 +1098,87 @@
           <Property Type="String" Name="headquartername" Nullable="true" MaxLength="500" />
           <Property Type="String" Name="heteroproductsapid" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="CITy">
+          <Key>
+            <PropertyRef Name="CITYID" />
+          </Key>
+          <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATEID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="STATE" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="CITy" ToRole="STATE" />
+          <NavigationProperty Name="SubAreas" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="CITy" ToRole="SubArea" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="STATEID" />
+          </Key>
+          <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STATENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Zone" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CITies" Relationship="HhcDbModel.FK_CITies_STATEs" FromRole="STATE" ToRole="CITy" />
+          <NavigationProperty Name="Zone1" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="STATE" ToRole="Zone" />
+        </EntityType>
+        <EntityType Name="SubArea">
+          <Key>
+            <PropertyRef Name="SubAreaID" />
+          </Key>
+          <Property Name="SubAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubArea1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CITYID" Type="Int32" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CITy" Relationship="HhcDbModel.FK_subareaCITies_CITies" FromRole="SubArea" ToRole="CITy" />
+        </EntityType>
+        <EntityType Name="Zone">
+          <Key>
+            <PropertyRef Name="ZoneID" />
+          </Key>
+          <Property Name="ZoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ZoneName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="STATEs" Relationship="HhcDbModel.FK_STATEs_Zones" FromRole="Zone" ToRole="STATE" />
+        </EntityType>
+        <Association Name="FK_CITies_STATEs">
+          <End Type="HhcDbModel.STATE" Role="STATE" Multiplicity="0..1" />
+          <End Type="HhcDbModel.CITy" Role="CITy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATE">
+              <PropertyRef Name="STATEID" />
+            </Principal>
+            <Dependent Role="CITy">
+              <PropertyRef Name="STATEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subareaCITies_CITies">
+          <End Type="HhcDbModel.CITy" Role="CITy" Multiplicity="0..1" />
+          <End Type="HhcDbModel.SubArea" Role="SubArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CITy">
+              <PropertyRef Name="CITYID" />
+            </Principal>
+            <Dependent Role="SubArea">
+              <PropertyRef Name="CITYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STATEs_Zones">
+          <End Type="HhcDbModel.Zone" Role="Zone" Multiplicity="0..1" />
+          <End Type="HhcDbModel.STATE" Role="STATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zone">
+              <PropertyRef Name="ZoneID" />
+            </Principal>
+            <Dependent Role="STATE">
+              <PropertyRef Name="Zone" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1192,17 +1192,6 @@
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
           <ScalarProperty Name="ParentCategoryId" ColumnName="ParentCategoryId" />
           <ScalarProperty Name="Remarks" ColumnName="Remarks" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CITies">
-      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.CITy)">
-        <MappingFragment StoreEntitySet="CITies">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
-          <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
-          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
-          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1620,16 +1609,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Zones">
-      <EntityTypeMapping TypeName="IsTypeOf(HhcDbModel.Zone)">
-        <MappingFragment StoreEntitySet="Zones">
-          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
-          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
-          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="spSkCountId" FunctionName="HhcDbModel.Store.spSkCountId" />
           <EntitySetMapping Name="hhcAdminLogins">
             <EntityTypeMapping TypeName="HhcDbModel.hhcAdminLogin">
@@ -1642,28 +1621,6 @@
                 <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="hhcAdminLoginsId" ColumnName="hhcAdminLoginsId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STATEs">
-            <EntityTypeMapping TypeName="HhcDbModel.STATE">
-              <MappingFragment StoreEntitySet="STATEs">
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-                <ScalarProperty Name="Zone" ColumnName="Zone" />
-                <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
-                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SubAreas">
-            <EntityTypeMapping TypeName="HhcDbModel.SubArea">
-              <MappingFragment StoreEntitySet="SubArea">
-                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
-                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
-                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
-                <ScalarProperty Name="SubArea1" ColumnName="SubArea" />
-                <ScalarProperty Name="SubAreaID" ColumnName="SubAreaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1723,6 +1680,49 @@
           <FunctionImportMapping FunctionImportName="monthHhcSs" FunctionName="HhcDbModel.Store.monthHhcSs" />
           <FunctionImportMapping FunctionImportName="stockistproductnameHhcSs" FunctionName="HhcDbModel.Store.stockistproductnameHhcSs" />
           <FunctionImportMapping FunctionImportName="yearHhcSs" FunctionName="HhcDbModel.Store.yearHhcSs" />
+          <EntitySetMapping Name="CITies">
+            <EntityTypeMapping TypeName="HhcDbModel.CITy">
+              <MappingFragment StoreEntitySet="CITies">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+                <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATEs">
+            <EntityTypeMapping TypeName="HhcDbModel.STATE">
+              <MappingFragment StoreEntitySet="STATEs">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="Zone" ColumnName="Zone" />
+                <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
+                <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubAreas">
+            <EntityTypeMapping TypeName="HhcDbModel.SubArea">
+              <MappingFragment StoreEntitySet="SubArea">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+                <ScalarProperty Name="SubArea1" ColumnName="SubArea" />
+                <ScalarProperty Name="SubAreaID" ColumnName="SubAreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zones">
+            <EntityTypeMapping TypeName="HhcDbModel.Zone">
+              <MappingFragment StoreEntitySet="Zones">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

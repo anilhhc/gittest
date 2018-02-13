@@ -16,7 +16,7 @@
     <AssemblyName>HhcTst</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -42,6 +42,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="C1.Web.Mvc, Version=4.0.20173.143, Culture=neutral, PublicKeyToken=9b75583953471eea, processorArchitecture=MSIL">
       <HintPath>..\packages\C1.Web.Mvc.4.0.20173.143\lib\net40\C1.Web.Mvc.dll</HintPath>
       <Private>True</Private>
@@ -250,10 +254,6 @@
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
     </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.Identity.Core">
@@ -276,6 +276,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin-hhc\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-hhc\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -310,50 +317,88 @@
     <Compile Include="Content\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Content\Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Content\Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CITiesController.cs" />
-    <Compile Include="Controllers\DemoController.cs" />
-    <Compile Include="Controllers\hhcAdminLoginsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HproductslistdescriptionsController.cs" />
-    <Compile Include="Controllers\HproductslistsController.cs" />
-    <Compile Include="Controllers\ImportExportController.cs" />
-    <Compile Include="Controllers\STATEsController.cs" />
-    <Compile Include="Controllers\StockistController.cs" />
-    <Compile Include="Controllers\StockistsApiController.cs" />
-    <Compile Include="Controllers\StockistsController.cs" />
-    <Compile Include="Controllers\SubAreaController.cs" />
-    <Compile Include="Controllers\test1Controller.cs" />
-    <Compile Include="Controllers\test3Controller.cs" />
-    <Compile Include="Controllers\test4Controller.cs" />
-    <Compile Include="Controllers\test5Controller.cs" />
-    <Compile Include="Controllers\test6Controller.cs" />
-    <Compile Include="Controllers\test7ZonesController.cs" />
-    <Compile Include="Controllers\testController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\WallOfLoveController.cs" />
-    <Compile Include="Controllers\ZoneApiTstController.cs" />
-    <Compile Include="Controllers\ZonesController.cs" />
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\AdminController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\CITiesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\DemoController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\hhcAdminLoginsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\HproductslistdescriptionsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\HproductslistsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ImportExportController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\STATEsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\StockistController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\StockistsApiController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\StockistsController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\SubAreaController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test1Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test3Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test4Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test5Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test6Controller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\test7ZonesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\testController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ValuesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ZoneApiTstController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ZonesController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CascadingTestModel.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\CITy.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Cltive_HhcSs_Result.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
@@ -362,20 +407,14 @@
       <DependentUpon>HhcDb.tt</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\foursolarwalloflove.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Hdivision.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcControlPanelIPStat.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\HhcDb.Context.cs">
       <DependentUpon>HhcDb.Context.tt</DependentUpon>
@@ -395,76 +434,47 @@
     </Compile>
     <Compile Include="Models\hhcprimarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hhcsecondarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hproductslist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hproductslistdescription.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hstockistdetail.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\hstockistupload.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Htherapatic.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvendordetail.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvproductslist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Hvsale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginVm.cs" />
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\OtherAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\OtherAdminPermission.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\secondarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\STATE.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Stockist.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
@@ -473,7 +483,6 @@
     <Compile Include="Models\StockistLoginVM.cs" />
     <Compile Include="Models\SubArea.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
@@ -490,23 +499,18 @@
     </Compile>
     <Compile Include="Models\UploadFileName.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\USER.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\UserAdminLogin.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Usershetro.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORSPECIALIZATION.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORSPECIALIZATIONs1.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
@@ -514,19 +518,15 @@
     </Compile>
     <Compile Include="Models\VENDORSUser.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORTYPE.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Zone.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -539,20 +539,117 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
     <Compile Include="xsds\datacare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>datacare.xsd</DependentUpon>
     </Compile>
+    <Compile Include="xsds\hhc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin-hhc\WebForm1.aspx" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.xml" />
+    <Content Include="bin\C1.Web.Mvc.dll" />
+    <Content Include="bin\C1.Web.Mvc.FlexSheet.dll" />
+    <Content Include="bin\C1.Web.Mvc.FlexSheet.xml" />
+    <Content Include="bin\C1.Web.Mvc.xml" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\EPPlus.dll" />
+    <Content Include="bin\EPPlus.Html.dll" />
+    <Content Include="bin\EPPlus.Html.pdb" />
+    <Content Include="bin\EPPlus.xml" />
+    <Content Include="bin\ExcelDataReader.DataSet.dll" />
+    <Content Include="bin\ExcelDataReader.DataSet.xml" />
+    <Content Include="bin\ExcelDataReader.dll" />
+    <Content Include="bin\ExcelDataReader.xml" />
+    <Content Include="bin\GemBox.Spreadsheet.dll" />
+    <Content Include="bin\GemBox.Spreadsheet.xml" />
+    <Content Include="bin\GridMvc.dll" />
+    <Content Include="bin\HhcTst.dll" />
+    <Content Include="bin\HhcTst.pdb" />
+    <Content Include="bin\LinqToExcel.dll" />
+    <Content Include="bin\LinqToExcel.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.Owin.Cors.dll" />
+    <Content Include="bin\Microsoft.Owin.Cors.xml" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MongoDB.Bson.dll" />
+    <Content Include="bin\MongoDB.Driver.Core.dll" />
+    <Content Include="bin\MongoDB.Driver.Core.xml" />
+    <Content Include="bin\MongoDB.Driver.dll" />
+    <Content Include="bin\MongoDB.Driver.Legacy.dll" />
+    <Content Include="bin\MongoDB.Driver.Legacy.xml" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\PagedList.dll" />
+    <Content Include="bin\PagedList.Mvc.dll" />
+    <Content Include="bin\PagedList.Mvc.xml" />
+    <Content Include="bin\PagedList.xml" />
+    <Content Include="bin\Remotion.Data.Linq.dll" />
+    <Content Include="bin\Remotion.dll" />
+    <Content Include="bin\Remotion.Interfaces.dll" />
+    <Content Include="bin\Rock.Core.dll" />
+    <Content Include="bin\Rock.Core.Newtonsoft.dll" />
+    <Content Include="bin\Rock.Core.Newtonsoft.xml" />
+    <Content Include="bin\Rock.Core.xml" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\System.Web.Cors.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.Owin.dll" />
+    <Content Include="bin\System.Web.Http.Owin.xml" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\zh-Hans\C1.Web.Mvc.resources.dll" />
     <Content Include="Content\Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\admin-lte\css\AdminLTE.min.css" />
     <Content Include="Content\admin-lte\css\blue.css" />
@@ -623,7 +720,6 @@
     <Content Include="HtmlPages\HtmlPage2.html" />
     <Content Include="HtmlPages\HtmlPage3.html" />
     <Content Include="HtmlPages\HtmlPage4.html" />
-    <Content Include="default.aspx" />
     <Content Include="Models\HhcDb.Context.tt">
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -637,16 +733,6 @@
       <DependentUpon>HhcDb.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>HhcDb.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -726,13 +812,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\globalize.js" />
     <Content Include="Scripts\globalize\currency.js" />
     <Content Include="Scripts\globalize\date.js" />
@@ -754,6 +833,7 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="bin\HhcTst.dll.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1647,7 +1727,6 @@
     <Content Include="Views\CITies\Edit.cshtml" />
     <Content Include="Views\CITies\Index.cshtml" />
     <Content Include="WebForm1.aspx" />
-    <Content Include="WebForm2.aspx" />
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
@@ -1747,8 +1826,6 @@
     <Content Include="Views\Zones\Edit.cshtml" />
     <Content Include="Views\Zones\Index.cshtml" />
     <Content Include="Views\Stockist\Edit.cshtml" />
-    <Content Include="Views\WallOfLove\Index.cshtml" />
-    <Content Include="Views\WallOfLove\WallOfLove1.cshtml" />
     <Content Include="Views\ImportExport\Index.cshtml" />
     <Content Include="Views\hhcAdminLogins\Create.cshtml" />
     <Content Include="Views\hhcAdminLogins\Delete.cshtml" />
@@ -1784,9 +1861,21 @@
     <Content Include="xsds\datacare.xss">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
+    <Content Include="xsds\hhc.xsc">
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Content>
+    <None Include="xsds\hhc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>hhc.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="xsds\hhc.xss">
+      <DependentUpon>hhc.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\Controllers\" />
     <Folder Include="Content\Areas\testArea\Controllers\" />
     <Folder Include="Content\Areas\testArea\Models\" />
     <Folder Include="Content\Areas\testArea\Views\Shared\" />
@@ -1823,7 +1912,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56930</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56930/</IISUrl>
+          <IISUrl>http://localhost/HhcTst</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

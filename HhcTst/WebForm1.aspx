@@ -9,40 +9,41 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:DropDownList ID="DropDownList1" runat="server"
-             DataSourceID="SqlDataSource1" DataTextField="purshcasequantity" DataValueField="purshcasequantity"
-             Height="30px" Width="180px" AutoPostBack="true">
-        </asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HhcDbConnectionString %>" SelectCommand="SELECT [purshcasequantity] FROM [hhcsecondarysales]"></asp:SqlDataSource>
-        <br />
-        <asp:DropDownList ID="DropDownList2" runat="server" Height="16px" Width="195px">
-            <%--<asp:ListItem Text="static item 1" Value="1" />
-     <asp:ListItem Text="static item 2" Value="2" />
-     <asp:ListItem Text="static item 3" Value="3" />--%>
-        </asp:DropDownList>
-        <br />
-        <asp:DropDownList ID="DropDownList3" runat="server" Height="16px" Width="195px">
-            <asp:ListItem Text="static item 1" Value="1" />
-     <asp:ListItem Text="static item 2" Value="2" />
-     <asp:ListItem Text="static item 3" Value="3" />
-        </asp:DropDownList>
-    
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" AutoGenerateColumns="true" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
-            <FooterStyle BackColor="White" ForeColor="#000066" />
-            <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-            <RowStyle ForeColor="#000066" />
-            <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#007DBB" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#00547E" />
-        </asp:GridView>
     
     </div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="CITYID" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="None">
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
+            <Columns>
+                <asp:BoundField DataField="CITYID" HeaderText="CITYID" InsertVisible="False" ReadOnly="True" SortExpression="CITYID" />
+                <asp:BoundField DataField="CITYNAME" HeaderText="CITYNAME" SortExpression="CITYNAME" />
+                <asp:BoundField DataField="STATEID" HeaderText="STATEID" SortExpression="STATEID" />
+                <asp:BoundField DataField="ACTIVE" HeaderText="ACTIVE" SortExpression="ACTIVE" />
+            </Columns>
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+        </asp:GridView>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="HhcTst.xsds.datacareTableAdapters.CITiesTableAdapter" UpdateMethod="Update">
+            <DeleteParameters>
+                <asp:Parameter Name="Original_CITYID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="CITYNAME" Type="String" />
+                <asp:Parameter Name="STATEID" Type="Int32" />
+                <asp:Parameter Name="ACTIVE" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="CITYNAME" Type="String" />
+                <asp:Parameter Name="STATEID" Type="Int32" />
+                <asp:Parameter Name="ACTIVE" Type="String" />
+                <asp:Parameter Name="Original_CITYID" Type="Int32" />
+            </UpdateParameters>
+        </asp:ObjectDataSource>
     </form>
 </body>
 </html>
