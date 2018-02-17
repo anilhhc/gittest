@@ -24,11 +24,11 @@ namespace HhcTst.Controllers
         }
         //fetch states by zone id
         [HttpPost]
-        public JsonResult GetStates(int ZoneID)
+        public JsonResult GetStates(int COUNTRYID)
         {
             List<STATE> allStates = new List<STATE>();
 
-            allStates= db.STATEs.Where(m => m.Zone1.ZoneID == ZoneID).ToList();
+            allStates = db.STATEs.Where(m => m.Zone1.ZoneID == COUNTRYID).ToList();
 
             return new JsonResult { Data = allStates, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -94,7 +94,7 @@ namespace HhcTst.Controllers
                     break;
                 case "ZoneId":
                     var states = (from state in db.STATEs
-                                  where state.Zone1.ZoneID == value
+                                  where state.Zone== value
                                   select state).ToList();
                     foreach (var s in states)
                     {

@@ -12,13 +12,13 @@ namespace HhcTst.Controllers
 {
     public class CITiesController : Controller
     {
-        CITiesTableAdapter cta = new CITiesTableAdapter();   
+      //  CITiesTableAdapter cta = new CITiesTableAdapter();   
         private HhcDbEntities db = new HhcDbEntities();
 
         // GET: CITies
         public ActionResult Index()
         {
-            var v = db.CITies.ToList();
+            var v = db.CITies;
             return View(v);
         }
 
@@ -29,7 +29,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CITy cITy = db.CITies.Find(id);
+             CITy cITy = db.CITies.Find(id);
             if (cITy == null)
             {
                 return HttpNotFound();

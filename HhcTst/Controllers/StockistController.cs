@@ -17,7 +17,7 @@ namespace HhcTst.Controllers
 {
     public class StockistController : Controller
     {
-       private HhcDbEntities db = new HhcDbEntities();
+        private HhcDbEntities db = new HhcDbEntities();
         // GET: Stockist
         public ActionResult Index()
         {
@@ -29,7 +29,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stockist stockist=db.Stockists.Find(id);
+            Hstockistdetail stockist=db.Hstockistdetails.Find(id);
             if(stockist==null)
             {
                 return HttpNotFound();
@@ -39,13 +39,13 @@ namespace HhcTst.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StockistID,StockistName,ACTIVE")] Stockist stockist)
+        public ActionResult Edit([Bind(Include = "StockistID,StockistName,ACTIVE")] Hstockistdetail stockist)
         {
             if (ModelState.IsValid)
             {
                // var count = db.Stockists.Count(t=>t.StockistName==stockist.StockistName)//.Where(o => o.StockistName == stockist.StockistName).SelectMany(o=>o.StockistName).Count();
                // if(db.Stockists.Count<>)
-                 if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                 if (db.Hstockistdetails.Where(u => u.HstockistdetailsID == stockist.HstockistdetailsID).Any())
                 {
                     ModelState.AddModelError("ZoneName", "Zone Name already taken");
                     return View(stockist);
@@ -71,17 +71,17 @@ namespace HhcTst.Controllers
         {
             if (ModelState.IsValid)
             {
-                var tbRes = new Stockist()
+                var tbRes = new Hstockistdetail()
                 {
-                    StockistName = vm.StockistName,
-                    Password = vm.Password
+                    hsemailid = vm.StockistName,
+                   hspwd = vm.Password
                 };
                 using (HhcDbEntities db = new HhcDbEntities())
                 {
-                    var v = db.Stockists.Where(a => a.StockistName.Equals(tbRes.StockistName) && a.Password.Equals(tbRes.Password)).FirstOrDefault();
+                    var v = db.Hstockistdetails.Where(a => a.hsemailid.Equals(tbRes.hsemailid) && a.hspwd.Equals(tbRes.hspwd)).FirstOrDefault();
                     if (v != null)
                     {
-                        Session["loggedStockistName"] = v.StockistName.ToString();
+                        Session["loggedStockistName"] = v.hsemailid.ToString();
                         return RedirectToAction("StockistDashBoard", "Stockist");
                     }
                     else
@@ -107,7 +107,7 @@ namespace HhcTst.Controllers
         public ActionResult ProfilePage()
         {
             string str = Session["loggedStockistName"].ToString();
-            var v = db.Stockists.Where(a=>a.StockistName == str).FirstOrDefault();
+            var v = db.Hstockistdetails.Where(a=>a.hsemailid == str).FirstOrDefault();
 
             return View(v);
         }
@@ -163,11 +163,11 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "StockistId,StockistName,Description,Password")] Stockist stockist)
+        public ActionResult Register([Bind(Include = "StockistId,StockistName,Description,Password")] Hstockistdetail stockist)
         {
             if (ModelState.IsValid)
             {
-                if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                if (db.Hstockistdetails.Where(u => u.hsemailid == stockist.hsemailid).Any())
                 {
                     ModelState.AddModelError("StockistName", "Stockist Name already taken");
                     return View(stockist);
@@ -176,9 +176,9 @@ namespace HhcTst.Controllers
                 }
                 else
                 {
-                    db.Stockists.Add(stockist);
+                    db.Hstockistdetails.Add(stockist);
                     db.SaveChanges();
-                    ViewBag.name =( stockist.StockistName.ToString()+" has been registered successfully");
+                    ViewBag.name =( stockist.hsemailid.ToString()+" has been registered successfully");
                     ModelState.Clear();
                     return View();
                   //  return RedirectToAction("Login"); // RedirectToAction("Index");

@@ -17,7 +17,7 @@ namespace HhcTst.Controllers
         }
         public JsonResult GetPersons()
         {
-            var result = db.Stockists.ToList();
+            var result = db.Hstockistdetails.ToList();
             return Json(result,JsonRequestBehavior.AllowGet);
         }
     }

@@ -17,16 +17,16 @@ namespace HhcTst.Controllers
         private HhcDbEntities db = new HhcDbEntities();
 
         // GET: api/Stockists
-        public IQueryable<Stockist> GetStockists()
+        public IQueryable<Hstockistdetail> GetStockists()
         {
-            return db.Stockists;
+            return db.Hstockistdetails;
         }
 
         // GET: api/Stockists/5
-        [ResponseType(typeof(Stockist))]
+        [ResponseType(typeof(Hstockistdetail))]
         public IHttpActionResult GetStockist(int id)
         {
-            Stockist stockist = db.Stockists.Find(id);
+            Hstockistdetail stockist = db.Hstockistdetails.Find(id);
             if (stockist == null)
             {
                 return NotFound();
@@ -37,14 +37,14 @@ namespace HhcTst.Controllers
 
         // PUT: api/Stockists/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutStockist(int id, Stockist stockist)
+        public IHttpActionResult PutStockist(int id, Hstockistdetail stockist)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != stockist.StockistId)
+            if (id != stockist.HstockistdetailsID)
             {
                 return BadRequest();
             }
@@ -71,31 +71,31 @@ namespace HhcTst.Controllers
         }
 
         // POST: api/Stockists
-        [ResponseType(typeof(Stockist))]
-        public IHttpActionResult PostStockist(Stockist stockist)
+        [ResponseType(typeof(Hstockistdetail))]
+        public IHttpActionResult PostStockist(Hstockistdetail stockist)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Stockists.Add(stockist);
+            db.Hstockistdetails.Add(stockist);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = stockist.StockistId }, stockist);
+            return CreatedAtRoute("DefaultApi", new { id = stockist.HstockistdetailsID }, stockist);
         }
 
         // DELETE: api/Stockists/5
-        [ResponseType(typeof(Stockist))]
+        [ResponseType(typeof(Hstockistdetail))]
         public IHttpActionResult DeleteStockist(int id)
         {
-            Stockist stockist = db.Stockists.Find(id);
+             Hstockistdetail stockist = db.Hstockistdetails.Find(id);
             if (stockist == null)
             {
                 return NotFound();
             }
 
-            db.Stockists.Remove(stockist);
+            db.Hstockistdetails.Remove(stockist);
             db.SaveChanges();
 
             return Ok(stockist);
@@ -112,7 +112,7 @@ namespace HhcTst.Controllers
 
         private bool StockistExists(int id)
         {
-            return db.Stockists.Count(e => e.StockistId == id) > 0;
+            return db.Hstockistdetails.Count(e => e.HstockistdetailsID == id) > 0;
         }
     }
 }

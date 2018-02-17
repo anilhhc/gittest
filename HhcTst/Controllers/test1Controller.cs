@@ -13,6 +13,7 @@ namespace HhcTst.Controllers
 {
     public class test1Controller : Controller
     {
+
         HhcDbEntities db = new HhcDbEntities();
         // GET: test1
         

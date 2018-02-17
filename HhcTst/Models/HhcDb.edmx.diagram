@@ -4,45 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="11624b7d28384c20bb9aad0fb61b0558" Name="Diagram1" ZoomLevel="83">
-        <EntityTypeShape EntityType="HhcDbModel.Category" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Employee" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hdivision" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcControlPanelIPStat" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcprimarysale" Width="1.5" PointX="4.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcsecondarysale" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hproductslistdescription" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hproductslist" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hstockistdetail" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hstockistupload" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Htherapatic" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hvendordetail" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hvproductslist" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Hvsale" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.OtherAdminLogin" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.OtherAdminPermission" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.secondarysale" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Stockist" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.sysdiagram" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.UploadFileName" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.UserAdminLogin" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.USER" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.Usershetro" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.VENDORSPECIALIZATION" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.VENDORSPECIALIZATIONs1" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.VENDORSUser" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.VENDORTYPE" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.VENDORTYPESpecialisationsentry" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HhcDbModel.hhcAdminLogin" Width="1.5" PointX="0.75" PointY="16.75" />
-        <EntityTypeShape EntityType="HhcDbModel.tbl_registration" Width="1.5" PointX="3.375" PointY="16.75" />
-        <EntityTypeShape EntityType="HhcDbModel.UploadedFile" Width="1.5" PointX="17.375" PointY="3.75" />
-        <EntityTypeShape EntityType="HhcDbModel.CITy" Width="1.5" PointX="21.875" PointY="7" />
-        <EntityTypeShape EntityType="HhcDbModel.STATE" Width="1.5" PointX="19.625" PointY="7" />
-        <EntityTypeShape EntityType="HhcDbModel.SubArea" Width="1.5" PointX="24.125" PointY="7" />
-        <EntityTypeShape EntityType="HhcDbModel.Zone" Width="1.5" PointX="17.375" PointY="7.125" />
-        <AssociationConnector Association="HhcDbModel.FK_CITies_STATEs" />
-        <AssociationConnector Association="HhcDbModel.FK_subareaCITies_CITies" />
-        <AssociationConnector Association="HhcDbModel.FK_STATEs_Zones" />
+      <Diagram DiagramId="8cbc64db9f9e45ffb212d92f2e45e153" Name="Diagram1">
+        <EntityTypeShape EntityType="HhcDbModel.Category" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.CITy" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Employee" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hdivision" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcAdminLogin" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcControlPanelIPStat" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcprimarysale" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hhcsecondarysale" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hproductslistdescription" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hproductslist" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hstockistdetail" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.hstockistupload" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Htherapatic" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hvendordetail" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hvproductslist" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Hvsale" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.OtherAdminLogin" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.OtherAdminPermission" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.secondarysale" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.STATE" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Stockist" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.SubArea" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.sysdiagram" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.tbl_registration" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.UploadedFile" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.UploadFileName" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.UserAdminLogin" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.USER" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Usershetro" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.VENDORSPECIALIZATION" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.VENDORSPECIALIZATIONs1" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.VENDORSUser" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.VENDORTYPE" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.VENDORTYPESpecialisationsentry" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HhcDbModel.Zone" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="HhcDbModel.FK_CITies_STATEs" ManuallyRouted="false" />
+        <AssociationConnector Association="HhcDbModel.FK_subareaCITies_CITies" ManuallyRouted="false" />
+        <AssociationConnector Association="HhcDbModel.FK_STATEs_Zones" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
