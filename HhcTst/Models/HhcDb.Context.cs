@@ -12,6 +12,8 @@ namespace HhcTst.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HhcDbEntities : DbContext
     {
@@ -60,5 +62,11 @@ namespace HhcTst.Models
         public virtual DbSet<VENDORTYPE> VENDORTYPES { get; set; }
         public virtual DbSet<VENDORTYPESpecialisationsentry> VENDORTYPESpecialisationsentries { get; set; }
         public virtual DbSet<Zone> Zones { get; set; }
+        public virtual DbSet<tbl_regNew> tbl_regNew { get; set; }
+    
+        public virtual ObjectResult<SpHhcPs_Result> SpHhcPs()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpHhcPs_Result>("SpHhcPs");
+        }
     }
 }

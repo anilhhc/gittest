@@ -12,11 +12,6 @@ namespace HhcMkTst.Controllers
 {
     public class PSalesController : Controller
     {
-        // GET: PSales
-        public ActionResult Index()
-        {
-            return View();
-        }
         HhcmkdbEntities db = new HhcmkdbEntities();
         // GET: test1
 
@@ -85,7 +80,7 @@ namespace HhcMkTst.Controllers
                     {
                         try
                         {
-                            if (a.billingdocument != "" && a.billingdate != "" && a.stockistcode != "" && a.productid != "" && a.sapproductquantity!= "" && a.rate!= "" &&a.value!="")
+                            if ((a.billingdocument != null || a.billingdocument !="") && (a.billingdate != null) && (a.stockistcode != null )&& (a.productid != null) && (a.sapproductquantity!= null) && (a.rate!= null) &&(a.value!=null))
                             {
 
 
@@ -112,6 +107,10 @@ namespace HhcMkTst.Controllers
                                 if (a.billingdocument == "" || a.billingdocument == null) data.Add("<li> billingdoc is required</li>");
                                 if (a.billingdate == "" || a.billingdate == null) data.Add("<li> billingdate is required</li>");
                                 if (a.stockistcode == "" || a.stockistcode == null) data.Add("<li>stockistcode is required</li>");
+                                if (a.productid == "" || a.productid == null) data.Add("<li>productid is required</li>");
+                                if (a.sapproductquantity == "" || a.sapproductquantity == null) data.Add("<li>sapProductQuantity is required");
+                                if (a.rate == "" || a.rate == null) data.Add("<li>rate is required</li>");
+                                if (a.value == "" || a.value == null) data.Add("<li> value is required</li>");
 
                                 data.Add("</ul>");
                                 data.ToArray();

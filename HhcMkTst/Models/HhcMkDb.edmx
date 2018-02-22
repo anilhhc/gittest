@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HhcmkdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HhcmkdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CITies">
           <Key>
             <PropertyRef Name="CITYID" />
@@ -114,12 +114,12 @@
           <Property Name="stockistid" Type="nvarchar" MaxLength="50" />
           <Property Name="month" Type="nvarchar" MaxLength="50" />
           <Property Name="year" Type="nvarchar" MaxLength="50" />
-          <Property Name="stockistproductcode" Type="nvarchar" MaxLength="500" />
+          <Property Name="sapmaterialcode" Type="nvarchar" MaxLength="500" />
           <Property Name="stockistproductname" Type="nvarchar" MaxLength="500" />
           <Property Name="package" Type="nvarchar" MaxLength="50" />
           <Property Name="openingstock" Type="int" />
           <Property Name="purshcasequantity" Type="int" />
-          <Property Name="salequanitity" Type="int" />
+          <Property Name="salequantity" Type="int" />
           <Property Name="purchasereturn" Type="int" />
           <Property Name="salereturn" Type="int" />
           <Property Name="closing" Type="int" />
@@ -425,8 +425,7 @@
           <EntitySet Name="VENDORSPECIALIZATIONs" EntityType="Self.VENDORSPECIALIZATIONs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VENDORSPECIALIZATIONs1" EntityType="Self.VENDORSPECIALIZATIONs1" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HhcmkdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -539,12 +538,10 @@
           <Property Name="stockistid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="stockistproductcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="stockistproductname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="package" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="openingstock" Type="Int32" />
           <Property Name="purshcasequantity" Type="Int32" />
-          <Property Name="salequanitity" Type="Int32" />
           <Property Name="purchasereturn" Type="Int32" />
           <Property Name="salereturn" Type="Int32" />
           <Property Name="closing" Type="Int32" />
@@ -561,6 +558,8 @@
           <Property Name="divisionname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="divisionid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="monthyearid" Type="Int32" />
+          <Property Name="salequantity" Type="Int32" />
+          <Property Name="sapmaterialcode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="hhcsecondarysaleseditlog">
           <Key>
@@ -966,17 +965,17 @@
           <EntitySetMapping Name="hhcsecondarysales">
             <EntityTypeMapping TypeName="HhcmkdbModel.hhcsecondarysale">
               <MappingFragment StoreEntitySet="hhcsecondarysales">
+                <ScalarProperty Name="sapmaterialcode" ColumnName="sapmaterialcode" />
+                <ScalarProperty Name="salequantity" ColumnName="salequantity" />
                 <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
                 <ScalarProperty Name="stockistname" ColumnName="stockistname" />
                 <ScalarProperty Name="stockistid" ColumnName="stockistid" />
                 <ScalarProperty Name="month" ColumnName="month" />
                 <ScalarProperty Name="year" ColumnName="year" />
-                <ScalarProperty Name="stockistproductcode" ColumnName="stockistproductcode" />
                 <ScalarProperty Name="stockistproductname" ColumnName="stockistproductname" />
                 <ScalarProperty Name="package" ColumnName="package" />
                 <ScalarProperty Name="openingstock" ColumnName="openingstock" />
                 <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
-                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
                 <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
                 <ScalarProperty Name="salereturn" ColumnName="salereturn" />
                 <ScalarProperty Name="closing" ColumnName="closing" />

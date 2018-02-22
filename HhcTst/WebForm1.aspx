@@ -11,14 +11,8 @@
     <div>
     
     </div>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="CITYID" DataSourceID="ObjectDataSource1" ForeColor="Black" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
-            <Columns>
-                <asp:BoundField DataField="CITYID" HeaderText="CITYID" InsertVisible="False" ReadOnly="True" SortExpression="CITYID" />
-                <asp:BoundField DataField="CITYNAME" HeaderText="CITYNAME" SortExpression="CITYNAME" />
-                <asp:BoundField DataField="STATEID" HeaderText="STATEID" SortExpression="STATEID" />
-                <asp:BoundField DataField="ACTIVE" HeaderText="ACTIVE" SortExpression="ACTIVE" />
-            </Columns>
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
             <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />

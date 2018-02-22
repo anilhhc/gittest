@@ -468,6 +468,9 @@
     <Compile Include="Models\secondarysale.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpHhcPs_Result.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\STATE.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
@@ -484,6 +487,10 @@
     <Compile Include="Models\tbl_registration.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tbl_regNew.cs">
+      <DependentUpon>HhcDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tempclass.cs" />
     <Compile Include="Models\TestUploadExcel.cs" />
     <Compile Include="Models\UploadedFile.cs">
       <DependentUpon>HhcDb.tt</DependentUpon>

@@ -16,7 +16,6 @@ namespace HhcTst.Controllers
 
         HhcDbEntities db = new HhcDbEntities();
         // GET: test1
-        
         public ActionResult UploadExcel()
         {
             var v1 = db.tbl_registration.ToList();
@@ -72,7 +71,6 @@ namespace HhcTst.Controllers
                     adapter.Fill(ds, "ExcelTable");
 
                     DataTable dtable = ds.Tables["ExcelTable"];
-
                     string sheetName = "Sheet1";
 
                     var excelFile = new ExcelQueryFactory(pathToExcelFile);
@@ -82,7 +80,8 @@ namespace HhcTst.Controllers
                     {
                           try
                             {
-                                if (a.Name != "" && a.Address != "" && a.ContactNo != "" && a.Email != "" && a.Password != "" && a.City != "")
+                              if(a.Name!=null&&a.Address!=null&&a.ContactNo!=null&&a.Email!=null&&a.Password!=null&&a.City!=null)
+                              //  if (a.Name != "" && a.Address != "" && a.ContactNo != "" && a.Email != "" && a.Password != "" && a.City != "")
                                 {
                                     
 
@@ -99,7 +98,7 @@ namespace HhcTst.Controllers
                                     db.SaveChanges();
                                     // IEnumerable<tbl_registration> v = ;
                                     // return View(db.tbl_registration.ToList());
-                                    // ViewBag.msg ="Uploaded successfully";
+                                     ViewBag.msg ="Uploaded successfully  " + filename;
                                 }
                                 else
                                 {
@@ -107,10 +106,13 @@ namespace HhcTst.Controllers
                                     data.Add("<ul>");
                                     if (a.Name == "" || a.Name == null) data.Add("<li> name is required</li>");
                                     if (a.Address == "" || a.Address == null) data.Add("<li> Address is required</li>");
+                                    if(a.ContactNo==""||a.ContactNo==null) data.Add("<li> ContactNo is required</li>");
                                     if (a.Email == "" || a.Email == null) data.Add("<li>ContactNo is required</li>");
-
+                                    if(a.Password==""||a.Password==null) data.Add("<li>Password is required</li>");
+                                    if (a.City == "" || a.City == null) data.Add("<li>City is required</li>");
                                     data.Add("</ul>");
                                     data.ToArray();
+                                    ViewBag.msg1 = data;
                                     return Json(data, JsonRequestBehavior.AllowGet);
                                 }
                             }
@@ -129,12 +131,13 @@ namespace HhcTst.Controllers
                                 }
                             }
                     }
+
                     //deleting excel file from folder  
-                    if ((System.IO.File.Exists(pathToExcelFile)))
-                    {
-                        System.IO.File.Delete(pathToExcelFile);
-                    }
-                    ViewBag.sheetdelmsg = "sheet deleted succcessfully";
+                    //if ((System.IO.File.Exists(pathToExcelFile)))
+                    //{
+                    //    System.IO.File.Delete(pathToExcelFile);
+                    //}
+                    //ViewBag.sheetdelmsg = "sheet deleted succcessfully";
                     return View(db.tbl_registration.ToList());
                 }
                 else

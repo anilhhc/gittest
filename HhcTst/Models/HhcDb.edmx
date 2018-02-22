@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HhcDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HhcDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Categories">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -99,7 +99,7 @@
           <Property Name="package" Type="nvarchar" MaxLength="50" />
           <Property Name="openingstock" Type="int" />
           <Property Name="purshcasequantity" Type="int" />
-          <Property Name="salequanitity" Type="int" />
+          <Property Name="salequantity" Type="int" />
           <Property Name="purchasereturn" Type="int" />
           <Property Name="salereturn" Type="int" />
           <Property Name="closing" Type="int" />
@@ -332,6 +332,19 @@
           <Property Name="Address" Type="varchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="datetime" />
         </EntityType>
+        <EntityType Name="tbl_regNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ContactNo" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
         <EntityType Name="UploadedFiles">
           <Key>
             <PropertyRef Name="Id" />
@@ -513,6 +526,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SpHhcPs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="HhcDbModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CITies" EntityType="Self.CITies" Schema="dbo" store:Type="Tables" />
@@ -538,6 +552,7 @@
           <EntitySet Name="SubArea" EntityType="Self.SubArea" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_registration" EntityType="Self.tbl_registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_regNew" EntityType="Self.tbl_regNew" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UploadedFiles" EntityType="Self.UploadedFiles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UploadFileNames" EntityType="Self.UploadFileNames" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAdminLogins" EntityType="Self.UserAdminLogins" Schema="dbo" store:Type="Tables" />
@@ -562,8 +577,7 @@
             <End Role="SubArea" EntitySet="SubArea" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HhcDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -673,6 +687,7 @@
           <Property Name="headquaterid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="headquartername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="heteroproductsapid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salequantity" Type="Int32" />
         </EntityType>
         <EntityType Name="Hproductslistdescription">
           <Key>
@@ -1129,7 +1144,36 @@
             <End Role="Zones" EntitySet="Zones" />
             <End Role="STATEs" EntitySet="STATEs" />
           </AssociationSet>
+          <EntitySet Name="tbl_regNew" EntityType="HhcDbModel.tbl_regNew" />
+          <FunctionImport Name="SpHhcPs" ReturnType="Collection(HhcDbModel.SpHhcPs_Result)" />
         </EntityContainer>
+        <EntityType Name="tbl_regNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="SpHhcPs_Result">
+          <Property Type="Int32" Name="hhcprimarysalesID" Nullable="false" />
+          <Property Type="String" Name="billingdocument" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="billingdate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="stockistcode" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="stockistsapid" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="stockistname" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="headquarter" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="heterosapproductcode" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="heterosapproductname" Nullable="true" />
+          <Property Type="String" Name="sapproductquantity" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="rate" Nullable="true" />
+          <Property Type="Int32" Name="value" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1226,6 +1270,7 @@
           <EntitySetMapping Name="hhcsecondarysales">
             <EntityTypeMapping TypeName="HhcDbModel.hhcsecondarysale">
               <MappingFragment StoreEntitySet="hhcsecondarysales">
+                <ScalarProperty Name="salequantity" ColumnName="salequantity" />
                 <ScalarProperty Name="hhcsecondarysalesID" ColumnName="hhcsecondarysalesID" />
                 <ScalarProperty Name="stockistname" ColumnName="stockistname" />
                 <ScalarProperty Name="stockistid" ColumnName="stockistid" />
@@ -1236,7 +1281,6 @@
                 <ScalarProperty Name="package" ColumnName="package" />
                 <ScalarProperty Name="openingstock" ColumnName="openingstock" />
                 <ScalarProperty Name="purshcasequantity" ColumnName="purshcasequantity" />
-                <ScalarProperty Name="salequanitity" ColumnName="salequanitity" />
                 <ScalarProperty Name="purchasereturn" ColumnName="purchasereturn" />
                 <ScalarProperty Name="salereturn" ColumnName="salereturn" />
                 <ScalarProperty Name="closing" ColumnName="closing" />
@@ -1643,6 +1687,38 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_regNew">
+            <EntityTypeMapping TypeName="HhcDbModel.tbl_regNew">
+              <MappingFragment StoreEntitySet="tbl_regNew">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SpHhcPs" FunctionName="HhcDbModel.Store.SpHhcPs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HhcDbModel.SpHhcPs_Result">
+                <ScalarProperty Name="hhcprimarysalesID" ColumnName="hhcprimarysalesID" />
+                <ScalarProperty Name="billingdocument" ColumnName="billingdocument" />
+                <ScalarProperty Name="billingdate" ColumnName="billingdate" />
+                <ScalarProperty Name="stockistcode" ColumnName="stockistcode" />
+                <ScalarProperty Name="stockistsapid" ColumnName="stockistsapid" />
+                <ScalarProperty Name="stockistname" ColumnName="stockistname" />
+                <ScalarProperty Name="headquarter" ColumnName="headquarter" />
+                <ScalarProperty Name="heterosapproductcode" ColumnName="heterosapproductcode" />
+                <ScalarProperty Name="heterosapproductname" ColumnName="heterosapproductname" />
+                <ScalarProperty Name="sapproductquantity" ColumnName="sapproductquantity" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

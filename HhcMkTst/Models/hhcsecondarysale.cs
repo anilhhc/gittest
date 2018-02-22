@@ -19,12 +19,10 @@ namespace HhcMkTst.Models
         public string stockistid { get; set; }
         public string month { get; set; }
         public string year { get; set; }
-        public string stockistproductcode { get; set; }
         public string stockistproductname { get; set; }
         public string package { get; set; }
         public Nullable<int> openingstock { get; set; }
         public Nullable<int> purshcasequantity { get; set; }
-        public Nullable<int> salequanitity { get; set; }
         public Nullable<int> purchasereturn { get; set; }
         public Nullable<int> salereturn { get; set; }
         public Nullable<int> closing { get; set; }
@@ -41,5 +39,7 @@ namespace HhcMkTst.Models
         public string divisionname { get; set; }
         public string divisionid { get; set; }
         public Nullable<int> monthyearid { get; set; }
+        public Nullable<int> salequantity { get; set; }
+        public string sapmaterialcode { get; set; }
     }
 }

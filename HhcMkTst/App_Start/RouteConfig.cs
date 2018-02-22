@@ -16,7 +16,7 @@ namespace HhcMkTst
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "PSales", action = "UploadExcel", id = UrlParameter.Optional }
+                defaults: new { controller = "SSales", action = "UploadExcel", id = UrlParameter.Optional }
             );
         }
     }

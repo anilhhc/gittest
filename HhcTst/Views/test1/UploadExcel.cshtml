@@ -11,11 +11,13 @@
 <body>
     @{
         var results = ViewBag.msg;
+        var results1 = ViewBag.msg1;
     }
-    <p>@results</p>
+    
     <div>
         @using (Html.BeginForm("UploadExcel", "test1", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return myFunction()" }))
         {
+            
             <div class="form-horizontal">
                 <div class="form-group">
                     <div class="control-label col-md-2">Download Format:</div>
@@ -40,6 +42,17 @@
                 </div>
             </div>
         }  
+        @if (ViewBag.msg1 != null)
+        {
+        <script type="text/javascript">
+            
+            window.onload = function () {
+                alert("@ViewBag.msg1");
+            };
+        </script>
+        }
+        <p class="font-weight-bold" style="color:blue">@results</p>
+        <p class="font-weight-bold" style="color:blue">@results1</p>
         <table class="table table-bordered table-hover">
             <tr>
                 <th>
@@ -86,10 +99,15 @@
                     </td>
                 </tr>
             }
-
         </table>
+        @{
+        <p class="ng-show">
 
-
+            @Html.ActionLink("UploadToDb", "UploadToDb")
+        </p>
+           
+        }
     </div>
+    
 </body>
 </html>
