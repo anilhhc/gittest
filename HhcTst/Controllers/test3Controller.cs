@@ -19,7 +19,7 @@ namespace HhcTst.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(HttpPostedFileBase postedFile,UploadedFile upldfile)
+        public ActionResult Index(HttpPostedFileBase postedFile,hstockistupload upldfile)
         {
             var v = new UploadedFilesTableAdapter();
             if (postedFile != null)
@@ -32,14 +32,14 @@ namespace HhcTst.Controllers
 
                 string str= path + "1-Hhc-" + Path.GetFileName(postedFile.FileName);
                 postedFile.SaveAs(str);
-                upldfile.FileName = postedFile.FileName;
+                upldfile.filepath = postedFile.FileName;
                 var dateandtime = DateTime.Now;
                 var date = dateandtime.Date;
-                upldfile.FileDescription = "1-" + date;
-                upldfile.FilePath=str;
-                upldfile.UploadedTime = date;
+                upldfile.filedescription = "1-" + date;
+                upldfile.filepath=str;
+                upldfile.fileuploaddate = date;
                 //upldfile.States = "state" + db.UploadedFiles.Select(x=>x.Id);
-                db.UploadedFiles.Add(upldfile);
+                db.hstockistuploads.Add(upldfile);
                 db.SaveChanges();
                 //v.Insert(upldfile);
                 ViewBag.msg = "file uploaded successfully";
@@ -96,7 +96,7 @@ namespace HhcTst.Controllers
 
         public ActionResult Index3()
         {
-            return View(from c in db.UploadedFiles.Take(10).OrderByDescending(x=>x.UploadedTime)
+            return View(from c in db.hstockistuploads.Take(10)
                             select c);
         }
     }

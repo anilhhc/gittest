@@ -17,7 +17,7 @@ namespace HhcTst.Controllers
 {
     public class StockistController : Controller
     {
-       private HhcDbEntities db = new HhcDbEntities();
+        private HhcDbEntities db = new HhcDbEntities();
         // GET: Stockist
         public ActionResult Index()
         {
@@ -29,7 +29,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stockist stockist=db.Stockists.Find(id);
+            Hstockistdetail stockist=db.Hstockistdetails.Find(id);
             if(stockist==null)
             {
                 return HttpNotFound();
@@ -39,13 +39,13 @@ namespace HhcTst.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StockistID,StockistName,ACTIVE")] Stockist stockist)
+        public ActionResult Edit([Bind(Include = "StockistID,StockistName,ACTIVE")] Hstockistdetail stockist)
         {
             if (ModelState.IsValid)
             {
                // var count = db.Stockists.Count(t=>t.StockistName==stockist.StockistName)//.Where(o => o.StockistName == stockist.StockistName).SelectMany(o=>o.StockistName).Count();
                // if(db.Stockists.Count<>)
-                 if (db.Stockists.Where(u => u.StockistName == stockist.StockistName).Any())
+                 if (db.Hstockistdetails.Where(u => u.HstockistdetailsID == stockist.HstockistdetailsID).Any())
                 {
                     ModelState.AddModelError("ZoneName", "Zone Name already taken");
                     return View(stockist);
@@ -74,7 +74,7 @@ namespace HhcTst.Controllers
                 var tbRes = new Stockist()
                 {
                     StockistName = vm.StockistName,
-                    Password = vm.Password
+                   Password = vm.Password
                 };
                 using (HhcDbEntities db = new HhcDbEntities())
                 {

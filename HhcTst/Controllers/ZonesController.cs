@@ -91,7 +91,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zone zone = db.Zones.Find(id);
+             Zone zone = db.Zones.Find(id);
             if (zone == null)
             {
                 return HttpNotFound();
@@ -104,7 +104,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ZoneID,ZoneName,ACTIVE")] Zone zone)
+        public ActionResult Edit( Zone zone)
         {
             if (ModelState.IsValid)
             {
@@ -138,7 +138,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zone zone = db.Zones.Find(id);
+           Zone zone = db.Zones.Find(id);
             if (zone == null)
             {
                 return HttpNotFound();

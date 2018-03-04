@@ -1,0 +1,103 @@
+﻿@model IEnumerable<HhcMkTst.Models.hhcprimarysale>
+@{
+    ViewBag.Title = "UploadExcel";
+}
+
+<h2>UploadExcel</h2>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>tst1Index</title>
+</head>
+<body>
+    @{
+        var results = ViewBag.msg;
+    }
+    <p>@results</p>
+    <div>
+        @using (Html.BeginForm("UploadExcel", "PSales", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "return myFunction()" }))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="control-label col-md-2">Download Format:</div>
+                    <div class="col-md-10">
+                        <img src="~/Content/Images/HhcLogo.png" width="25" height="25" title="Download Excel format" alt="excel" />
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+
+                    <div class="control-label col-md-2">Excel:</div>
+                    <div class="col-md-10">
+                        <input type="file" id="FileUpload" name="FileUpload" class="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Upload" id="btnSubmit" class="btn btn-primary" />
+
+                    </div>
+                </div>
+            </div>
+        }
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.billingdocument)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.billingdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.stockistcode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.productid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.sapproductquantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model =>model.value)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.billingdocument)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.billingdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.stockistcode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.productid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.sapproductquantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.rate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m =>item.value)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</body>
+</html>

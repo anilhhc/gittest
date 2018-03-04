@@ -20,7 +20,7 @@ namespace HhcTst.Controllers
         [HttpPost]
         public JsonResult GetStockists()
         {
-            var v = db.Stockists.ToList();
+            var v = db.Hstockistdetails.ToList();
             return Json(v, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
@@ -33,25 +33,25 @@ namespace HhcTst.Controllers
             return Json(json);
         }
         [HttpPost]
-        public JsonResult InsertStockists(Stockist stockist)
+        public JsonResult InsertStockists(Hstockistdetail stockist)
         {
-            db.Stockists.Add(stockist);
+            db.Hstockistdetails.Add(stockist);
             db.SaveChanges();
             return Json(stockist);
         }
         [HttpPost]
-        public ActionResult UpdateStockists(Stockist stockist)
+        public ActionResult UpdateStockists(Hstockistdetail stockist)
         {
-            stockist = db.Stockists.Where(x => x.StockistId == stockist.StockistId).FirstOrDefault();
+            stockist = db.Hstockistdetails.Where(x => x.HstockistdetailsID == stockist.HstockistdetailsID).FirstOrDefault();
             db.Entry(stockist).State = EntityState.Modified;
             db.SaveChanges();
             return new EmptyResult();
         }
         [HttpPost]
-        public ActionResult DeleteStockists(Stockist stockist)
+        public ActionResult DeleteStockists(Hstockistdetail stockist)
         {
-            stockist = db.Stockists.Where(x => x.StockistId == stockist.StockistId).FirstOrDefault();
-            db.Stockists.Remove(stockist);
+            stockist = db.Hstockistdetails.Where(x => x.HstockistdetailsID == stockist.HstockistdetailsID).FirstOrDefault();
+            db.Hstockistdetails.Remove(stockist);
             db.SaveChanges();
             return new EmptyResult();
         }

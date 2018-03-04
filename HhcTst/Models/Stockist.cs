@@ -18,8 +18,8 @@ namespace HhcTst.Models
         public string StockistName { get; set; }
         public string Description { get; set; }
         public string Password { get; set; }
-        public Nullable<System.DateTime> CreatedOn { get; set; }
         public string ACTIVE { get; set; }
+        public Nullable<System.DateTime> CreatedOn { get; set; }
         public string EmailId { get; set; }
         public string Mobile { get; set; }
         public string PlotNo { get; set; }

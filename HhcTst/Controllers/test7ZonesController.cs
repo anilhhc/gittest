@@ -42,7 +42,7 @@ namespace HhcTst.Controllers
                 Zone updatedZone = (from c in db.Zones
                                             where c.ZoneID == zone.ZoneID
                                             select c).FirstOrDefault();
-                updatedZone.ZoneName = zone.ZoneName;
+                updatedZone.ZoneName =  zone.ZoneName;
                 db.SaveChanges();
             
 
@@ -50,11 +50,11 @@ namespace HhcTst.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteZones(int ZoneID)
+        public ActionResult DeleteZones(int COUNTRYID)
         {
             
                 Zone zone = (from c in db.Zones
-                                     where c.ZoneID == ZoneID
+                                   where c.ZoneID == COUNTRYID
                                      select c).FirstOrDefault();
                 db.Zones.Remove(zone);
                 db.SaveChanges();

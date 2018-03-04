@@ -34,5 +34,6 @@ namespace HhcTst.Models
         public string headquaterid { get; set; }
         public string headquartername { get; set; }
         public string heteroproductsapid { get; set; }
+        public Nullable<int> salequantity { get; set; }
     }
 }

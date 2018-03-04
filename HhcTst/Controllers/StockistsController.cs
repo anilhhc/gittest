@@ -47,7 +47,7 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StockistId,StockistName,Description,Password")] Stockist stockist)
+        public ActionResult Create(Stockist stockist)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stockist stockist = db.Stockists.Find(id);
+            Hstockistdetail stockist = db.Hstockistdetails.Find(id);
             if (stockist == null)
             {
                 return HttpNotFound();
@@ -97,12 +97,12 @@ namespace HhcTst.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StockistId,StockistName,Description,Password")] Stockist stockist)
+        public ActionResult Edit(Hstockistdetail stockist)
         {
             if (ModelState.IsValid)
             {
-                var v = from p in db.Stockists
-                        where p.StockistName == stockist.StockistName && p.StockistId != stockist.StockistId
+                var v = from p in db.Hstockistdetails
+                        where p.hsemailid == stockist.hsemailid && p.HstockistdetailsID != stockist.HstockistdetailsID
                         select p;
                 if(v.Any())
                // if(db.spSkCountId(stockist.StockistName,stockist.StockistId.ToString()).Any())
@@ -128,7 +128,7 @@ namespace HhcTst.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Stockist stockist = db.Stockists.Find(id);
+            Hstockistdetail stockist = db.Hstockistdetails.Find(id);
             if (stockist == null)
             {
                 return HttpNotFound();
@@ -141,8 +141,8 @@ namespace HhcTst.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Stockist stockist = db.Stockists.Find(id);
-            db.Stockists.Remove(stockist);
+            Hstockistdetail stockist = db.Hstockistdetails.Find(id);
+            db.Hstockistdetails.Remove(stockist);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
