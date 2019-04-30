@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TestSsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionId" Type="int" />
+          <Property Name="DivisionName" Type="nvarchar(max)" />
+          <Property Name="Active" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DivisionWiseProductPrice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaterialCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameOfTheProduct" Type="nvarchar" MaxLength="500" />
+          <Property Name="PackSize" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mrp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nsp" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ptr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pts" Type="nvarchar" MaxLength="50" />
+          <Property Name="HsnCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gst" Type="nvarchar" MaxLength="50" />
+          <Property Name="DivisionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DivisionWiseProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="DivisionId" Type="nvarchar" MaxLength="50" />
+          <Property Name="DivisionName" Type="nvarchar(max)" />
+          <Property Name="Active" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="TestSsDataModelStoreContainer">
+          <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DivisionWiseProductPrice" EntityType="Self.DivisionWiseProductPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestSsDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Division">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionId" Type="Int32" />
+          <Property Name="DivisionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DivisionWiseProductPrice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameOfTheProduct" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PackSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mrp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nsp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ptr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HsnCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gst" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DivisionWiseProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="TestSsDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Divisions" EntityType="Self.Division" />
+          <EntitySet Name="DivisionWiseProductPrices" EntityType="Self.DivisionWiseProductPrice" />
+          <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProduct" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestSsDataModelStoreContainer" CdmEntityContainer="TestSsDataEntities">
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="TestSsDataModel.Division">
+              <MappingFragment StoreEntitySet="Division">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DivisionWiseProductPrices">
+            <EntityTypeMapping TypeName="TestSsDataModel.DivisionWiseProductPrice">
+              <MappingFragment StoreEntitySet="DivisionWiseProductPrice">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MaterialCode" ColumnName="MaterialCode" />
+                <ScalarProperty Name="NameOfTheProduct" ColumnName="NameOfTheProduct" />
+                <ScalarProperty Name="PackSize" ColumnName="PackSize" />
+                <ScalarProperty Name="Mrp" ColumnName="Mrp" />
+                <ScalarProperty Name="Nsp" ColumnName="Nsp" />
+                <ScalarProperty Name="Ptr" ColumnName="Ptr" />
+                <ScalarProperty Name="Pts" ColumnName="Pts" />
+                <ScalarProperty Name="HsnCode" ColumnName="HsnCode" />
+                <ScalarProperty Name="Gst" ColumnName="Gst" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DivisionWiseProducts">
+            <EntityTypeMapping TypeName="TestSsDataModel.DivisionWiseProduct">
+              <MappingFragment StoreEntitySet="DivisionWiseProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TestSsDataModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
