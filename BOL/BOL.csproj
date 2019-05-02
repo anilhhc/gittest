@@ -60,6 +60,9 @@
     <Compile Include="DivisionWiseProductPrice.cs">
       <DependentUpon>SsData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Hstockistdetail.cs">
+      <DependentUpon>SsData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SsData.Context.cs">
       <AutoGen>True</AutoGen>

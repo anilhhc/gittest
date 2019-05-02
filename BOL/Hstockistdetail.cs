@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HhcTst.Models
+namespace BOL
 {
     using System;
     using System.Collections.Generic;
@@ -41,5 +41,7 @@ namespace HhcTst.Models
         public string hsssistatus { get; set; }
         public string hsdruglicenceno { get; set; }
         public string hszone { get; set; }
+        public string ACTIVE { get; set; }
+        public Nullable<System.DateTime> CreatedOn { get; set; }
     }
 }

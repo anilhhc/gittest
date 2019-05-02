@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HhcTst</RootNamespace>
     <AssemblyName>HhcTst</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -23,6 +23,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -186,6 +187,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -197,12 +199,11 @@
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
@@ -253,6 +254,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -330,40 +332,7 @@
     <Compile Include="Controllers\StockistsApiController.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Controllers\StockistsController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\SubAreaController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test1Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test3Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test4Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test5Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test6Controller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\test7ZonesController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\testController.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\ValuesController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\ZoneApiTstController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controllers\ZonesController.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -371,148 +340,14 @@
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CITy.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Employee.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hdivision.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcControlPanelIPStat.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HhcDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HhcDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HhcDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HhcDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcprimarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hhcsecondarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hproductslist.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hproductslistdescription.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hstockistdetail.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\hstockistupload.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Htherapatic.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvendordetail.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvproductslist.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Hvsale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginVm.cs" />
-    <Compile Include="Models\OtherAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OtherAdminPermission.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\secondarysale.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpHhcPs_Result.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\STATE.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Stockist.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\StockistLoginVM.cs" />
-    <Compile Include="Models\SubArea.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_registration.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_regNew.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tempclass.cs" />
     <Compile Include="Models\TestUploadExcel.cs" />
-    <Compile Include="Models\UploadedFile.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UploadFileName.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\USER.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserAdminLogin.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Usershetro.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSPECIALIZATION.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSPECIALIZATIONs1.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORSUser.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORTYPE.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\VENDORTYPESpecialisationsentry.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Zone.cs">
-      <DependentUpon>HhcDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="xsds\datacare.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -698,17 +533,6 @@
     <Content Include="HtmlPages\HtmlPage2.html" />
     <Content Include="HtmlPages\HtmlPage3.html" />
     <Content Include="HtmlPages\HtmlPage4.html" />
-    <Content Include="Models\HhcDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-      <LastGenOutput>HhcDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\HhcDb.edmx.sql" />
-    <Content Include="Models\HhcDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-      <LastGenOutput>HhcDb.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -805,13 +629,6 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="bin\HhcTst.dll.config" />
-    <EntityDeploy Include="Models\HhcDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HhcDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\HhcDb.edmx.diagram">
-      <DependentUpon>HhcDb.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -1704,7 +1521,6 @@
     <Content Include="Views\CITies\Details.cshtml" />
     <Content Include="Views\CITies\Edit.cshtml" />
     <Content Include="Views\CITies\Index.cshtml" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="xsds\datacare.xsc">
       <DependentUpon>datacare.xsd</DependentUpon>
     </Content>
@@ -1869,6 +1685,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{90e112d5-aec7-4386-98ce-bb9dd7d9171f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BOL\BOL.csproj">
+      <Project>{032b2e18-7c6e-4406-a4ce-e7c2e4c44af9}</Project>
+      <Name>BOL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

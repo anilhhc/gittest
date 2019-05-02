@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TestSsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TestSsDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Division">
           <Key>
             <PropertyRef Name="Id" />
@@ -46,6 +46,40 @@
           <Property Name="DivisionName" Type="nvarchar(max)" />
           <Property Name="Active" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Hstockistdetails">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hsfullname" Type="nvarchar(max)" />
+          <Property Name="hslastname" Type="nvarchar(max)" />
+          <Property Name="hsemailid" Type="nvarchar(max)" />
+          <Property Name="hsmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssapcustomerid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsplotno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsadressone" Type="nvarchar(max)" />
+          <Property Name="hsadresstwo" Type="nvarchar(max)" />
+          <Property Name="hscountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsstate" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsheadquater" Type="nvarchar" MaxLength="50" />
+          <Property Name="hssubarea" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdivision" Type="nvarchar" MaxLength="50" />
+          <Property Name="hscnf" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstherapatic" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="hstelephone" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsfax" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsgstprovisionalid" Type="nvarchar" MaxLength="50" />
+          <Property Name="hspan" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocname" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsspocmobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsssistatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="hsdruglicenceno" Type="nvarchar" MaxLength="50" />
+          <Property Name="hszone" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACTIVE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="date" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -60,10 +94,10 @@
           <EntitySet Name="Division" EntityType="Self.Division" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DivisionWiseProductPrice" EntityType="Self.DivisionWiseProductPrice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TestSsDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -123,7 +157,42 @@
           <EntitySet Name="DivisionWiseProductPrices" EntityType="Self.DivisionWiseProductPrice" />
           <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProduct" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Hstockistdetails" EntityType="TestSsDataModel.Hstockistdetail" />
         </EntityContainer>
+        <EntityType Name="Hstockistdetail">
+          <Key>
+            <PropertyRef Name="HstockistdetailsID" />
+          </Key>
+          <Property Name="HstockistdetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hsfullname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hslastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hsemailid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hsmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssapcustomerid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsplotno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsadressone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hsadresstwo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="hscountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsstate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsheadquater" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hssubarea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdivision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hscnf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstherapatic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hstelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsfax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsgstprovisionalid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hspan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsspocmobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsssistatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hsdruglicenceno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hszone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -182,6 +251,41 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hstockistdetails">
+            <EntityTypeMapping TypeName="TestSsDataModel.Hstockistdetail">
+              <MappingFragment StoreEntitySet="Hstockistdetails">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="hszone" ColumnName="hszone" />
+                <ScalarProperty Name="hsdruglicenceno" ColumnName="hsdruglicenceno" />
+                <ScalarProperty Name="hsssistatus" ColumnName="hsssistatus" />
+                <ScalarProperty Name="hsspocmobile" ColumnName="hsspocmobile" />
+                <ScalarProperty Name="hsspocname" ColumnName="hsspocname" />
+                <ScalarProperty Name="hspan" ColumnName="hspan" />
+                <ScalarProperty Name="hsgstprovisionalid" ColumnName="hsgstprovisionalid" />
+                <ScalarProperty Name="hsfax" ColumnName="hsfax" />
+                <ScalarProperty Name="hstelephone" ColumnName="hstelephone" />
+                <ScalarProperty Name="hspincode" ColumnName="hspincode" />
+                <ScalarProperty Name="hstherapatic" ColumnName="hstherapatic" />
+                <ScalarProperty Name="hscnf" ColumnName="hscnf" />
+                <ScalarProperty Name="hsdivision" ColumnName="hsdivision" />
+                <ScalarProperty Name="hssubarea" ColumnName="hssubarea" />
+                <ScalarProperty Name="hsheadquater" ColumnName="hsheadquater" />
+                <ScalarProperty Name="hsstate" ColumnName="hsstate" />
+                <ScalarProperty Name="hscountry" ColumnName="hscountry" />
+                <ScalarProperty Name="hsadresstwo" ColumnName="hsadresstwo" />
+                <ScalarProperty Name="hsadressone" ColumnName="hsadressone" />
+                <ScalarProperty Name="hsplotno" ColumnName="hsplotno" />
+                <ScalarProperty Name="hssapcustomerid" ColumnName="hssapcustomerid" />
+                <ScalarProperty Name="hspwd" ColumnName="hspwd" />
+                <ScalarProperty Name="hsmobile" ColumnName="hsmobile" />
+                <ScalarProperty Name="hsemailid" ColumnName="hsemailid" />
+                <ScalarProperty Name="hslastname" ColumnName="hslastname" />
+                <ScalarProperty Name="hsfullname" ColumnName="hsfullname" />
+                <ScalarProperty Name="HstockistdetailsID" ColumnName="HstockistdetailsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
