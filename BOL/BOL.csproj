@@ -79,6 +79,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SsData.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TotalStockist.cs">
+      <DependentUpon>SsData.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>SsData.tt</DependentUpon>
     </Compile>

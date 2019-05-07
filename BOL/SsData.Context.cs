@@ -30,5 +30,6 @@ namespace BOL
         public virtual DbSet<DivisionWiseProduct> DivisionWiseProducts { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Hstockistdetail> Hstockistdetails { get; set; }
+        public virtual DbSet<TotalStockist> TotalStockists { get; set; }
     }
 }

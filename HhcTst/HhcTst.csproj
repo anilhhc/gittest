@@ -338,6 +338,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Security\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Content\Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Content\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Content\Areas\HelpPage\Controllers\HelpController.cs" />
@@ -670,6 +672,7 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Security\Views\web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1720,7 +1723,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\" />
+    <Folder Include="Areas\Security\Models\" />
+    <Folder Include="Areas\Security\Views\Login\" />
+    <Folder Include="Areas\Security\Views\Shared\" />
     <Folder Include="bin\Controllers\" />
     <Folder Include="Content\Areas\testArea\Controllers\" />
     <Folder Include="Content\Areas\testArea\Models\" />

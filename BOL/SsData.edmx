@@ -80,6 +80,21 @@
           <Property Name="ACTIVE" Type="nvarchar" MaxLength="50" />
           <Property Name="CreatedOn" Type="date" />
         </EntityType>
+        <EntityType Name="TotalStockist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StkId" Type="nvarchar" MaxLength="50" />
+          <Property Name="StkName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Region" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliverPlant" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisChannel" Type="nvarchar" MaxLength="50" />
+          <Property Name="DivisionId" Type="int" />
+          <Property Name="DivisionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalesOfficeId" Type="int" />
+          <Property Name="SalesOfficeName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -95,6 +110,7 @@
           <EntitySet Name="DivisionWiseProductPrice" EntityType="Self.DivisionWiseProductPrice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProducts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hstockistdetails" EntityType="Self.Hstockistdetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TotalStockist" EntityType="Self.TotalStockist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -158,6 +174,7 @@
           <EntitySet Name="DivisionWiseProducts" EntityType="Self.DivisionWiseProduct" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Hstockistdetails" EntityType="TestSsDataModel.Hstockistdetail" />
+          <EntitySet Name="TotalStockists" EntityType="TestSsDataModel.TotalStockist" />
         </EntityContainer>
         <EntityType Name="Hstockistdetail">
           <Key>
@@ -192,6 +209,21 @@
           <Property Name="hszone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ACTIVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="TotalStockist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StkId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StkName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeliverPlant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisChannel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DivisionId" Type="Int32" />
+          <Property Name="DivisionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SalesOfficeId" Type="Int32" />
+          <Property Name="SalesOfficeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -286,6 +318,22 @@
                 <ScalarProperty Name="hslastname" ColumnName="hslastname" />
                 <ScalarProperty Name="hsfullname" ColumnName="hsfullname" />
                 <ScalarProperty Name="HstockistdetailsID" ColumnName="HstockistdetailsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TotalStockists">
+            <EntityTypeMapping TypeName="TestSsDataModel.TotalStockist">
+              <MappingFragment StoreEntitySet="TotalStockist">
+                <ScalarProperty Name="SalesOfficeName" ColumnName="SalesOfficeName" />
+                <ScalarProperty Name="SalesOfficeId" ColumnName="SalesOfficeId" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="DivisionId" ColumnName="DivisionId" />
+                <ScalarProperty Name="DisChannel" ColumnName="DisChannel" />
+                <ScalarProperty Name="DeliverPlant" ColumnName="DeliverPlant" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="StkName" ColumnName="StkName" />
+                <ScalarProperty Name="StkId" ColumnName="StkId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
